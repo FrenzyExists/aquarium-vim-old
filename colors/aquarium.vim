@@ -1,4 +1,4 @@
-
+"
 " Aquarium Theme
 " Vim layout config based upon nord-vim
 " https://github.com/arcticicestudio/nord-vim
@@ -31,7 +31,7 @@ let s:aquarium_red1 = "#cc9b9d"
 let s:nord12_gui = "#d95e59"
 let s:aquarium_yellow1 = "#ebe3b9"
 let s:nord14_gui = "#8fc587"
-let s:aquarium_red2 = "#ebb9b9"
+let s:aquarium_red2 = "#d95e59"
 
 let s:nord1_term = "0"
 let s:nord3_term = "8"
