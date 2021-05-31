@@ -167,7 +167,7 @@ call s:hi("Underline", "", "", "", "", s:underline, "")
 call s:hi("ColorColumn", "", s:nord1_gui, "NONE", s:nord1_term, "", "")
 call s:hi("Cursor", s:aquarium_background1, s:nord4_gui, "", "NONE", "", "")
 call s:hi("CursorLine", "", s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
-call s:hi("Error", s:nord4_gui, s:aquarium_red1, "", s:nord11_term, "", "")
+call s:hi("Error", s:nord4_gui, s:aquarium_red2, "", s:nord11_term, "", "")
 call s:hi("iCursor", s:aquarium_background1, s:nord4_gui, "", "NONE", "", "")
 call s:hi("LineNr", s:nord3_gui, "NONE", s:nord3_term, "NONE", "", "")
 call s:hi("MatchParen", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, "", "")
@@ -179,7 +179,7 @@ call s:hi("PmenuSel", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term,
 call s:hi("PmenuThumb", s:aquarium_cyan1, s:nord3_gui, "NONE", s:nord3_term, "", "")
 call s:hi("SpecialKey", s:nord3_gui, "", s:nord3_term, "", "", "")
 call s:hi("SpellBad", s:aquarium_red1, s:aquarium_background1, s:nord11_term, "NONE", "undercurl", s:aquarium_red1)
-call s:hi("SpellCap", s:aquarium_yellow1, s:aquarium_background1, s:nord13_term, "NONE", "undercurl", s:nord13_gui)
+call s:hi("SpellCap", s:aquarium_yellow1, s:aquarium_background1, s:nord13_term, "NONE", "undercurl", s:aquarium_yellow1)
 call s:hi("SpellLocal", s:nord5_gui, s:aquarium_background1, s:nord5_term, "NONE", "undercurl", s:nord5_gui)
 call s:hi("SpellRare", s:nord6_gui, s:aquarium_background1, s:nord6_term, "NONE", "undercurl", s:nord6_gui)
 call s:hi("Visual", "", s:nord2_gui, "", s:nord1_term, "", "")
@@ -192,7 +192,7 @@ call s:hi("TermCursorNC", "", s:nord1_gui, "", s:nord1_term, "", "")
 
 "+- Vim 8 Terminal Colors -+
 if has('terminal')
-  let g:terminal_ansi_colors = [s:nord1_gui, s:aquarium_red1, s:nord14_gui, s:aquarium_yellow1, s:nord9_gui, s:aquarium_red2, s:aquarium_cyan1, s:nord5_gui, s:nord3_gui, s:aquarium_red1, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:nord15_gui, s:nord7_gui, s:nord6_gui]
+  let g:terminal_ansi_colors = [s:nord1_gui, s:aquarium_red1, s:nord14_gui, s:aquarium_yellow1, s:nord9_gui, s:aquarium_red2, s:aquarium_cyan1, s:nord5_gui, s:nord3_gui, s:aquarium_red1, s:nord14_gui, s:aquarium_yellow1, s:nord9_gui, s:nord15_gui, s:nord7_gui, s:nord6_gui]
 endif
 
 "+- Neovim Terminal Colors -+
@@ -231,7 +231,7 @@ call s:hi("Directory", s:aquarium_cyan1, "", s:nord8_term, "NONE", "", "")
 
 "+--- Prompt/Status ---+
 call s:hi("EndOfBuffer", s:nord1_gui, "", s:nord1_term, "NONE", "", "")
-call s:hi("ErrorMsg", s:nord4_gui, s:aquarium_red1, "NONE", s:nord11_term, "", "")
+call s:hi("ErrorMsg", s:nord4_gui, s:aquarium_red2, "NONE", s:nord11_term, "", "")
 call s:hi("ModeMsg", s:nord4_gui, "", "", "", "", "")
 call s:hi("MoreMsg", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
 call s:hi("Question", s:nord4_gui, "", "NONE", "", "", "")
