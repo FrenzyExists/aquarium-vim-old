@@ -19,11 +19,11 @@ let s:aquarium_background1 = "#1b1b23"
 let s:aquarium_background2 = "#2c2e3e"
 let s:nord2_gui = "#2c2e3e"
 let s:nord3_gui = "#3b3b4d"
-let s:nord3_gui_bright = "#f6bbe7"
+let s:aquarium_magenta_2 = "#bf83b5"
 let s:nord4_gui = "#8791a3"
 let s:nord5_gui = "#4c5664"
 let s:nord6_gui = "#a0a8b6"
-let s:nord7_gui = "#8FBCBB"
+let s:nord7_gui = "#ffcf85"
 let s:aquarium_cyan1 = "#b8dceb"
 let s:nord9_gui = "#81A1C1"
 let s:aquarium_blue1 = "#cddbf9"
@@ -47,7 +47,7 @@ let s:nord13_term = "3"
 let s:nord14_term = "2"
 let s:nord15_term = "5"
 
-let s:nord3_gui_brightened = [
+let s:aquarium_magenta_2ened = [
   \ s:nord3_gui,
   \ "#4e586d",
   \ "#505b70",
@@ -272,7 +272,7 @@ endif
 "+----------------------+
 call s:hi("Boolean", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Character", s:nord14_gui, "", s:nord14_term, "", "", "")
-call s:hi("Comment", s:nord3_gui_bright, "", s:nord3_term, "", s:italicize_comments, "")
+call s:hi("Comment", s:aquarium_magenta_2, "", s:nord3_term, "", s:italicize_comments, "")
 call s:hi("Conceal", "", "NONE", "", "NONE", "", "")
 call s:hi("Conditional", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Constant", s:nord4_gui, "", "NONE", "", "", "")
@@ -537,7 +537,7 @@ hi! link vimFunction Function
 hi! link vimUserFunc Function
 
 call s:hi("xmlAttrib", s:nord7_gui, "", s:nord7_term, "", "", "")
-call s:hi("xmlCdataStart", s:nord3_gui_bright, "", s:nord3_term, "", s:bold, "")
+call s:hi("xmlCdataStart", s:aquarium_magenta_2, "", s:nord3_term, "", s:bold, "")
 call s:hi("xmlNamespace", s:nord7_gui, "", s:nord7_term, "", "", "")
 hi! link xmlAttribPunct Delimiter
 hi! link xmlCdata Comment
@@ -731,8 +731,6 @@ hi! link tsxIntrinsicTagName htmlTag
 hi! link tsxTagName tsxIntrinsicTagName
 
 " Markdown
-" > plasticboy/vim-markdown
-call s:hi("mkdCode", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("mkdFootnote", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
 call s:hi("mkdRule", s:aquarium_blue1, "", s:nord10_term, "", "", "")
 call s:hi("mkdLineBreak", s:nord9_gui, "", s:nord9_term, "", "", "")
@@ -787,6 +785,6 @@ function! NordPalette() abort
   for color in range(16)
     execute 'let ret["nord'.color.'"] = s:nord'.color.'_gui'
   endfor
-  let ret["nord3_bright"] = s:nord3_gui_bright
+  let ret["nord3_bright"] = s:aquarium_magenta_2
   return ret
 endfunction
