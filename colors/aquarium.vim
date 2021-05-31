@@ -1,4 +1,4 @@
-"
+
 " Aquarium Theme
 " Vim layout config based upon nord-vim
 " https://github.com/arcticicestudio/nord-vim
@@ -16,9 +16,9 @@ let s:nord_vim_version="0.01.0"
 set background=dark
 
 let s:aquarium_background1 = "#1b1b23"
-let s:nord1_gui = "#2c2e3e"
-let s:nord2_gui = "#434C5E"
-let s:nord3_gui = "#4C566A"
+let s:aquarium_background2 = "#2c2e3e"
+let s:nord2_gui = "#2c2e3e"
+let s:nord3_gui = "#3b3b4d"
 let s:nord3_gui_bright = "#f6bbe7"
 let s:nord4_gui = "#8791a3"
 let s:nord5_gui = "#4c5664"
@@ -164,9 +164,9 @@ call s:hi("Italic", "", "", "", "", s:italic, "")
 call s:hi("Underline", "", "", "", "", s:underline, "")
 
 "+--- Editor ---+
-call s:hi("ColorColumn", "", s:nord1_gui, "NONE", s:nord1_term, "", "")
+call s:hi("ColorColumn", "", s:aquarium_background2, "NONE", s:nord1_term, "", "")
 call s:hi("Cursor", s:aquarium_background1, s:nord4_gui, "", "NONE", "", "")
-call s:hi("CursorLine", "", s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
+call s:hi("CursorLine", "", s:aquarium_background2, "NONE", s:nord1_term, "NONE", "")
 call s:hi("Error", s:nord4_gui, s:aquarium_red2, "", s:nord11_term, "", "")
 call s:hi("iCursor", s:aquarium_background1, s:nord4_gui, "", "NONE", "", "")
 call s:hi("LineNr", s:nord3_gui, "NONE", s:nord3_term, "NONE", "", "")
@@ -185,19 +185,19 @@ call s:hi("SpellRare", s:nord6_gui, s:aquarium_background1, s:nord6_term, "NONE"
 call s:hi("Visual", "", s:nord2_gui, "", s:nord1_term, "", "")
 call s:hi("VisualNOS", "", s:nord2_gui, "", s:nord1_term, "", "")
 "+- Neovim Support -+
-call s:hi("healthError", s:aquarium_red1, s:nord1_gui, s:nord11_term, s:nord1_term, "", "")
-call s:hi("healthSuccess", s:nord14_gui, s:nord1_gui, s:nord14_term, s:nord1_term, "", "")
-call s:hi("healthWarning", s:aquarium_yellow1, s:nord1_gui, s:nord13_term, s:nord1_term, "", "")
-call s:hi("TermCursorNC", "", s:nord1_gui, "", s:nord1_term, "", "")
+call s:hi("healthError", s:aquarium_red1, s:aquarium_background2, s:nord11_term, s:nord1_term, "", "")
+call s:hi("healthSuccess", s:nord14_gui, s:aquarium_background2, s:nord14_term, s:nord1_term, "", "")
+call s:hi("healthWarning", s:aquarium_yellow1, s:aquarium_background2, s:nord13_term, s:nord1_term, "", "")
+call s:hi("TermCursorNC", "", s:aquarium_background2, "", s:nord1_term, "", "")
 
 "+- Vim 8 Terminal Colors -+
 if has('terminal')
-  let g:terminal_ansi_colors = [s:nord1_gui, s:aquarium_red1, s:nord14_gui, s:aquarium_yellow1, s:nord9_gui, s:aquarium_red2, s:aquarium_cyan1, s:nord5_gui, s:nord3_gui, s:aquarium_red1, s:nord14_gui, s:aquarium_yellow1, s:nord9_gui, s:nord15_gui, s:nord7_gui, s:nord6_gui]
+  let g:terminal_ansi_colors = [s:aquarium_background2, s:aquarium_red1, s:nord14_gui, s:aquarium_yellow1, s:nord9_gui, s:aquarium_red2, s:aquarium_cyan1, s:nord5_gui, s:nord3_gui, s:aquarium_red1, s:nord14_gui, s:aquarium_yellow1, s:nord9_gui, s:nord15_gui, s:nord7_gui, s:nord6_gui]
 endif
 
 "+- Neovim Terminal Colors -+
 if has('nvim')
-  let g:terminal_color_0 = s:nord1_gui
+  let g:terminal_color_0 = s:aquarium_background2
   let g:terminal_color_1 = s:aquarium_red1
   let g:terminal_color_2 = s:nord14_gui
   let g:terminal_color_3 = s:aquarium_yellow1
@@ -216,30 +216,30 @@ if has('nvim')
 endif
 
 "+--- Gutter ---+
-call s:hi("CursorColumn", "", s:nord1_gui, "NONE", s:nord1_term, "", "")
+call s:hi("CursorColumn", "", s:aquarium_background2, "NONE", s:nord1_term, "", "")
 if g:nord_cursor_line_number_background == 0
   call s:hi("CursorLineNr", s:nord4_gui, "", "NONE", "", "NONE", "")
 else
-  call s:hi("CursorLineNr", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
+  call s:hi("CursorLineNr", s:nord4_gui, s:aquarium_background2, "NONE", s:nord1_term, "NONE", "")
 endif
-call s:hi("Folded", s:nord3_gui, s:nord1_gui, s:nord3_term, s:nord1_term, s:bold, "")
+call s:hi("Folded", s:nord3_gui, s:aquarium_background2, s:nord3_term, s:nord1_term, s:bold, "")
 call s:hi("FoldColumn", s:nord3_gui, s:aquarium_background1, s:nord3_term, "NONE", "", "")
-call s:hi("SignColumn", s:nord1_gui, s:aquarium_background1, s:nord1_term, "NONE", "", "")
+call s:hi("SignColumn", s:aquarium_background2, s:aquarium_background1, s:nord1_term, "NONE", "", "")
 
 "+--- Navigation ---+
 call s:hi("Directory", s:aquarium_cyan1, "", s:nord8_term, "NONE", "", "")
 
 "+--- Prompt/Status ---+
-call s:hi("EndOfBuffer", s:nord1_gui, "", s:nord1_term, "NONE", "", "")
+call s:hi("EndOfBuffer", s:aquarium_background2, "", s:nord1_term, "NONE", "", "")
 call s:hi("ErrorMsg", s:nord4_gui, s:aquarium_red2, "NONE", s:nord11_term, "", "")
 call s:hi("ModeMsg", s:nord4_gui, "", "", "", "", "")
 call s:hi("MoreMsg", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
 call s:hi("Question", s:nord4_gui, "", "NONE", "", "", "")
 if g:nord_uniform_status_lines == 0
   call s:hi("StatusLine", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
-  call s:hi("StatusLineNC", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
+  call s:hi("StatusLineNC", s:nord4_gui, s:aquarium_background2, "NONE", s:nord1_term, "NONE", "")
   call s:hi("StatusLineTerm", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
-  call s:hi("StatusLineTermNC", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
+  call s:hi("StatusLineTermNC", s:nord4_gui, s:aquarium_background2, "NONE", s:nord1_term, "NONE", "")
 else
   call s:hi("StatusLine", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
   call s:hi("StatusLineNC", s:nord4_gui, s:nord3_gui, "NONE", s:nord3_term, "NONE", "")
@@ -247,15 +247,15 @@ else
   call s:hi("StatusLineTermNC", s:nord4_gui, s:nord3_gui, "NONE", s:nord3_term, "NONE", "")
 endif
 call s:hi("WarningMsg", s:aquarium_background1, s:aquarium_yellow1, s:nord1_term, s:nord13_term, "", "")
-call s:hi("WildMenu", s:aquarium_cyan1, s:nord1_gui, s:nord8_term, s:nord1_term, "", "")
+call s:hi("WildMenu", s:aquarium_cyan1, s:aquarium_background2, s:nord8_term, s:nord1_term, "", "")
 
 "+--- Search ---+
 call s:hi("IncSearch", s:nord6_gui, s:aquarium_blue1, s:nord6_term, s:nord10_term, s:underline, "")
-call s:hi("Search", s:nord1_gui, s:aquarium_cyan1, s:nord1_term, s:nord8_term, "NONE", "")
+call s:hi("Search", s:aquarium_background2, s:aquarium_cyan1, s:nord1_term, s:nord8_term, "NONE", "")
 
 "+--- Tabs ---+
-call s:hi("TabLine", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
-call s:hi("TabLineFill", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
+call s:hi("TabLine", s:nord4_gui, s:aquarium_background2, "NONE", s:nord1_term, "NONE", "")
+call s:hi("TabLineFill", s:nord4_gui, s:aquarium_background2, "NONE", s:nord1_term, "NONE", "")
 call s:hi("TabLineSel", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
 
 "+--- Window ---+
@@ -264,7 +264,7 @@ call s:hi("Title", s:nord4_gui, "", "NONE", "", "NONE", "")
 if g:nord_bold_vertical_split_line == 0
   call s:hi("VertSplit", s:nord2_gui, s:aquarium_background1, s:nord3_term, "NONE", "NONE", "")
 else
-  call s:hi("VertSplit", s:nord2_gui, s:nord1_gui, s:nord3_term, s:nord1_term, "NONE", "")
+  call s:hi("VertSplit", s:nord2_gui, s:aquarium_background2, s:nord3_term, s:nord1_term, "NONE", "")
 endif
 
 "+----------------------+
@@ -285,7 +285,7 @@ call s:hi("Identifier", s:nord4_gui, "", "NONE", "", "NONE", "")
 call s:hi("Include", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Keyword", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Label", s:nord9_gui, "", s:nord9_term, "", "", "")
-call s:hi("Number", s:aquarium_red2, "", s:nord15_term, "", "", "")
+call s:hi("Number", s:aquarium_red1, "", s:nord15_term, "", "", "")
 call s:hi("Operator", s:nord9_gui, "", s:nord9_term, "", "NONE", "")
 call s:hi("PreProc", s:nord9_gui, "", s:nord9_term, "", "NONE", "")
 call s:hi("Repeat", s:nord9_gui, "", s:nord9_term, "", "", "")
@@ -385,10 +385,10 @@ if g:nord_uniform_diff_background == 0
   call s:hi("DiffDelete", s:aquarium_red1, s:aquarium_background1, s:nord11_term, "NONE", "inverse", "")
   call s:hi("DiffText", s:nord9_gui, s:aquarium_background1, s:nord9_term, "NONE", "inverse", "")
 else
-  call s:hi("DiffAdd", s:nord14_gui, s:nord1_gui, s:nord14_term, s:nord1_term, "", "")
-  call s:hi("DiffChange", s:aquarium_yellow1, s:nord1_gui, s:nord13_term, s:nord1_term, "", "")
-  call s:hi("DiffDelete", s:aquarium_red1, s:nord1_gui, s:nord11_term, s:nord1_term, "", "")
-  call s:hi("DiffText", s:nord9_gui, s:nord1_gui, s:nord9_term, s:nord1_term, "", "")
+  call s:hi("DiffAdd", s:nord14_gui, s:aquarium_background2, s:nord14_term, s:nord1_term, "", "")
+  call s:hi("DiffChange", s:aquarium_yellow1, s:aquarium_background2, s:nord13_term, s:nord1_term, "", "")
+  call s:hi("DiffDelete", s:aquarium_red1, s:aquarium_background2, s:nord11_term, s:nord1_term, "", "")
+  call s:hi("DiffText", s:nord9_gui, s:aquarium_background2, s:nord9_term, s:nord1_term, "", "")
 endif
 " Legacy groups for official git.vim and diff.vim syntax
 hi! link diffAdded DiffAdd
@@ -620,7 +620,7 @@ hi! link CtrlPBufferHid Normal
 " vim-clap
 " > liuchengxu/vim-clap
 call s:hi("ClapDir", s:nord4_gui, "", "", "", "", "")
-call s:hi("ClapDisplay", s:nord4_gui, s:nord1_gui, "", s:nord1_term, "", "")
+call s:hi("ClapDisplay", s:nord4_gui, s:aquarium_background2, "", s:nord1_term, "", "")
 call s:hi("ClapFile", s:nord4_gui, "", "", "NONE", "", "")
 call s:hi("ClapMatches", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
 call s:hi("ClapNoMatchesFound", s:aquarium_yellow1, "", s:nord13_term, "", "", "")
@@ -649,7 +649,7 @@ hi! link ClapProviderId Type
 
 " vim-indent-guides
 " > nathanaelkane/vim-indent-guides
-call s:hi("IndentGuidesEven", "", s:nord1_gui, "", s:nord1_term, "", "")
+call s:hi("IndentGuidesEven", "", s:aquarium_background2, "", s:nord1_term, "", "")
 call s:hi("IndentGuidesOdd", "", s:nord2_gui, "", s:nord3_term, "", "")
 
 " vim-plug
