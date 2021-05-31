@@ -1,8 +1,6 @@
-" Copyright (C) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
-" Copyright (C) 2016-present Sven Greb <development@svengreb.de>
-
-" Project: Nord Vim
-" Repository: https://github.com/arcticicestudio/nord-vim
+" Aquarium Theme
+" Vim layout config based upon nord-vim
+" https://github.com/arcticicestudio/nord-vim
 " License: MIT
 
 if version > 580
@@ -12,8 +10,8 @@ if version > 580
   endif
 endif
 
-let g:colors_name = "nord"
-let s:nord_vim_version="0.15.0"
+let g:colors_name = "aquarium"
+let s:nord_vim_version="0.01.0"
 set background=dark
 
 let s:nord0_gui = "#2E3440"
