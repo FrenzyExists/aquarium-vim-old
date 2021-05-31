@@ -24,13 +24,13 @@ let s:nord4_gui = "#8791a3"
 let s:nord5_gui = "#4c5664"
 let s:nord6_gui = "#a0a8b6"
 let s:nord7_gui = "#8FBCBB"
-let s:nord8_gui = "#88C0D0"
+let s:aquarium_cyan1 = "#b8dceb"
 let s:nord9_gui = "#81A1C1"
 let s:nord10_gui = "#5E81AC"
 let s:nord11_gui = "#BF616A"
 let s:nord12_gui = "#d95e59"
 let s:nord13_gui = "#EBCB8B"
-let s:nord14_gui = "#A3BE8C"
+let s:nord14_gui = "#caf6bb"
 let s:nord15_gui = "#B48EAD"
 
 let s:nord1_term = "0"
@@ -170,13 +170,13 @@ call s:hi("CursorLine", "", s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
 call s:hi("Error", s:nord4_gui, s:nord11_gui, "", s:nord11_term, "", "")
 call s:hi("iCursor", s:nord0_gui, s:nord4_gui, "", "NONE", "", "")
 call s:hi("LineNr", s:nord3_gui, "NONE", s:nord3_term, "NONE", "", "")
-call s:hi("MatchParen", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "", "")
+call s:hi("MatchParen", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, "", "")
 call s:hi("NonText", s:nord2_gui, "", s:nord3_term, "", "", "")
 call s:hi("Normal", s:nord4_gui, s:nord0_gui, "NONE", "NONE", "", "")
 call s:hi("Pmenu", s:nord4_gui, s:nord2_gui, "NONE", s:nord1_term, "NONE", "")
 call s:hi("PmenuSbar", s:nord4_gui, s:nord2_gui, "NONE", s:nord1_term, "", "")
-call s:hi("PmenuSel", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "", "")
-call s:hi("PmenuThumb", s:nord8_gui, s:nord3_gui, "NONE", s:nord3_term, "", "")
+call s:hi("PmenuSel", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, "", "")
+call s:hi("PmenuThumb", s:aquarium_cyan1, s:nord3_gui, "NONE", s:nord3_term, "", "")
 call s:hi("SpecialKey", s:nord3_gui, "", s:nord3_term, "", "", "")
 call s:hi("SpellBad", s:nord11_gui, s:nord0_gui, s:nord11_term, "NONE", "undercurl", s:nord11_gui)
 call s:hi("SpellCap", s:nord13_gui, s:nord0_gui, s:nord13_term, "NONE", "undercurl", s:nord13_gui)
@@ -192,7 +192,7 @@ call s:hi("TermCursorNC", "", s:nord1_gui, "", s:nord1_term, "", "")
 
 "+- Vim 8 Terminal Colors -+
 if has('terminal')
-  let g:terminal_ansi_colors = [s:nord1_gui, s:nord11_gui, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:nord15_gui, s:nord8_gui, s:nord5_gui, s:nord3_gui, s:nord11_gui, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:nord15_gui, s:nord7_gui, s:nord6_gui]
+  let g:terminal_ansi_colors = [s:nord1_gui, s:nord11_gui, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:nord15_gui, s:aquarium_cyan1, s:nord5_gui, s:nord3_gui, s:nord11_gui, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:nord15_gui, s:nord7_gui, s:nord6_gui]
 endif
 
 "+- Neovim Terminal Colors -+
@@ -203,7 +203,7 @@ if has('nvim')
   let g:terminal_color_3 = s:nord13_gui
   let g:terminal_color_4 = s:nord9_gui
   let g:terminal_color_5 = s:nord15_gui
-  let g:terminal_color_6 = s:nord8_gui
+  let g:terminal_color_6 = s:aquarium_cyan1
   let g:terminal_color_7 = s:nord5_gui
   let g:terminal_color_8 = s:nord3_gui
   let g:terminal_color_9 = s:nord11_gui
@@ -227,36 +227,36 @@ call s:hi("FoldColumn", s:nord3_gui, s:nord0_gui, s:nord3_term, "NONE", "", "")
 call s:hi("SignColumn", s:nord1_gui, s:nord0_gui, s:nord1_term, "NONE", "", "")
 
 "+--- Navigation ---+
-call s:hi("Directory", s:nord8_gui, "", s:nord8_term, "NONE", "", "")
+call s:hi("Directory", s:aquarium_cyan1, "", s:nord8_term, "NONE", "", "")
 
 "+--- Prompt/Status ---+
 call s:hi("EndOfBuffer", s:nord1_gui, "", s:nord1_term, "NONE", "", "")
 call s:hi("ErrorMsg", s:nord4_gui, s:nord11_gui, "NONE", s:nord11_term, "", "")
 call s:hi("ModeMsg", s:nord4_gui, "", "", "", "", "")
-call s:hi("MoreMsg", s:nord8_gui, "", s:nord8_term, "", "", "")
+call s:hi("MoreMsg", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
 call s:hi("Question", s:nord4_gui, "", "NONE", "", "", "")
 if g:nord_uniform_status_lines == 0
-  call s:hi("StatusLine", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
+  call s:hi("StatusLine", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
   call s:hi("StatusLineNC", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
-  call s:hi("StatusLineTerm", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
+  call s:hi("StatusLineTerm", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
   call s:hi("StatusLineTermNC", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
 else
-  call s:hi("StatusLine", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
+  call s:hi("StatusLine", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
   call s:hi("StatusLineNC", s:nord4_gui, s:nord3_gui, "NONE", s:nord3_term, "NONE", "")
-  call s:hi("StatusLineTerm", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
+  call s:hi("StatusLineTerm", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
   call s:hi("StatusLineTermNC", s:nord4_gui, s:nord3_gui, "NONE", s:nord3_term, "NONE", "")
 endif
 call s:hi("WarningMsg", s:nord0_gui, s:nord13_gui, s:nord1_term, s:nord13_term, "", "")
-call s:hi("WildMenu", s:nord8_gui, s:nord1_gui, s:nord8_term, s:nord1_term, "", "")
+call s:hi("WildMenu", s:aquarium_cyan1, s:nord1_gui, s:nord8_term, s:nord1_term, "", "")
 
 "+--- Search ---+
 call s:hi("IncSearch", s:nord6_gui, s:nord10_gui, s:nord6_term, s:nord10_term, s:underline, "")
-call s:hi("Search", s:nord1_gui, s:nord8_gui, s:nord1_term, s:nord8_term, "NONE", "")
+call s:hi("Search", s:nord1_gui, s:aquarium_cyan1, s:nord1_term, s:nord8_term, "NONE", "")
 
 "+--- Tabs ---+
 call s:hi("TabLine", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
 call s:hi("TabLineFill", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
-call s:hi("TabLineSel", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
+call s:hi("TabLineSel", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
 
 "+--- Window ---+
 call s:hi("Title", s:nord4_gui, "", "NONE", "", "NONE", "")
@@ -280,7 +280,7 @@ call s:hi("Define", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Delimiter", s:nord6_gui, "", s:nord6_term, "", "", "")
 call s:hi("Exception", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Float", s:nord15_gui, "", s:nord15_term, "", "", "")
-call s:hi("Function", s:nord8_gui, "", s:nord8_term, "", "", "")
+call s:hi("Function", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
 call s:hi("Identifier", s:nord4_gui, "", "NONE", "", "NONE", "")
 call s:hi("Include", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Keyword", s:nord9_gui, "", s:nord9_term, "", "", "")
@@ -291,7 +291,7 @@ call s:hi("PreProc", s:nord9_gui, "", s:nord9_term, "", "NONE", "")
 call s:hi("Repeat", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Special", s:nord4_gui, "", "NONE", "", "", "")
 call s:hi("SpecialChar", s:nord13_gui, "", s:nord13_term, "", "", "")
-call s:hi("SpecialComment", s:nord8_gui, "", s:nord8_term, "", s:italicize_comments, "")
+call s:hi("SpecialComment", s:aquarium_cyan1, "", s:nord8_term, "", s:italicize_comments, "")
 call s:hi("Statement", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("StorageClass", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("String", s:nord14_gui, "", s:nord14_term, "", "", "")
@@ -311,8 +311,8 @@ call s:hi("asciidocAttributeList", s:nord10_gui, "", s:nord10_term, "", "", "")
 call s:hi("asciidocAttributeRef", s:nord10_gui, "", s:nord10_term, "", "", "")
 call s:hi("asciidocHLabel", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("asciidocListingBlock", s:nord7_gui, "", s:nord7_term, "", "", "")
-call s:hi("asciidocMacroAttributes", s:nord8_gui, "", s:nord8_term, "", "", "")
-call s:hi("asciidocOneLineTitle", s:nord8_gui, "", s:nord8_term, "", "", "")
+call s:hi("asciidocMacroAttributes", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
+call s:hi("asciidocOneLineTitle", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
 call s:hi("asciidocPassthroughBlock", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("asciidocQuotedMonospaced", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("asciidocTriplePlusPassthrough", s:nord7_gui, "", s:nord7_term, "", "", "")
@@ -367,7 +367,7 @@ hi! link cssPseudoClass cssDefinition
 hi! link cssPseudoClassId cssPseudoClass
 hi! link cssVendor Keyword
 
-call s:hi("dosiniHeader", s:nord8_gui, "", s:nord8_term, "", "", "")
+call s:hi("dosiniHeader", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
 hi! link dosiniLabel Type
 
 call s:hi("dtBooleanKey", s:nord7_gui, "", s:nord7_term, "", "", "")
@@ -401,7 +401,7 @@ call s:hi("goBuiltins", s:nord7_gui, "", s:nord7_term, "", "", "")
 hi! link goConstants Keyword
 
 call s:hi("helpBar", s:nord3_gui, "", s:nord3_term, "", "", "")
-call s:hi("helpHyperTextJump", s:nord8_gui, "", s:nord8_term, "", s:underline, "")
+call s:hi("helpHyperTextJump", s:aquarium_cyan1, "", s:nord8_term, "", s:underline, "")
 
 call s:hi("htmlArg", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("htmlLink", s:nord4_gui, "", "", "", "NONE", "NONE")
@@ -446,8 +446,8 @@ call s:hi("markdownCodeDelimiter", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("markdownFootnote", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("markdownId", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("markdownIdDeclaration", s:nord7_gui, "", s:nord7_term, "", "", "")
-call s:hi("markdownH1", s:nord8_gui, "", s:nord8_term, "", "", "")
-call s:hi("markdownLinkText", s:nord8_gui, "", s:nord8_term, "", "", "")
+call s:hi("markdownH1", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
+call s:hi("markdownLinkText", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
 call s:hi("markdownUrl", s:nord4_gui, "", "NONE", "", "NONE", "")
 hi! link markdownBold Bold
 hi! link markdownBoldDelimiter Keyword
@@ -495,7 +495,7 @@ hi! link rubyRegexp SpecialChar
 
 call s:hi("rustAttribute", s:nord10_gui, "", s:nord10_term, "", "", "")
 call s:hi("rustEnum", s:nord7_gui, "", s:nord7_term, "", s:bold, "")
-call s:hi("rustMacro", s:nord8_gui, "", s:nord8_term, "", s:bold, "")
+call s:hi("rustMacro", s:aquarium_cyan1, "", s:nord8_term, "", s:bold, "")
 call s:hi("rustModPath", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("rustPanic", s:nord9_gui, "", s:nord9_term, "", s:bold, "")
 call s:hi("rustTrait", s:nord7_gui, "", s:nord7_term, "", s:italic, "")
@@ -568,18 +568,18 @@ call s:hi("CocWarningHighlight" , s:nord13_gui, "", s:nord13_term, "", "undercur
 call s:hi("CocErrorHighlight" , s:nord11_gui, "", s:nord11_term, "", "undercurl", "")
 call s:hi("CocWarningSign", s:nord13_gui, "", s:nord13_term, "", "", "")
 call s:hi("CocErrorSign" , s:nord11_gui, "", s:nord11_term, "", "", "")
-call s:hi("CocInfoSign" , s:nord8_gui, "", s:nord8_term, "", "", "")
+call s:hi("CocInfoSign" , s:aquarium_cyan1, "", s:nord8_term, "", "", "")
 call s:hi("CocHintSign" , s:nord10_gui, "", s:nord10_term, "", "", "")
 
 " Neovim LSP
 " > neovim/nvim-lspconfig
 call s:hi("LspDiagnosticsDefaultWarning", s:nord13_gui, "", s:nord13_term, "", "", "")
 call s:hi("LspDiagnosticsDefaultError" , s:nord11_gui, "", s:nord11_term, "", "", "")
-call s:hi("LspDiagnosticsDefaultInformation" , s:nord8_gui, "", s:nord8_term, "", "", "")
+call s:hi("LspDiagnosticsDefaultInformation" , s:aquarium_cyan1, "", s:nord8_term, "", "", "")
 call s:hi("LspDiagnosticsDefaultHint" , s:nord10_gui, "", s:nord10_term, "", "", "")
 call s:hi("LspDiagnosticsUnderlineWarning" , s:nord13_gui, "", s:nord13_term, "", "undercurl", "")
 call s:hi("LspDiagnosticsUnderlineError" , s:nord11_gui, "", s:nord11_term, "", "undercurl", "")
-call s:hi("LspDiagnosticsUnderlineInformation" , s:nord8_gui, "", s:nord8_term, "", "undercurl", "")
+call s:hi("LspDiagnosticsUnderlineInformation" , s:aquarium_cyan1, "", s:nord8_term, "", "undercurl", "")
 call s:hi("LspDiagnosticsUnderlineHint" , s:nord10_gui, "", s:nord10_term, "", "undercurl", "")
 
 " GitGutter
@@ -604,7 +604,7 @@ call s:hi("gitcommitSelectedFile", s:nord14_gui, "", s:nord14_term, "", "", "")
 
 " davidhalter/jedi-vim
 call s:hi("jediFunction", s:nord4_gui, s:nord3_gui, "", s:nord3_term, "", "")
-call s:hi("jediFat", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, s:underline.s:bold, "")
+call s:hi("jediFat", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, s:underline.s:bold, "")
 
 " NERDTree
 " > scrooloose/nerdtree
@@ -622,13 +622,13 @@ hi! link CtrlPBufferHid Normal
 call s:hi("ClapDir", s:nord4_gui, "", "", "", "", "")
 call s:hi("ClapDisplay", s:nord4_gui, s:nord1_gui, "", s:nord1_term, "", "")
 call s:hi("ClapFile", s:nord4_gui, "", "", "NONE", "", "")
-call s:hi("ClapMatches", s:nord8_gui, "", s:nord8_term, "", "", "")
+call s:hi("ClapMatches", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
 call s:hi("ClapNoMatchesFound", s:nord13_gui, "", s:nord13_term, "", "", "")
 call s:hi("ClapSelected", s:nord7_gui, "", s:nord7_term, "", s:bold, "")
 call s:hi("ClapSelectedSign", s:nord9_gui, "", s:nord9_term, "", "", "")
 
 let s:clap_matches = [
-        \ [s:nord8_gui,  s:nord8_term] ,
+        \ [s:aquarium_cyan1,  s:nord8_term] ,
         \ [s:nord9_gui,  s:nord9_term] ,
         \ [s:nord10_gui, s:nord10_term] ,
         \ ]
@@ -658,15 +658,15 @@ call s:hi("plugDeleted", s:nord11_gui, "", "", s:nord11_term, "", "")
 
 " vim-signature
 " > kshenoy/vim-signature
-call s:hi("SignatureMarkText", s:nord8_gui, "", s:nord8_term, "", "", "")
+call s:hi("SignatureMarkText", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
 
 " vim-startify
 " > mhinz/vim-startify
 call s:hi("StartifyFile", s:nord6_gui, "", s:nord6_term, "", "", "")
 call s:hi("StartifyFooter", s:nord7_gui, "", s:nord7_term, "", "", "")
-call s:hi("StartifyHeader", s:nord8_gui, "", s:nord8_term, "", "", "")
+call s:hi("StartifyHeader", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
 call s:hi("StartifyNumber", s:nord7_gui, "", s:nord7_term, "", "", "")
-call s:hi("StartifyPath", s:nord8_gui, "", s:nord8_term, "", "", "")
+call s:hi("StartifyPath", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
 hi! link StartifyBracket Delimiter
 hi! link StartifySlash Normal
 hi! link StartifySpecial Comment
@@ -680,7 +680,7 @@ hi! link haskellPragma haskellPreProc
 
 " JavaScript
 " > pangloss/vim-javascript
-call s:hi("jsGlobalNodeObjects", s:nord8_gui, "", s:nord8_term, "", s:italic, "")
+call s:hi("jsGlobalNodeObjects", s:aquarium_cyan1, "", s:nord8_term, "", s:italic, "")
 hi! link jsBrackets Delimiter
 hi! link jsFuncCall Function
 hi! link jsFuncParens Delimiter
@@ -691,7 +691,7 @@ hi! link jsRegexpString SpecialChar
 
 " TypeScript
 " > HerringtonDarkholme/yats.vim
-call s:hi("typescriptBOMWindowMethod", s:nord8_gui, "", s:nord8_term, "", s:italic, "")
+call s:hi("typescriptBOMWindowMethod", s:aquarium_cyan1, "", s:nord8_term, "", s:italic, "")
 call s:hi("typescriptClassName", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("typescriptDecorator", s:nord12_gui, "", s:nord12_term, "", "", "")
 call s:hi("typescriptInterfaceName", s:nord7_gui, "", s:nord7_term, "", s:bold, "")
@@ -733,7 +733,7 @@ hi! link tsxTagName tsxIntrinsicTagName
 " Markdown
 " > plasticboy/vim-markdown
 call s:hi("mkdCode", s:nord7_gui, "", s:nord7_term, "", "", "")
-call s:hi("mkdFootnote", s:nord8_gui, "", s:nord8_term, "", "", "")
+call s:hi("mkdFootnote", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
 call s:hi("mkdRule", s:nord10_gui, "", s:nord10_term, "", "", "")
 call s:hi("mkdLineBreak", s:nord9_gui, "", s:nord9_term, "", "", "")
 hi! link mkdBold Bold
@@ -758,17 +758,17 @@ hi! link mkdDelimiter Keyword
 " > vimwiki/vimwiki
 if !exists("g:vimwiki_hl_headers") || g:vimwiki_hl_headers == 0
   for s:i in range(1,6)
-    call s:hi("VimwikiHeader".s:i, s:nord8_gui, "", s:nord8_term, "", s:bold, "")
+    call s:hi("VimwikiHeader".s:i, s:aquarium_cyan1, "", s:nord8_term, "", s:bold, "")
   endfor
 else
-  let s:vimwiki_hcolor_guifg = [s:nord7_gui, s:nord8_gui, s:nord9_gui, s:nord10_gui, s:nord14_gui, s:nord15_gui]
+  let s:vimwiki_hcolor_guifg = [s:nord7_gui, s:aquarium_cyan1, s:nord9_gui, s:nord10_gui, s:nord14_gui, s:nord15_gui]
   let s:vimwiki_hcolor_ctermfg = [s:nord7_term, s:nord8_term, s:nord9_term, s:nord10_term, s:nord14_term, s:nord15_term]
   for s:i in range(1,6)
     call s:hi("VimwikiHeader".s:i, s:vimwiki_hcolor_guifg[s:i-1] , "", s:vimwiki_hcolor_ctermfg[s:i-1], "", s:bold, "")
   endfor
 endif
 
-call s:hi("VimwikiLink", s:nord8_gui, "", s:nord8_term, "", s:underline, "")
+call s:hi("VimwikiLink", s:aquarium_cyan1, "", s:nord8_term, "", s:underline, "")
 hi! link VimwikiHeaderChar markdownHeadingDelimiter
 hi! link VimwikiHR Keyword
 hi! link VimwikiList markdownListMarker
