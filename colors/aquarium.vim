@@ -29,7 +29,7 @@ let s:nord9_gui = "#81A1C1"
 let s:aquarium_blue1 = "#cddbf9"
 let s:aquarium_red1 = "#cc9b9d"
 let s:nord12_gui = "#d95e59"
-let s:nord13_gui = "#EBCB8B"
+let s:aquarium_yellow1 = "#ebe3b9"
 let s:nord14_gui = "#8fc587"
 let s:aquarium_red2 = "#ebb9b9"
 
@@ -179,7 +179,7 @@ call s:hi("PmenuSel", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term,
 call s:hi("PmenuThumb", s:aquarium_cyan1, s:nord3_gui, "NONE", s:nord3_term, "", "")
 call s:hi("SpecialKey", s:nord3_gui, "", s:nord3_term, "", "", "")
 call s:hi("SpellBad", s:aquarium_red1, s:aquarium_background1, s:nord11_term, "NONE", "undercurl", s:aquarium_red1)
-call s:hi("SpellCap", s:nord13_gui, s:aquarium_background1, s:nord13_term, "NONE", "undercurl", s:nord13_gui)
+call s:hi("SpellCap", s:aquarium_yellow1, s:aquarium_background1, s:nord13_term, "NONE", "undercurl", s:nord13_gui)
 call s:hi("SpellLocal", s:nord5_gui, s:aquarium_background1, s:nord5_term, "NONE", "undercurl", s:nord5_gui)
 call s:hi("SpellRare", s:nord6_gui, s:aquarium_background1, s:nord6_term, "NONE", "undercurl", s:nord6_gui)
 call s:hi("Visual", "", s:nord2_gui, "", s:nord1_term, "", "")
@@ -187,12 +187,12 @@ call s:hi("VisualNOS", "", s:nord2_gui, "", s:nord1_term, "", "")
 "+- Neovim Support -+
 call s:hi("healthError", s:aquarium_red1, s:nord1_gui, s:nord11_term, s:nord1_term, "", "")
 call s:hi("healthSuccess", s:nord14_gui, s:nord1_gui, s:nord14_term, s:nord1_term, "", "")
-call s:hi("healthWarning", s:nord13_gui, s:nord1_gui, s:nord13_term, s:nord1_term, "", "")
+call s:hi("healthWarning", s:aquarium_yellow1, s:nord1_gui, s:nord13_term, s:nord1_term, "", "")
 call s:hi("TermCursorNC", "", s:nord1_gui, "", s:nord1_term, "", "")
 
 "+- Vim 8 Terminal Colors -+
 if has('terminal')
-  let g:terminal_ansi_colors = [s:nord1_gui, s:aquarium_red1, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:aquarium_red2, s:aquarium_cyan1, s:nord5_gui, s:nord3_gui, s:aquarium_red1, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:nord15_gui, s:nord7_gui, s:nord6_gui]
+  let g:terminal_ansi_colors = [s:nord1_gui, s:aquarium_red1, s:nord14_gui, s:aquarium_yellow1, s:nord9_gui, s:aquarium_red2, s:aquarium_cyan1, s:nord5_gui, s:nord3_gui, s:aquarium_red1, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:nord15_gui, s:nord7_gui, s:nord6_gui]
 endif
 
 "+- Neovim Terminal Colors -+
@@ -200,7 +200,7 @@ if has('nvim')
   let g:terminal_color_0 = s:nord1_gui
   let g:terminal_color_1 = s:aquarium_red1
   let g:terminal_color_2 = s:nord14_gui
-  let g:terminal_color_3 = s:nord13_gui
+  let g:terminal_color_3 = s:aquarium_yellow1
   let g:terminal_color_4 = s:nord9_gui
   let g:terminal_color_5 = s:aquarium_red2
   let g:terminal_color_6 = s:aquarium_cyan1
@@ -208,7 +208,7 @@ if has('nvim')
   let g:terminal_color_8 = s:nord3_gui
   let g:terminal_color_9 = s:aquarium_red1
   let g:terminal_color_10 = s:nord14_gui
-  let g:terminal_color_11 = s:nord13_gui
+  let g:terminal_color_11 = s:aquarium_yellow1
   let g:terminal_color_12 = s:nord9_gui
   let g:terminal_color_13 = s:aquarium_red2
   let g:terminal_color_14 = s:nord7_gui
@@ -246,7 +246,7 @@ else
   call s:hi("StatusLineTerm", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
   call s:hi("StatusLineTermNC", s:nord4_gui, s:nord3_gui, "NONE", s:nord3_term, "NONE", "")
 endif
-call s:hi("WarningMsg", s:aquarium_background1, s:nord13_gui, s:nord1_term, s:nord13_term, "", "")
+call s:hi("WarningMsg", s:aquarium_background1, s:aquarium_yellow1, s:nord1_term, s:nord13_term, "", "")
 call s:hi("WildMenu", s:aquarium_cyan1, s:nord1_gui, s:nord8_term, s:nord1_term, "", "")
 
 "+--- Search ---+
@@ -290,14 +290,14 @@ call s:hi("Operator", s:nord9_gui, "", s:nord9_term, "", "NONE", "")
 call s:hi("PreProc", s:nord9_gui, "", s:nord9_term, "", "NONE", "")
 call s:hi("Repeat", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Special", s:nord4_gui, "", "NONE", "", "", "")
-call s:hi("SpecialChar", s:nord13_gui, "", s:nord13_term, "", "", "")
+call s:hi("SpecialChar", s:aquarium_yellow1, "", s:nord13_term, "", "", "")
 call s:hi("SpecialComment", s:aquarium_cyan1, "", s:nord8_term, "", s:italicize_comments, "")
 call s:hi("Statement", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("StorageClass", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("String", s:nord14_gui, "", s:nord14_term, "", "", "")
 call s:hi("Structure", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Tag", s:nord4_gui, "", "", "", "", "")
-call s:hi("Todo", s:nord13_gui, "NONE", s:nord13_term, "NONE", "", "")
+call s:hi("Todo", s:aquarium_yellow1, "NONE", s:nord13_term, "NONE", "", "")
 call s:hi("Type", s:nord9_gui, "", s:nord9_term, "", "NONE", "")
 call s:hi("Typedef", s:nord9_gui, "", s:nord9_term, "", "", "")
 hi! link Macro Define
@@ -381,12 +381,12 @@ hi! link dtTypeValue Keyword
 
 if g:nord_uniform_diff_background == 0
   call s:hi("DiffAdd", s:nord14_gui, s:aquarium_background1, s:nord14_term, "NONE", "inverse", "")
-  call s:hi("DiffChange", s:nord13_gui, s:aquarium_background1, s:nord13_term, "NONE", "inverse", "")
+  call s:hi("DiffChange", s:aquarium_yellow1, s:aquarium_background1, s:nord13_term, "NONE", "inverse", "")
   call s:hi("DiffDelete", s:aquarium_red1, s:aquarium_background1, s:nord11_term, "NONE", "inverse", "")
   call s:hi("DiffText", s:nord9_gui, s:aquarium_background1, s:nord9_term, "NONE", "inverse", "")
 else
   call s:hi("DiffAdd", s:nord14_gui, s:nord1_gui, s:nord14_term, s:nord1_term, "", "")
-  call s:hi("DiffChange", s:nord13_gui, s:nord1_gui, s:nord13_term, s:nord1_term, "", "")
+  call s:hi("DiffChange", s:aquarium_yellow1, s:nord1_gui, s:nord13_term, s:nord1_term, "", "")
   call s:hi("DiffDelete", s:aquarium_red1, s:nord1_gui, s:nord11_term, s:nord1_term, "", "")
   call s:hi("DiffText", s:nord9_gui, s:nord1_gui, s:nord9_term, s:nord1_term, "", "")
 endif
@@ -557,27 +557,27 @@ hi! link yamlDocumentStart Keyword
 "+--- UI ---+
 " ALE
 " > w0rp/ale
-call s:hi("ALEWarningSign", s:nord13_gui, "", s:nord13_term, "", "", "")
+call s:hi("ALEWarningSign", s:aquarium_yellow1, "", s:nord13_term, "", "", "")
 call s:hi("ALEErrorSign" , s:aquarium_red1, "", s:nord11_term, "", "", "")
-call s:hi("ALEWarning" , s:nord13_gui, "", s:nord13_term, "", "undercurl", "")
+call s:hi("ALEWarning" , s:aquarium_yellow1, "", s:nord13_term, "", "undercurl", "")
 call s:hi("ALEError" , s:aquarium_red1, "", s:nord11_term, "", "undercurl", "")
 
 " Coc
 " > neoclide/coc
-call s:hi("CocWarningHighlight" , s:nord13_gui, "", s:nord13_term, "", "undercurl", "")
+call s:hi("CocWarningHighlight" , s:aquarium_yellow1, "", s:nord13_term, "", "undercurl", "")
 call s:hi("CocErrorHighlight" , s:aquarium_red1, "", s:nord11_term, "", "undercurl", "")
-call s:hi("CocWarningSign", s:nord13_gui, "", s:nord13_term, "", "", "")
+call s:hi("CocWarningSign", s:aquarium_yellow1, "", s:nord13_term, "", "", "")
 call s:hi("CocErrorSign" , s:aquarium_red1, "", s:nord11_term, "", "", "")
 call s:hi("CocInfoSign" , s:aquarium_cyan1, "", s:nord8_term, "", "", "")
 call s:hi("CocHintSign" , s:aquarium_blue1, "", s:nord10_term, "", "", "")
 
 " Neovim LSP
 " > neovim/nvim-lspconfig
-call s:hi("LspDiagnosticsDefaultWarning", s:nord13_gui, "", s:nord13_term, "", "", "")
+call s:hi("LspDiagnosticsDefaultWarning", s:aquarium_yellow1, "", s:nord13_term, "", "", "")
 call s:hi("LspDiagnosticsDefaultError" , s:aquarium_red1, "", s:nord11_term, "", "", "")
 call s:hi("LspDiagnosticsDefaultInformation" , s:aquarium_cyan1, "", s:nord8_term, "", "", "")
 call s:hi("LspDiagnosticsDefaultHint" , s:aquarium_blue1, "", s:nord10_term, "", "", "")
-call s:hi("LspDiagnosticsUnderlineWarning" , s:nord13_gui, "", s:nord13_term, "", "undercurl", "")
+call s:hi("LspDiagnosticsUnderlineWarning" , s:aquarium_yellow1, "", s:nord13_term, "", "undercurl", "")
 call s:hi("LspDiagnosticsUnderlineError" , s:aquarium_red1, "", s:nord11_term, "", "undercurl", "")
 call s:hi("LspDiagnosticsUnderlineInformation" , s:aquarium_cyan1, "", s:nord8_term, "", "undercurl", "")
 call s:hi("LspDiagnosticsUnderlineHint" , s:aquarium_blue1, "", s:nord10_term, "", "undercurl", "")
@@ -585,14 +585,14 @@ call s:hi("LspDiagnosticsUnderlineHint" , s:aquarium_blue1, "", s:nord10_term, "
 " GitGutter
 " > airblade/vim-gitgutter
 call s:hi("GitGutterAdd", s:nord14_gui, "", s:nord14_term, "", "", "")
-call s:hi("GitGutterChange", s:nord13_gui, "", s:nord13_term, "", "", "")
+call s:hi("GitGutterChange", s:aquarium_yellow1, "", s:nord13_term, "", "", "")
 call s:hi("GitGutterChangeDelete", s:aquarium_red1, "", s:nord11_term, "", "", "")
 call s:hi("GitGutterDelete", s:aquarium_red1, "", s:nord11_term, "", "", "")
 
 " Signify
 " > mhinz/vim-signify
 call s:hi("SignifySignAdd", s:nord14_gui, "", s:nord14_term, "", "", "")
-call s:hi("SignifySignChange", s:nord13_gui, "", s:nord13_term, "", "", "")
+call s:hi("SignifySignChange", s:aquarium_yellow1, "", s:nord13_term, "", "", "")
 call s:hi("SignifySignChangeDelete", s:aquarium_red1, "", s:nord11_term, "", "", "")
 call s:hi("SignifySignDelete", s:aquarium_red1, "", s:nord11_term, "", "", "")
 
@@ -623,7 +623,7 @@ call s:hi("ClapDir", s:nord4_gui, "", "", "", "", "")
 call s:hi("ClapDisplay", s:nord4_gui, s:nord1_gui, "", s:nord1_term, "", "")
 call s:hi("ClapFile", s:nord4_gui, "", "", "NONE", "", "")
 call s:hi("ClapMatches", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
-call s:hi("ClapNoMatchesFound", s:nord13_gui, "", s:nord13_term, "", "", "")
+call s:hi("ClapNoMatchesFound", s:aquarium_yellow1, "", s:nord13_term, "", "", "")
 call s:hi("ClapSelected", s:nord7_gui, "", s:nord7_term, "", s:bold, "")
 call s:hi("ClapSelectedSign", s:nord9_gui, "", s:nord9_term, "", "", "")
 
@@ -695,7 +695,7 @@ call s:hi("typescriptBOMWindowMethod", s:aquarium_cyan1, "", s:nord8_term, "", s
 call s:hi("typescriptClassName", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("typescriptDecorator", s:nord12_gui, "", s:nord12_term, "", "", "")
 call s:hi("typescriptInterfaceName", s:nord7_gui, "", s:nord7_term, "", s:bold, "")
-call s:hi("typescriptRegexpString", s:nord13_gui, "", s:nord13_term, "", "", "")
+call s:hi("typescriptRegexpString", s:aquarium_yellow1, "", s:nord13_term, "", "", "")
 " TypeScript JSX
  call s:hi("tsxAttrib", s:nord7_gui, "", s:nord7_term, "", "", "")
 hi! link typescriptOperator Operator
