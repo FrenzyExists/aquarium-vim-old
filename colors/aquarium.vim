@@ -30,8 +30,8 @@ let s:nord10_gui = "#5E81AC"
 let s:nord11_gui = "#BF616A"
 let s:nord12_gui = "#d95e59"
 let s:nord13_gui = "#EBCB8B"
-let s:nord14_gui = "#caf6bb"
-let s:nord15_gui = "#B48EAD"
+let s:nord14_gui = "#8fc587"
+let s:aquarium_red2 = "#ebb9b9"
 
 let s:nord1_term = "0"
 let s:nord3_term = "8"
@@ -192,7 +192,7 @@ call s:hi("TermCursorNC", "", s:nord1_gui, "", s:nord1_term, "", "")
 
 "+- Vim 8 Terminal Colors -+
 if has('terminal')
-  let g:terminal_ansi_colors = [s:nord1_gui, s:nord11_gui, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:nord15_gui, s:aquarium_cyan1, s:nord5_gui, s:nord3_gui, s:nord11_gui, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:nord15_gui, s:nord7_gui, s:nord6_gui]
+  let g:terminal_ansi_colors = [s:nord1_gui, s:nord11_gui, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:aquarium_red2, s:aquarium_cyan1, s:nord5_gui, s:nord3_gui, s:nord11_gui, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:nord15_gui, s:nord7_gui, s:nord6_gui]
 endif
 
 "+- Neovim Terminal Colors -+
@@ -202,7 +202,7 @@ if has('nvim')
   let g:terminal_color_2 = s:nord14_gui
   let g:terminal_color_3 = s:nord13_gui
   let g:terminal_color_4 = s:nord9_gui
-  let g:terminal_color_5 = s:nord15_gui
+  let g:terminal_color_5 = s:aquarium_red2
   let g:terminal_color_6 = s:aquarium_cyan1
   let g:terminal_color_7 = s:nord5_gui
   let g:terminal_color_8 = s:nord3_gui
@@ -210,7 +210,7 @@ if has('nvim')
   let g:terminal_color_10 = s:nord14_gui
   let g:terminal_color_11 = s:nord13_gui
   let g:terminal_color_12 = s:nord9_gui
-  let g:terminal_color_13 = s:nord15_gui
+  let g:terminal_color_13 = s:aquarium_red2
   let g:terminal_color_14 = s:nord7_gui
   let g:terminal_color_15 = s:nord6_gui
 endif
@@ -279,13 +279,13 @@ call s:hi("Constant", s:nord4_gui, "", "NONE", "", "", "")
 call s:hi("Define", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Delimiter", s:nord6_gui, "", s:nord6_term, "", "", "")
 call s:hi("Exception", s:nord9_gui, "", s:nord9_term, "", "", "")
-call s:hi("Float", s:nord15_gui, "", s:nord15_term, "", "", "")
+call s:hi("Float", s:aquarium_red2, "", s:nord15_term, "", "", "")
 call s:hi("Function", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
 call s:hi("Identifier", s:nord4_gui, "", "NONE", "", "NONE", "")
 call s:hi("Include", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Keyword", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Label", s:nord9_gui, "", s:nord9_term, "", "", "")
-call s:hi("Number", s:nord15_gui, "", s:nord15_term, "", "", "")
+call s:hi("Number", s:aquarium_red2, "", s:nord15_term, "", "", "")
 call s:hi("Operator", s:nord9_gui, "", s:nord9_term, "", "NONE", "")
 call s:hi("PreProc", s:nord9_gui, "", s:nord9_term, "", "NONE", "")
 call s:hi("Repeat", s:nord9_gui, "", s:nord9_term, "", "", "")
@@ -761,7 +761,7 @@ if !exists("g:vimwiki_hl_headers") || g:vimwiki_hl_headers == 0
     call s:hi("VimwikiHeader".s:i, s:aquarium_cyan1, "", s:nord8_term, "", s:bold, "")
   endfor
 else
-  let s:vimwiki_hcolor_guifg = [s:nord7_gui, s:aquarium_cyan1, s:nord9_gui, s:nord10_gui, s:nord14_gui, s:nord15_gui]
+  let s:vimwiki_hcolor_guifg = [s:nord7_gui, s:aquarium_cyan1, s:nord9_gui, s:nord10_gui, s:nord14_gui, s:aquarium_red2]
   let s:vimwiki_hcolor_ctermfg = [s:nord7_term, s:nord8_term, s:nord9_term, s:nord10_term, s:nord14_term, s:nord15_term]
   for s:i in range(1,6)
     call s:hi("VimwikiHeader".s:i, s:vimwiki_hcolor_guifg[s:i-1] , "", s:vimwiki_hcolor_ctermfg[s:i-1], "", s:bold, "")
