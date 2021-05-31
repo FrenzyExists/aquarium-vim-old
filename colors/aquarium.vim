@@ -19,7 +19,7 @@ let s:aquarium_background1 = "#1b1b23"
 let s:nord1_gui = "#2c2e3e"
 let s:nord2_gui = "#434C5E"
 let s:nord3_gui = "#4C566A"
-let s:nord3_gui_bright = "#616E88"
+let s:nord3_gui_bright = "#f6bbe7"
 let s:nord4_gui = "#8791a3"
 let s:nord5_gui = "#4c5664"
 let s:nord6_gui = "#a0a8b6"
@@ -178,7 +178,7 @@ call s:hi("PmenuSbar", s:nord4_gui, s:nord2_gui, "NONE", s:nord1_term, "", "")
 call s:hi("PmenuSel", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, "", "")
 call s:hi("PmenuThumb", s:aquarium_cyan1, s:nord3_gui, "NONE", s:nord3_term, "", "")
 call s:hi("SpecialKey", s:nord3_gui, "", s:nord3_term, "", "", "")
-call s:hi("SpellBad", s:aquarium_red1, s:aquarium_background1, s:nord11_term, "NONE", "undercurl", s:nord11_gui)
+call s:hi("SpellBad", s:aquarium_red1, s:aquarium_background1, s:nord11_term, "NONE", "undercurl", s:aquarium_red1)
 call s:hi("SpellCap", s:nord13_gui, s:aquarium_background1, s:nord13_term, "NONE", "undercurl", s:nord13_gui)
 call s:hi("SpellLocal", s:nord5_gui, s:aquarium_background1, s:nord5_term, "NONE", "undercurl", s:nord5_gui)
 call s:hi("SpellRare", s:nord6_gui, s:aquarium_background1, s:nord6_term, "NONE", "undercurl", s:nord6_gui)
@@ -192,7 +192,7 @@ call s:hi("TermCursorNC", "", s:nord1_gui, "", s:nord1_term, "", "")
 
 "+- Vim 8 Terminal Colors -+
 if has('terminal')
-  let g:terminal_ansi_colors = [s:nord1_gui, s:aquarium_red1, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:aquarium_red2, s:aquarium_cyan1, s:nord5_gui, s:nord3_gui, s:nord11_gui, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:nord15_gui, s:nord7_gui, s:nord6_gui]
+  let g:terminal_ansi_colors = [s:nord1_gui, s:aquarium_red1, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:aquarium_red2, s:aquarium_cyan1, s:nord5_gui, s:nord3_gui, s:aquarium_red1, s:nord14_gui, s:nord13_gui, s:nord9_gui, s:nord15_gui, s:nord7_gui, s:nord6_gui]
 endif
 
 "+- Neovim Terminal Colors -+
