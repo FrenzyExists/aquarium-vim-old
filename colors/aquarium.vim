@@ -17,21 +17,28 @@ set background=dark
 
 let s:aquarium_background1 = "#1b1b23"
 let s:aquarium_background2 = "#2c2e3e"
-let s:nord2_gui = "#2c2e3e"
-let s:nord3_gui = "#3b3b4d"
+
+let s:aquarium_cyan1 = "#b8dceb"
+
+let s:aquarium_blue1 = "#cddbf9"
+
+let s:aquarium_red1 = "#cc9b9d"
+let s:aquarium_red2 = "#d95e59"
+
+let s:aquarium_yellow1 = "#ebe3b9"
+
+let s:aquarium_black1 = "#3b3b4d"
+
 let s:aquarium_magenta_2 = "#bf83b5"
+
+let s:nord2_gui = "#2c2e3e"
 let s:nord4_gui = "#8791a3"
 let s:nord5_gui = "#4c5664"
 let s:nord6_gui = "#a0a8b6"
 let s:nord7_gui = "#ffcf85"
-let s:aquarium_cyan1 = "#b8dceb"
 let s:nord9_gui = "#4eb3cd"
-let s:aquarium_blue1 = "#cddbf9"
-let s:aquarium_red1 = "#cc9b9d"
 let s:nord12_gui = "#d95e59"
-let s:aquarium_yellow1 = "#ebe3b9"
 let s:nord14_gui = "#8fc587"
-let s:aquarium_red2 = "#d95e59"
 
 let s:nord1_term = "0"
 let s:nord3_term = "8"
@@ -48,7 +55,7 @@ let s:nord14_term = "2"
 let s:nord15_term = "5"
 
 let s:aquarium_magenta_2ened = [
-  \ s:nord3_gui,
+  \ s:aquarium_black1,
   \ "#4e586d",
   \ "#505b70",
   \ "#525d73",
@@ -169,15 +176,15 @@ call s:hi("Cursor", s:aquarium_background1, s:nord4_gui, "", "NONE", "", "")
 call s:hi("CursorLine", "", s:aquarium_background2, "NONE", s:nord1_term, "NONE", "")
 call s:hi("Error", s:nord4_gui, s:aquarium_red2, "", s:nord11_term, "", "")
 call s:hi("iCursor", s:aquarium_background1, s:nord4_gui, "", "NONE", "", "")
-call s:hi("LineNr", s:nord3_gui, "NONE", s:nord3_term, "NONE", "", "")
-call s:hi("MatchParen", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, "", "")
+call s:hi("LineNr", s:aquarium_black1, "NONE", s:nord3_term, "NONE", "", "")
+call s:hi("MatchParen", s:aquarium_cyan1, s:aquarium_black1, s:nord8_term, s:nord3_term, "", "")
 call s:hi("NonText", s:nord2_gui, "", s:nord3_term, "", "", "")
 call s:hi("Normal", s:nord4_gui, s:aquarium_background1, "NONE", "NONE", "", "")
 call s:hi("Pmenu", s:nord4_gui, s:nord2_gui, "NONE", s:nord1_term, "NONE", "")
 call s:hi("PmenuSbar", s:nord4_gui, s:nord2_gui, "NONE", s:nord1_term, "", "")
-call s:hi("PmenuSel", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, "", "")
-call s:hi("PmenuThumb", s:aquarium_cyan1, s:nord3_gui, "NONE", s:nord3_term, "", "")
-call s:hi("SpecialKey", s:nord3_gui, "", s:nord3_term, "", "", "")
+call s:hi("PmenuSel", s:aquarium_cyan1, s:aquarium_black1, s:nord8_term, s:nord3_term, "", "")
+call s:hi("PmenuThumb", s:aquarium_cyan1, s:aquarium_black1, "NONE", s:nord3_term, "", "")
+call s:hi("SpecialKey", s:aquarium_black1, "", s:nord3_term, "", "", "")
 call s:hi("SpellBad", s:aquarium_red1, s:aquarium_background1, s:nord11_term, "NONE", "undercurl", s:aquarium_red1)
 call s:hi("SpellCap", s:aquarium_yellow1, s:aquarium_background1, s:nord13_term, "NONE", "undercurl", s:aquarium_yellow1)
 call s:hi("SpellLocal", s:nord5_gui, s:aquarium_background1, s:nord5_term, "NONE", "undercurl", s:nord5_gui)
@@ -192,7 +199,7 @@ call s:hi("TermCursorNC", "", s:aquarium_background2, "", s:nord1_term, "", "")
 
 "+- Vim 8 Terminal Colors -+
 if has('terminal')
-  let g:terminal_ansi_colors = [s:aquarium_background2, s:aquarium_red1, s:nord14_gui, s:aquarium_yellow1, s:nord9_gui, s:aquarium_red2, s:aquarium_cyan1, s:nord5_gui, s:nord3_gui, s:aquarium_red1, s:nord14_gui, s:aquarium_yellow1, s:nord9_gui, s:nord15_gui, s:nord7_gui, s:nord6_gui]
+  let g:terminal_ansi_colors = [s:aquarium_background2, s:aquarium_red1, s:nord14_gui, s:aquarium_yellow1, s:nord9_gui, s:aquarium_red2, s:aquarium_cyan1, s:nord5_gui, s:aquarium_black1, s:aquarium_red1, s:nord14_gui, s:aquarium_yellow1, s:nord9_gui, s:nord15_gui, s:nord7_gui, s:nord6_gui]
 endif
 
 "+- Neovim Terminal Colors -+
@@ -205,7 +212,7 @@ if has('nvim')
   let g:terminal_color_5 = s:aquarium_red2
   let g:terminal_color_6 = s:aquarium_cyan1
   let g:terminal_color_7 = s:nord5_gui
-  let g:terminal_color_8 = s:nord3_gui
+  let g:terminal_color_8 = s:aquarium_black1
   let g:terminal_color_9 = s:aquarium_red1
   let g:terminal_color_10 = s:nord14_gui
   let g:terminal_color_11 = s:aquarium_yellow1
@@ -222,8 +229,8 @@ if g:nord_cursor_line_number_background == 0
 else
   call s:hi("CursorLineNr", s:nord4_gui, s:aquarium_background2, "NONE", s:nord1_term, "NONE", "")
 endif
-call s:hi("Folded", s:nord3_gui, s:aquarium_background2, s:nord3_term, s:nord1_term, s:bold, "")
-call s:hi("FoldColumn", s:nord3_gui, s:aquarium_background1, s:nord3_term, "NONE", "", "")
+call s:hi("Folded", s:aquarium_black1, s:aquarium_background2, s:nord3_term, s:nord1_term, s:bold, "")
+call s:hi("FoldColumn", s:aquarium_black1, s:aquarium_background1, s:nord3_term, "NONE", "", "")
 call s:hi("SignColumn", s:aquarium_background2, s:aquarium_background1, s:nord1_term, "NONE", "", "")
 
 "+--- Navigation ---+
@@ -236,15 +243,15 @@ call s:hi("ModeMsg", s:nord4_gui, "", "", "", "", "")
 call s:hi("MoreMsg", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
 call s:hi("Question", s:nord4_gui, "", "NONE", "", "", "")
 if g:nord_uniform_status_lines == 0
-  call s:hi("StatusLine", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
+  call s:hi("StatusLine", s:aquarium_cyan1, s:aquarium_black1, s:nord8_term, s:nord3_term, "NONE", "")
   call s:hi("StatusLineNC", s:nord4_gui, s:aquarium_background2, "NONE", s:nord1_term, "NONE", "")
-  call s:hi("StatusLineTerm", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
+  call s:hi("StatusLineTerm", s:aquarium_cyan1, s:aquarium_black1, s:nord8_term, s:nord3_term, "NONE", "")
   call s:hi("StatusLineTermNC", s:nord4_gui, s:aquarium_background2, "NONE", s:nord1_term, "NONE", "")
 else
-  call s:hi("StatusLine", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
-  call s:hi("StatusLineNC", s:nord4_gui, s:nord3_gui, "NONE", s:nord3_term, "NONE", "")
-  call s:hi("StatusLineTerm", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
-  call s:hi("StatusLineTermNC", s:nord4_gui, s:nord3_gui, "NONE", s:nord3_term, "NONE", "")
+  call s:hi("StatusLine", s:aquarium_cyan1, s:aquarium_black1, s:nord8_term, s:nord3_term, "NONE", "")
+  call s:hi("StatusLineNC", s:nord4_gui, s:aquarium_black1, "NONE", s:nord3_term, "NONE", "")
+  call s:hi("StatusLineTerm", s:aquarium_cyan1, s:aquarium_black1, s:nord8_term, s:nord3_term, "NONE", "")
+  call s:hi("StatusLineTermNC", s:nord4_gui, s:aquarium_black1, "NONE", s:nord3_term, "NONE", "")
 endif
 call s:hi("WarningMsg", s:aquarium_background1, s:aquarium_yellow1, s:nord1_term, s:nord13_term, "", "")
 call s:hi("WildMenu", s:aquarium_cyan1, s:aquarium_background2, s:nord8_term, s:nord1_term, "", "")
@@ -256,7 +263,7 @@ call s:hi("Search", s:aquarium_background2, s:aquarium_cyan1, s:nord1_term, s:no
 "+--- Tabs ---+
 call s:hi("TabLine", s:nord4_gui, s:aquarium_background2, "NONE", s:nord1_term, "NONE", "")
 call s:hi("TabLineFill", s:nord4_gui, s:aquarium_background2, "NONE", s:nord1_term, "NONE", "")
-call s:hi("TabLineSel", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
+call s:hi("TabLineSel", s:aquarium_cyan1, s:aquarium_black1, s:nord8_term, s:nord3_term, "NONE", "")
 
 "+--- Window ---+
 call s:hi("Title", s:nord4_gui, "", "NONE", "", "NONE", "")
@@ -272,7 +279,7 @@ endif
 "+----------------------+
 call s:hi("Boolean", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Character", s:nord14_gui, "", s:nord14_term, "", "", "")
-call s:hi("Comment", s:aquarium_magenta_2, "", s:nord3_term, "", s:italicize_comments, "")
+call s:hi("Comment", s:aquarium_background2, "", s:nord3_term, "", s:italicize_comments, "")
 call s:hi("Conceal", "", "NONE", "", "NONE", "", "")
 call s:hi("Conditional", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Constant", s:nord4_gui, "", "NONE", "", "", "")
@@ -400,7 +407,7 @@ call s:hi("gitconfigVariable", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("goBuiltins", s:nord7_gui, "", s:nord7_term, "", "", "")
 hi! link goConstants Keyword
 
-call s:hi("helpBar", s:nord3_gui, "", s:nord3_term, "", "", "")
+call s:hi("helpBar", s:aquarium_black1, "", s:nord3_term, "", "", "")
 call s:hi("helpHyperTextJump", s:aquarium_cyan1, "", s:nord8_term, "", s:underline, "")
 
 call s:hi("htmlArg", s:nord7_gui, "", s:nord7_term, "", "", "")
@@ -603,8 +610,8 @@ call s:hi("gitcommitUntrackedFile", s:aquarium_red1, "", s:nord11_term, "", "", 
 call s:hi("gitcommitSelectedFile", s:nord14_gui, "", s:nord14_term, "", "", "")
 
 " davidhalter/jedi-vim
-call s:hi("jediFunction", s:nord4_gui, s:nord3_gui, "", s:nord3_term, "", "")
-call s:hi("jediFat", s:aquarium_cyan1, s:nord3_gui, s:nord8_term, s:nord3_term, s:underline.s:bold, "")
+call s:hi("jediFunction", s:nord4_gui, s:aquarium_black1, "", s:nord3_term, "", "")
+call s:hi("jediFat", s:aquarium_cyan1, s:aquarium_black1, s:nord8_term, s:nord3_term, s:underline.s:bold, "")
 
 " NERDTree
 " > scrooloose/nerdtree
