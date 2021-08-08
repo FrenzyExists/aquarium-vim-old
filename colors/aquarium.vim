@@ -81,72 +81,29 @@ let s:aquarium13_term = "3"
 let s:aquarium14_term = "2"
 
 
-if !exists("g:aquarium_bold")
-  let g:aquarium_bold = 1
-endif
-
-let s:bold = "bold,"
-if g:aquarium_bold == 0
-  let s:bold = ""
-endif
-
-if !exists("g:aquarium_italic")
-  if has("gui_running") || $TERM_ITALICS == "true"
-    let g:nord_italic = 1
+" This function is based on one from FlatColor: https://github.com/MaxSt/FlatColor/
+" Which in turn was based on one found in hemisu: https://github.com/noahfrederick/vim-hemisu/
+let s:group_colors = {} " Cache of default highlight group settings, for later reference via `onedark#extend_highlight`
+function! s:hi(group, style, ...)
+  if (a:0 > 0) " Will be true if we got here from onedark#extend_highlight
+    let s:highlight = s:group_colors[a:group]
+    for style_type in ["fg", "bg", "sp"]
+      if (has_key(a:style, style_type))
+        let l:default_style = (has_key(s:highlight, style_type) ? copy(s:highlight[style_type]) : { "cterm16": "NONE", "cterm": "NONE", "gui": "NONE" })
+        let s:highlight[style_type] = extend(l:default_style, a:style[style_type])
+      endif
+    endfor
+    if (has_key(a:style, "gui"))
+      let s:highlight.gui = a:style.gui
+    endif
   else
-    let g:nord_italic = 0
+    let s:highlight = a:style
+    let s:group_colors[a:group] = s:highlight " Cache default highlight group settings
   endif
-endif
-
-let s:italic = "italic,"
-if g:nord_italic == 0
-  let s:italic = ""
-endif
-
-let s:underline = "underline,"
-if ! get(g:, "aquarium_underline", 1)
-  let s:underline = "NONE,"
-endif
-
-let s:italicize_comments = ""
-if exists("g:aquarium_italic_comments")
-  if g:nord_italic_comments == 1
-    let s:italicize_comments = s:italic
-  endif
-endif
-
-if !exists('g:aquarium_uniform_status_lines')
-  let g:nord_uniform_status_lines = 0
-endif
-
-function! s:hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
-  if a:guifg != ""
-    exec "hi " . a:group . " guifg=" . a:guifg
-  endif
-  if a:guibg != ""
-    exec "hi " . a:group . " guibg=" . a:guibg
-  endif
-  if a:ctermfg != ""
-    exec "hi " . a:group . " ctermfg=" . a:ctermfg
-  endif
-  if a:ctermbg != ""
-    exec "hi " . a:group . " ctermbg=" . a:ctermbg
-  endif
-  if a:attr != ""
-    exec "hi " . a:group . " gui=" . a:attr . " cterm=" . substitute(a:attr, "undercurl", s:underline, "")
-  endif
-  if a:guisp != ""
-    exec "hi " . a:group . " guisp=" . a:guisp
-  endif
-endfunction
 
 "+---------------+
 "+ UI Components +
 "+---------------+
-"+--- Attributes ---+
-call s:hi("Bold", "", "", "", "", s:bold, "")
-call s:hi("Italic", "", "", "", "", s:italic, "")
-call s:hi("Underline", "", "", "", "", s:underline, "")
 
 "+-+-+-+-+-+-+-+-+-+-+
 "+----- Editor ------+
