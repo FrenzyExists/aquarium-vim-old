@@ -2,7 +2,12 @@
 " Aquarium Theme
 " Vim layout config based upon nord-vim
 " https://github.com/arcticicestudio/nord-vim
-" License: MIT
+" Name:       aquarium.vim
+" Maintainer: https://github.com/frenzyexists/aquarium.vim/
+" License: The MIT License (MIT)
+
+
+highlight clear
 
 if version > 580
   hi clear
@@ -11,321 +16,486 @@ if version > 580
   endif
 endif
 
+"+--------------------------------+
+"+ Totally not an Identify Crisis +
+"+--------------------------------+
 let g:colors_name = "aquarium"
-let s:nord_vim_version="0.01.0"
-set background=dark
+let s:nord_vim_version="0.2.0"
 
-let s:aquarium_foreground1 = "#8791a3"
+"+
+"+ Color Reference
+"+
 
-let s:aquarium_background1 = "#1b1b23"
-let s:aquarium_background2 = "#2c2e3e"
+" +---------------------------------------------+
+" |  Color Name  |         RGB        |   Hex   |
+" |--------------+--------------------+---------|
+" | Black        | rgb(40, 44, 52)    | #282c34 |
+" |--------------+--------------------+---------|
+" | Foreground   | rgb(171, 178, 191) | #7c7c93 |
+" |--------------+--------------------+---------|
+" | Red          | rgb(190, 80, 70)   | #ebb9b9 |
+" |--------------+--------------------+---------|
+" | Green        | rgb(152, 195, 121) | #caf6bb |
+" |--------------+--------------------+---------|
+" | Yellow       | rgb(229, 192, 123) | #ebe3b9 |
+" |--------------+--------------------+---------|
+" | Blue         | rgb(97, 175, 239)  | #cddbf9 |
+" |--------------+--------------------+---------|
+" | Magenta      | rgb(198, 120, 221) | #f6bbe7 |
+" |--------------+--------------------+---------|
+" | Cyan         | rgb(86, 182, 194)  | #b8dceb |
+" |--------------+--------------------+---------|
 
-let s:aquarium_cyan1 = "#b8dceb"
-let s:aquarium_cyan2 = "#4eb3cd"
+"+-+-+-+-+-+-+-+-+-+-+
+"+-- Define Colors --+
+"+-+-+-+-+-+-+-+-+-+-+
+let s:aquarium_bg1 = "#1b1b23"
+let s:aquarium_bg2 = "#2c2e3e"
+let s:aquarium_bg3 = "#3b3b4d"
 
-let s:aquarium_blue1 = "#cddbf9"
-            
-let s:aquarium_red1 = "#cc9b9d"
-let s:aquarium_red2 = "#d95e59"
+let s:aquarium_fg1 = "#7c7c93"
+let s:aquarium_fg2 = "#63718b"
+let s:aquarium_fg3 = "#E5E9F0"
 
-let s:aquarium_yellow1 = "#ebe3b9"
-let s:aquarium_yellow2 = "#ffcf85"
+let s:aquarium_red = "#ebb9b9"
+let s:aquarium_green = "#caf6bb"
+let s:aquarium_yellow = "#ebe3b9"
+let s:aquarium_blue = "#cddbf9"
+let s:aquarium_magenta = "#f6bbe7"
+let s:aquarium_cyan = "#b8dceb"
+let s:aquarium_black = "#4c5664"
 
-let s:aquarium_black1 = "#3b3b4d"
-let s:aquarium_black2 = "#32302f"
+let s:aquarium1_term = "0"
+let s:aquarium3_term = "8"
+let s:aquarium5_term = "7"
+let s:aquariumd6_term = "15"
+let s:aquarium7_term = "14"
+let s:aquarium8_term = "6"
+let s:aquarium9_term = "4"
+let s:aquarium10_term = "12"
+let s:aquarium11_term = "1"
+let s:aquarium12_term = "11"
+let s:aquarium13_term = "3"
+let s:aquarium14_term = "2"
 
-let s:aquarium_magenta_2 = "#bf83b5"
+"+-------------------+
+"+ Comments and Such +
+"+-------------------+
+call s:hi("Comment", {"fg": s:aquarium_black, "gui": "italic", "cterm": "italic" })
+call s:hi("SpecialComment", {"fg": s:aquarium_cyan, "gui": "italic", "cterm": "italic" })
 
-let s:nord2_gui = "#2c2e3e"
-let s:nord5_gui = "#4c5664"
-let s:nord6_gui = "#a0a8b6"
-let s:nord9_gui = "#4eb3cd"
-let s:nord12_gui = "#d95e59"
-let s:nord14_gui = "#8fc587"
+"+---------------------+
+"+ Rust Lang Highlight +
+"+---------------------+
+call s:hi("rustAttribute", { "fg": s:aquarium_blue })
+call s:hi("rustEnum", { "fg": s:aquarium_yellow, "cterm": "bold", "gui": "bold" })
+call s:hi("rustMacro", { "fg": s:aquarium_cyan, "cterm": "bold", "gui": "bold" })
+call s:hi("rustModPath", { "fg": s:aquarium_yellow })
+call s:hi("rustPanic", { "fg": s:aquarium_red, "cterm": "bold", "gui": "bold" })
+call s:hi("rustTrait", { "fg": s:aquarium_yellow, "cterm": "italic", "gui": "italic" })
+hi! link rustCommentLineDoc Comment
+hi! link rustDerive rustAttribute
+hi! link rustEnumVariant rustEnum
+hi! link rustEscape SpecialChar
+hi! link rustQuestionMark Keyword
 
-let s:nord1_term = "0"
-let s:nord3_term = "8"
-let s:nord5_term = "7"
-let s:nord6_term = "15"
-let s:nord7_term = "14"
-let s:nord8_term = "6"
-let s:nord9_term = "4"
-let s:nord10_term = "12"
-let s:nord11_term = "1"
-let s:nord12_term = "11"
-let s:nord13_term = "3"
-let s:nord14_term = "2"
-let s:nord15_term = "5"
+"+---------------------+
+"+ Ruby Lang Highlight +
+"+---------------------+
+call s:h("rubyBlockParameter", { "fg": s:aquarium_red})
+call s:h("rubyBlockParameterList", { "fg": s:aquarium_red })
+call s:h("rubyClass", { "fg": s:aquarium_yellow})
+call s:h("rubyConstant", { "fg": s:aquarium_yellow})
+call s:h("rubyControl", { "fg": s:aquarium_yellow })
+call s:h("rubyEscape", { "fg": s:aquarium_red })
+call s:h("rubyFunction", { "fg": s:aquarium_blue })
+call s:h("rubyGlobalVariable", { "fg": s:aquarium_red })
+call s:h("rubyInclude", { "fg": s:aquarium_blue})
+call s:h("rubyIncluderubyGlobalVariable", { "fg": s:aquarium_red })
+call s:h("rubyInstanceVariable", { "fg": s:aquarium_red })
+call s:h("rubyInterpolation", { "fg": s:aquarium_cyan })
+call s:h("rubyInterpolationDelimiter", { "fg": s:aquarium_red })
+call s:h("rubyInterpolationDelimiter", { "fg": s:aquarium_red })
+call s:h("rubyRegexp", { "fg": s:aquarium_cyan})
+call s:h("rubyRegexpDelimiter", { "fg": s:aquarium_cyan})
+call s:h("rubyStringDelimiter", { "fg": s:aquarium_green})
+call s:h("rubySymbol", { "fg": s:aquarium_cyan })
 
-let s:aquarium_magenta_2ened = [
-  \ s:aquarium_black1,
-  \ "#4e586d",
-  \ "#505b70",
-  \ "#525d73",
-  \ "#556076",
-  \ "#576279",
-  \ "#59647c",
-  \ "#5b677f",
-  \ "#5d6982",
-  \ "#5f6c85",
-  \ "#616e88",
-  \ "#63718b",
-  \ "#66738e",
-  \ "#687591",
-  \ "#6a7894",
-  \ "#6d7a96",
-  \ "#6f7d98",
-  \ "#72809a",
-  \ "#75829c",
-  \ "#78859e",
-  \ "#7b88a1",
-\ ]
+"+----------------------------+
+"+ Typescript Lang Hightlight +
+"+----------------------------+
+call s:h("typescriptReserved", { "fg": s:aquarium_yellow })
+call s:h("typescriptEndColons", { "fg": s:aquarium_fg2 })
+call s:h("typescriptBraces", { "fg": s:aquarium_fg2 })
 
-if !exists("g:nord_bold")
-  let g:nord_bold = 1
-endif
+"+-------------------+
+"+ Go Lang Highlight +
+"+-------------------+
+call s:h("goDeclaration", { "fg": s:aquarium_magenta })
+call s:h("goBuiltins", { "fg": s:aquarium_cyan })
+call s:h("goFunctionCall", { "fg": s:aquarium_blue })
+call s:h("goVarDefs", { "fg": s:aquarium_red })
+call s:h("goVarAssign", { "fg": s:aquarium_red })
+call s:h("goVar", { "fg": s:aquarium_magenta })
+call s:h("goConst", { "fg": s:aquarium_magenta })
+call s:h("goType", { "fg": s:aquarium_yellow })
+call s:h("goTypeName", { "fg": s:aquarium_yellow })
+call s:h("goDeclType", { "fg": s:aquarium_cyan })
+call s:h("goTypeDecl", { "fg": s:aquarium_magenta })
 
-let s:bold = "bold,"
-if g:nord_bold == 0
-  let s:bold = ""
-endif
+"+---------------------+
+"+ HTML Lang Highlight +
+"+---------------------+
+call s:h("htmlArg", { "fg": s:aquarium_yellow })
+call s:h("htmlBold", { "fg": s:aquarium_yellow, "gui": "bold", "cterm": "bold" })
+call s:h("htmlEndTag", { "fg": s:aquarium_fg2 })
+call s:h("htmlH1", { "fg": s:aquarium_red })
+call s:h("htmlH2", { "fg": s:aquarium_red })
+call s:h("htmlH3", { "fg": s:aquarium_red })
+call s:h("htmlH4", { "fg": s:aquarium_red })
+call s:h("htmlH5", { "fg": s:aquarium_red })
+call s:h("htmlH6", { "fg": s:aquarium_red })
+call s:h("htmlItalic", { "fg": s:aquarium_magenta, "gui": "italic", "cterm": "italic" })
+call s:h("htmlLink", { "fg": s:aquarium_cyan, "gui": "underline", "cterm": "underline" })
+call s:h("htmlSpecialChar", { "fg": s:aquarium_yellow })
+call s:h("htmlSpecialTagName", { "fg": s:aquarium_red })
+call s:h("htmlTag", { "fg": s:aquarium_fg2 })
+call s:h("htmlTagN", { "fg": s:aquarium_red })
+call s:h("htmlTagName", { "fg": s:aquarium_red })
+call s:h("htmlTitle", { "fg": s:aquarium_fg2 })
 
-if !exists("g:nord_italic")
-  if has("gui_running") || $TERM_ITALICS == "true"
-    let g:nord_italic = 1
-  else
-    let g:nord_italic = 0
-  endif
-endif
+"+----------------------------+
+"+ JavaScript Lang Hightlight +
+"+----------------------------+
+call s:h("javaScriptBraces", { "fg": s:aquarium_fg2 })
+call s:h("javaScriptFunction", { "fg": s:aquarium_yellow })
+call s:h("javaScriptIdentifier", { "fg": s:aquarium_yellow })
+call s:h("javaScriptNull", { "fg": s:aquarium_red })
+call s:h("javaScriptNumber", { "fg": s:aquarium_blue })
+call s:h("javaScriptRequire", { "fg": s:aquarium_cyan })
+call s:h("javaScriptReserved", { "fg": s:aquarium_magenta })
+" https://github.com/pangloss/vim-javascript
+call s:h("jsArrowFunction", { "fg": s:aquarium_magenta })
+call s:h("jsClassKeyword", { "fg": s:aquarium_magenta })
+call s:h("jsClassMethodType", { "fg": s:aquarium_magenta })
+call s:h("jsDocParam", { "fg": s:aquarium_blue })
+call s:h("jsDocTags", { "fg": s:aquarium_magenta })
+call s:h("jsExport", { "fg": s:aquarium_magenta })
+call s:h("jsExportDefault", { "fg": s:aquarium_magenta })
+call s:h("jsExtendsKeyword", { "fg": s:aquarium_magenta })
+call s:h("jsFrom", { "fg": s:aquarium_magenta })
+call s:h("jsFuncCall", { "fg": s:aquarium_blue })
+call s:h("jsFunction", { "fg": s:aquarium_magenta })
+call s:h("jsGenerator", { "fg": s:aquarium_yellow })
+call s:h("jsGlobalObjects", { "fg": s:aquarium_yellow })
+call s:h("jsImport", { "fg": s:aquarium_magenta })
+call s:h("jsModuleAs", { "fg": s:aquarium_magenta })
+call s:h("jsModuleWords", { "fg": s:aquarium_magenta })
+call s:h("jsModules", { "fg": s:aquarium_magenta })
+call s:h("jsNull", { "fg": s:aquarium_yellow })
+call s:h("jsOperator", { "fg": s:aquarium_magenta })
+call s:h("jsStorageClass", { "fg": s:aquarium_magenta })
+call s:h("jsSuper", { "fg": s:aquarium_red })
+call s:h("jsTemplateBraces", { "fg": s:aquarium_red })
+call s:h("jsTemplateVar", { "fg": s:aquarium_green })
+call s:h("jsThis", { "fg": s:aquarium_red })
+call s:h("jsUndefined", { "fg": s:aquarium_yellow })
 
-let s:italic = "italic,"
-if g:nord_italic == 0
-  let s:italic = ""
-endif
+"+-+-+-+-+-+-+-+-+-+-+-+-+
+"+-- XML Lang Highlight -+
+"+-+-+-+-+-+-+-+-+-+-+-+-+
+call s:h("xmlAttrib", { "fg": s:aquarium_yellow })
+call s:h("xmlEndTag", { "fg": s:aquarium_red })
+call s:h("xmlTag", { "fg": s:aquarium_red })
+call s:h("xmlTagName", { "fg": s:aquarium_red })
 
-let s:underline = "underline,"
-if ! get(g:, "nord_underline", 1)
-  let s:underline = "NONE,"
-endif
+"+-+-+-+-+-+-+-+-+-+-+-+-+
+"+-- TeX Lang Highlight -+
+"+-+-+-+-+-+-+-+-+-+-+-+-+
+call s:h("texStatement", { "fg": s:aquarium_magenta })
+call s:h("texSubscripts", { "fg": s:dark_yellow })
+call s:h("texSuperscripts", { "fg": s:aquarium_yellow })
+call s:h("texTodo", { "fg": s:aquarium_bg3 })
+call s:h("texBeginEnd", { "fg": s:aquarium_magenta })
+call s:h("texBeginEndName", { "fg": s:aquarium_blue })
+call s:h("texMathMatcher", { "fg": s:aquarium_blue })
+call s:h("texMathDelim", { "fg": s:aquarium_blue })
+call s:h("texDelimiter", { "fg": s:aquarium_yellow })
+call s:h("texSpecialChar", { "fg": s:aquarium_yellow })
+call s:h("texCite", { "fg": s:aquarium_blue })
+call s:h("texRefZone", { "fg": s:aquarium_blue })
 
-let s:italicize_comments = ""
-if exists("g:nord_italic_comments")
-  if g:nord_italic_comments == 1
-    let s:italicize_comments = s:italic
-  endif
-endif
+"+--------------------+
+"+ CSS Lang Highlight +
+"+--------------------+
+call s:h("cssAttrComma", { "fg": s:aquarium_magenta })
+call s:h("cssAttributeSelector", { "fg": s:aquarium_green })
+call s:h("cssBraces", { "fg": s:aquarium_fg2 })
+call s:h("cssClassName", { "fg": s:aquarium_yellow })
+call s:h("cssClassNameDot", { "fg": s:aquarium_yellow })
+call s:h("cssDefinition", { "fg": s:aquarium_magenta })
+call s:h("cssFontAttr", { "fg": s:aquarium_yellow })
+call s:h("cssFontDescriptor", { "fg": s:aquarium_magenta })
+call s:h("cssFunctionName", { "fg": s:aquarium_blue })
+call s:h("cssIdentifier", { "fg": s:aquarium_blue })
+call s:h("cssImportant", { "fg": s:aquarium_magenta })
+call s:h("cssInclude", { "fg": s:aquarium_fg2 })
+call s:h("cssIncludeKeyword", { "fg": s:aquarium_magenta })
+call s:h("cssMediaType", { "fg": s:aquarium_yellow })
+call s:h("cssProp", { "fg": s:aquarium_fg2 })
+call s:h("cssPseudoClassId", { "fg": s:aquarium_yellow })
+call s:h("cssSelectorOp", { "fg": s:aquarium_magenta })
+call s:h("cssSelectorOp2", { "fg": s:aquarium_magenta })
+call s:h("cssTagName", { "fg": s:aquarium_red })
 
-if !exists('g:nord_uniform_status_lines')
-  let g:nord_uniform_status_lines = 0
-endif
+"+--------------------+
+" Perl Lang Highlight +
+"+--------------------+
+call s:h("perlFiledescRead", { "fg": s:aquarium_green })
+call s:h("perlFunction", { "fg": s:aquarium_magenta })
+call s:h("perlMatchStartEnd",{ "fg": s:aquarium_blue })
+call s:h("perlMethod", { "fg": s:aquarium_magenta })
+call s:h("perlPOD", { "fg": s:aquarium_bg2 })
+call s:h("perlSharpBang", { "fg": s:aquarium_fg2 })
+call s:h("perlSpecialString",{ "fg": s:aquarium_yellow })
+call s:h("perlStatementFiledesc", { "fg": s:aquarium_red })
+call s:h("perlStatementFlow",{ "fg": s:aquarium_red })
+call s:h("perlStatementInclude", { "fg": s:aquarium_magenta })
+call s:h("perlStatementScalar",{ "fg": s:aquarium_magenta })
+call s:h("perlStatementStorage", { "fg": s:aquarium_magenta })
+call s:h("perlSubName",{ "fg": s:aquarium_yellow })
+call s:h("perlVarPlain",{ "fg": s:aquarium_blue })
 
-function! s:logWarning(msg)
-  echohl WarningMsg
-  echomsg 'nord: warning: ' . a:msg
-  echohl None
-endfunction
+"+----------------------+
+"+ PHP :amg Hightlight
+"+----------------------+
+call s:h("phpVarSelector", { "fg": s:aquarium_red })
+call s:h("phpOperator", { "fg": s:aquarium_fg2 })
+call s:h("phpParent", { "fg": s:aquarium_fg2 })
+call s:h("phpMemberSelector", { "fg": s:aquarium_fg2 })
+call s:h("phpType", { "fg": s:aquarium_magenta })
+call s:h("phpKeyword", { "fg": s:aquarium_magenta })
+call s:h("phpClass", { "fg": s:aquarium_yellow })
+call s:h("phpUseClass", { "fg": s:aquarium_fg2 })
+call s:h("phpUseAlias", { "fg": s:aquarium_fg2 })
+call s:h("phpInclude", { "fg": s:aquarium_magenta })
+call s:h("phpClassExtends", { "fg": s:aquarium_green })
+call s:h("phpDocTags", { "fg": s:aquarium_fg2 })
+call s:h("phpFunction", { "fg": s:aquarium_blue })
+call s:h("phpFunctions", { "fg": s:aquarium_cyan })
+call s:h("phpMethodsVar", { "fg": s:aquarium_yellow })
+call s:h("phpMagicConstants", { "fg": s:aquarium_yellow })
+call s:h("phpSuperglobals", { "fg": s:aquarium_red })
+call s:h("phpConstants", { "fg": s:aquarium_yellow })
 
-if exists("g:nord_comment_brightness")
-  call s:logWarning('Variable g:nord_comment_brightness has been deprecated and will be removed in version 1.0.0!' .
-                   \' The comment color brightness has been increased by 10% by default.' .
-                   \' Please see https://github.com/arcticicestudio/nord-vim/issues/145 for more details.')
-  let g:nord_comment_brightness = 10
-endif
+"+-------------------------+
+"+ Markdown Lang Highlight +
+"+-------------------------+
+call s:h("markdownBlockquote", { "fg": s:aquarium_fg2 })
+call s:h("markdownBold", { "fg": s:aquarium_yellow, "gui": "bold", "cterm": "bold" })
+call s:h("markdownCode", { "fg": s:aquarium_green })
+call s:h("markdownCodeBlock", { "fg": s:aquarium_green })
+call s:h("markdownCodeDelimiter", { "fg": s:aquarium_green })
+call s:h("markdownH1", { "fg": s:aquarium_red })
+call s:h("markdownH2", { "fg": s:aquarium_red })
+call s:h("markdownH3", { "fg": s:aquarium_red })
+call s:h("markdownH4", { "fg": s:aquarium_red })
+call s:h("markdownH5", { "fg": s:aquarium_red })
+call s:h("markdownH6", { "fg": s:aquarium_red })
+call s:h("markdownHeadingDelimiter", { "fg": s:aquarium_red })
+call s:h("markdownHeadingRule", { "fg": s:aquarium_fg2 })
+call s:h("markdownId", { "fg": s:aquarium_magenta })
+call s:h("markdownIdDeclaration", { "fg": s:aquarium_blue })
+call s:h("markdownIdDelimiter", { "fg": s:aquarium_magenta })
+call s:h("markdownItalic", { "fg": s:aquarium_magenta, "gui": "italic", "cterm": "italic" })
+call s:h("markdownLinkDelimiter", { "fg": s:aquarium_magenta })
+call s:h("markdownLinkText", { "fg": s:aquarium_blue })
+call s:h("markdownListMarker", { "fg": s:aquarium_red })
+call s:h("markdownOrderedListMarker", { "fg": s:aquarium_red })
+call s:h("markdownRule", { "fg": s:aquarium_fg2 })
+call s:h("markdownUrl", { "fg": s:aquarium_cyan, "gui": "underline", "cterm": "underline" })
 
-if !exists("g:nord_uniform_diff_background")
-  let g:nord_uniform_diff_background = 0
-endif
+"+-+-+-+-+-+-+-+-+
+"+-- Fish Shell -+
+"+-+-+-+-+-+-+-+-+
+call s:h("fishKeyword", { "fg": s:aquarium_magenta, "cterm": "italic", "gui": "italic" })
+call s:h("fishConditional", { "fg": s:aquarium_magenta })
 
-if !exists("g:nord_cursor_line_number_background")
-  let g:nord_cursor_line_number_background = 0
-endif
+"+----------------------+
+"+ JSON Lang Hightlight +
+"+----------------------+
+call s:h("jsonCommentError", { "fg": s:aquarium_fg2 })
+call s:h("jsonKeyword", { "fg": s:aquarium_red })
+call s:h("jsonBoolean", { "fg": s:aquarium_yellow })
+call s:h("jsonNumber", { "fg": s:aquarium_yellow })
+call s:h("jsonQuote", { "fg": s:aquarium_fg2 })
+call s:h("jsonMissingCommaError", { "fg": s:aquarium_red, "gui": "reverse" })
+call s:h("jsonNoQuotesError", { "fg": s:aquarium_red, "gui": "reverse" })
+call s:h("jsonNumError", { "fg": s:aquarium_red, "gui": "reverse" })
+call s:h("jsonString", { "fg": s:aquarium_green })
+call s:h("jsonStringSQError", { "fg": s:aquarium_red, "gui": "reverse" })
+call s:h("jsonSemicolonError", { "fg": s:aquarium_red, "gui": "reverse" })
 
-if !exists("g:nord_bold_vertical_split_line")
-  let g:nord_bold_vertical_split_line = 0
-endif
-
-function! s:hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
-  if a:guifg != ""
-    exec "hi " . a:group . " guifg=" . a:guifg
-  endif
-  if a:guibg != ""
-    exec "hi " . a:group . " guibg=" . a:guibg
-  endif
-  if a:ctermfg != ""
-    exec "hi " . a:group . " ctermfg=" . a:ctermfg
-  endif
-  if a:ctermbg != ""
-    exec "hi " . a:group . " ctermbg=" . a:ctermbg
-  endif
-  if a:attr != ""
-    exec "hi " . a:group . " gui=" . a:attr . " cterm=" . substitute(a:attr, "undercurl", s:underline, "")
-  endif
-  if a:guisp != ""
-    exec "hi " . a:group . " guisp=" . a:guisp
-  endif
-endfunction
+"+------------------+
+"+ Git Highlighting +
+"+------------------+
+call s:h("gitcommitComment", { "fg": s:aquarium_fg3 })
+call s:h("gitcommitUnmerged", { "fg": s:aquarium_green })
+call s:h("gitcommitOnBranch", { "fg": s:aquarium_cyan })
+call s:h("gitcommitBranch", { "fg": s:aquarium_magenta })
+call s:h("gitcommitDiscardedType", { "fg": s:aquarium_red })
+call s:h("gitcommitSelectedType", { "fg": s:aquarium_green })
+call s:h("gitcommitHeader", {"fg": s:aquarium_green })
+call s:h("gitcommitUntrackedFile", { "fg": s:aquarium_cyan })
+call s:h("gitcommitDiscardedFile", { "fg": s:aquarium_red })
+call s:h("gitcommitSelectedFile", { "fg": s:aquarium_green })
+call s:h("gitcommitUnmergedFile", { "fg": s:aquarium_yellow })
+call s:h("gitcommitFile", { "fg": s:aquarium_magenta })
+call s:h("gitcommitSummary", { "fg": s:aquarium_fg2 })
+call s:h("gitcommitOverflow", { "fg": s:aquarium_red })
+hi link gitcommitNoBranch gitcommitBranch
+hi link gitcommitUntracked gitcommitComment
+hi link gitcommitDiscarded gitcommitComment
+hi link gitcommitSelected gitcommitComment
+hi link gitcommitDiscardedArrow gitcommitDiscardedFile
+hi link gitcommitSelectedArrow gitcommitSelectedFile
+hi link gitcommitUnmergedArrow gitcommitUnmergedFile
 
 "+---------------+
 "+ UI Components +
 "+---------------+
-"+--- Attributes ---+
-call s:hi("Bold", "", "", "", "", s:bold, "")
-call s:hi("Italic", "", "", "", "", s:italic, "")
-call s:hi("Underline", "", "", "", "", s:underline, "")
+"
+"+-+-+-+-+-+-+-+-+-+-+
+"+--- Attributes ----+
+"+-+-+-+-+-+-+-+-+-+-+
+call s:hi("Bold", "", "", "", "", "bold", "")
+call s:hi("Italic", "", "", "", "", "italic", "")
+call s:hi("Underline", "", "", "", "", "underline", "")
 
-"+--- Editor ---+
-call s:hi("ColorColumn", "", s:aquarium_background2, "NONE", s:nord1_term, "", "")
-call s:hi("Cursor", s:aquarium_background1, s:aquarium_foreground1, "", "NONE", "", "")
-call s:hi("CursorLine", "", s:aquarium_background2, "NONE", s:nord1_term, "NONE", "")
-call s:hi("Error", s:aquarium_foreground1, s:aquarium_red2, "", s:nord11_term, "", "")
-call s:hi("iCursor", s:aquarium_background1, s:aquarium_foreground1, "", "NONE", "", "")
-call s:hi("LineNr", s:aquarium_black1, "NONE", s:nord3_term, "NONE", "", "")
-call s:hi("MatchParen", s:aquarium_cyan1, s:aquarium_black1, s:nord8_term, s:nord3_term, "", "")
-call s:hi("NonText", s:nord2_gui, "", s:nord3_term, "", "", "")
-call s:hi("Normal", s:aquarium_foreground1, s:aquarium_background1, "NONE", "NONE", "", "")
-call s:hi("Pmenu", s:aquarium_foreground1, s:nord2_gui, "NONE", s:nord1_term, "NONE", "")
-call s:hi("PmenuSbar", s:aquarium_foreground1, s:nord2_gui, "NONE", s:nord1_term, "", "")
-call s:hi("PmenuSel", s:aquarium_cyan1, s:aquarium_black1, s:nord8_term, s:nord3_term, "", "")
-call s:hi("PmenuThumb", s:aquarium_cyan1, s:aquarium_black1, "NONE", s:nord3_term, "", "")
-call s:hi("SpecialKey", s:aquarium_black1, "", s:nord3_term, "", "", "")
-call s:hi("SpellBad", s:aquarium_red1, s:aquarium_background1, s:nord11_term, "NONE", "undercurl", s:aquarium_red1)
-call s:hi("SpellCap", s:aquarium_yellow1, s:aquarium_background1, s:nord13_term, "NONE", "undercurl", s:aquarium_yellow1)
-call s:hi("SpellLocal", s:nord5_gui, s:aquarium_background1, s:nord5_term, "NONE", "undercurl", s:nord5_gui)
-call s:hi("SpellRare", s:nord6_gui, s:aquarium_background1, s:nord6_term, "NONE", "undercurl", s:nord6_gui)
-call s:hi("Visual", "", s:nord2_gui, "", s:nord1_term, "", "")
-call s:hi("VisualNOS", "", s:nord2_gui, "", s:nord1_term, "", "")
+"+-+-+-+-+-+-+-+-+-+-+
+"+----- Editor ------+
+"+-+-+-+-+-+-+-+-+-+-+
+call s:hi("ColorColumn", { "fg": s:aquarium_bg2 }) " used for the columns set with 'colorcolumn'
+call s:hi("Cursor", { "fg": s:aquarium_bg2, "bg": s:aquarium_blue }) " the character under the cursor
+call s:h("CursorIM", {}) " like Cursor, but used when in IME mode
+call s:h("Conceal", { "fg": s:aquarium_yellow }) " placeholder characters substituted for concealed text (see 'conceallevel')
+call s:hi("CursorLine", { "bg": s:aquarium_bg2 })
+call s:h("Error", { "fg": s:aquarium_red }) " any erroneous construct
+call s:hi("iCursor",{ "fg": s:aquarium_fg2, "bg":s:aquarium_black1 })
+call s:hi("LineNr", { "fg": s:aquarium_magenta, "bg":s:aquarium_black1 })
+call s:hi("MatchParen", { "fg": s:aquarium_cyan, "bg":s:aquarium_black1 })
+call s:hi("NonText", { "fg": s:aquarium_fg2, "bg":s:aquarium_black1 })
+call s:hi("Normal", { "fg": s:aquarium_fg2, "bg":s:aquarium_black1 })
+call s:hi("Pmenu", { "fg": s:aquarium_fg2, "bg":s:aquarium_black1 })
+call s:hi("PmenuSbar",  {"fg": s:aquarium_fg2, "bg":s:aquarium_black1 })
+call s:hi("PmenuSel", {"fg": s:aquarium_cyan, "bg":s:aquarium_black1 })
+call s:hi("PmenuThumb", { "fg": s:aquarium_cyan, "bg": s:aquarium_bg2 })
+call s:hi("SpecialKey", {"fg": s:aquarium_black1 })
+call s:h("Search", { "bg": s:aquarium_black1, "fg": s:aquarium_yellow }) " Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
+
+"+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+"+-- Lang Specifics aka Fallbacks ---+
+"+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+call s:h("Todo", { "fg": s:aquarium_magenta }) " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+call s:h("Type", { "fg": s:aquarium_yellow }) " int, long, char, etc.
+call s:h("Boolean", { "fg": aquarium_yellow }) " a boolean constant: TRUE, false
+call s:h("Number", { "fg": s:aquarium_yellow }) " a number constant: 234, 0xff
+call s:h("String", { "fg": s:aquarium_green }) " a string constant: 'this is a string'
+call s:h("Character", { "fg": s:aquarium_green }) " a character constant: 'c', '\n'
+call s:h("Macro", { "fg": s:aquarium_magenta }) " same as Define
+call s:h("Exception", { "fg": s:aquarium_magenta }) " try, catch, throw
+call s:h("StorageClass", { "fg": s:aquarium_yellow }) " static, register, volatile, etc.
+call s:h("Structure", { "fg": s:aquarium_yellow }) " struct, union, enum, etc.
+call s:h("Typedef", { "fg": s:aquarium_yellow }) " A typedef
+call s:h("Special", { "fg": s:aquarium_blue }) " any special symbol
+call s:h("SpecialChar", { "fg": s:aquarium_yellow }) " special character in a constant
+call s:h("Tag", {}) " you can use CTRL-] on this
+call s:h("Delimiter", {}) " character that needs attention
+call s:h("Operator", { "fg": s:aquarium_magenta }) " sizeof", "+", "*", etc.
+call s:h("Keyword", { "fg": s:aquarium_red }) " any other keyword
+call s:h("Debug", {}) " debugging statements
+call s:h("Underlined", { "gui": "underline", "cterm": "underline" }) " text that stands out, HTML links
+call s:h("Ignore", {}) " left blank, hidden
+call s:h("Float", { "fg": s:aquarium_magenta }) " a floating point constant: 2.3e10
+call s:h("Identifier", { "fg": s:aquarium_red }) " any variable name
+call s:h("Function", { "fg": s:aquarium_blue }) " function name (also: methods for classes)
+call s:h("Include", { "fg": s:aquarium_blue }) " preprocessor #include
+call s:h("Statement", { "fg": s:aquarium_magenta }) " any statement
+call s:h("Conditional", { "fg": s:aquarium_magenta }) " if, then, else, endif, switch, etc.
+call s:h("Repeat", { "fg": s:aquarium_magenta }) " for, do, while, etc.
+call s:h("Label", { "fg": s:aquarium_magenta }) " case, default, etc.
+"-----------------------------------------------------------------------------------------
+
+"+-+-+-+-+-+-+-+-+-+-+-+
+"+-- Diff Highlight ---+
+"+-+-+-+-+-+-+-+-+-+-+-+
+if &diff
+  " Don't change the background color in diff mode
+  call s:h("CursorLine", { "gui": "underline" }) " the screen line that the cursor is in when 'cursorline' is set
+else
+  call s:h("CursorLine", { "bg": s:aquarium_bg2 }) " the screen line that the cursor is in when 'cursorline' is set
+endif
+call s:h("Directory", { "fg": s:aquarium_blue }) " directory names (and other special names in listings)
+call s:h("DiffAdd", { "bg": s:aquarium_green, "fg": s:aquarium_black }) " diff mode: Added line
+call s:h("DiffChange", { "fg": s:aquarium_yellow, "gui": "underline", "cterm": "underline" }) " diff mode: Changed line
+call s:h("DiffDelete", { "bg": s:aquarium_red, "fg": s:aquarium_black }) " diff mode: Deleted line
+call s:h("DiffText", { "bg": s:aquarium_yellow, "fg": s:aquarium_black }) " diff mode: Changed text within a changed line
+
+"+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+"+-- Spell Check Highlight --+
+"+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+" Word that is not recognized by the spellchecker. This will be combined with the highlighting used otherwise.
+call s:hi("SpellBad", { "fg": s:aquarium_red, "bg":aquarium_bg2, "cterm": "undercurl", "gui": "undercurl" })
+" Word that should start with a capital. This will be combined with the highlighting used otherwise.
+call s:hi("SpellCap", {"fg": s:aquarium_yellow, "bg": s:aquarium_bg2, "cterm": "undercurl", "gui": "undercurl" })
+" Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise.
+call s:hi("SpellLocal", {"fg": s:aquarium_cyan, "bg": s:aquarium_bg2, "cterm": "undercurl", "gui": "undercurl" })
+" Word that is recognized by the spellchecker as one that is hardly ever used. spell This will be combined with the highlighting used otherwise.
+call s:hi("SpellRare", {"fg": s:aquarium_blue, "bg": s:aquarium_bg2, "cterm": "undercurl", "gui": "undercurl" })
+
+"+-+-+-+-+-+-+-+-+-+-+-+
+" Visual Something
+"+-+-+-+-+-+-+-+-+-+-+-+
+call s:hi("Visual", { "bg": s:aquarium_bg2 })
+call s:hi("VisualNOS", { "bg": s:aquarium_bg2 })
+
+"+-+-+-+-+-+-+-+-+-+-+-+
 "+- Neovim Support -+
+"+-+-+-+-+-+-+-+-+-+-+-+
 call s:hi("healthError", s:aquarium_red1, s:aquarium_background2, s:nord11_term, s:nord1_term, "", "")
 call s:hi("healthSuccess", s:nord14_gui, s:aquarium_background2, s:nord14_term, s:nord1_term, "", "")
 call s:hi("healthWarning", s:aquarium_yellow1, s:aquarium_background2, s:nord13_term, s:nord1_term, "", "")
-call s:hi("TermCursorNC", "", s:aquarium_background2, "", s:nord1_term, "", "")
 
-"+- Vim 8 Terminal Colors -+
-if has('terminal')
-  let g:terminal_ansi_colors = [s:aquarium_background2, s:aquarium_red1, s:nord14_gui, s:aquarium_yellow1, s:nord9_gui, s:aquarium_red2, s:aquarium_cyan1, s:nord5_gui, s:aquarium_black1, s:aquarium_red1, s:nord14_gui, s:aquarium_yellow1, s:nord9_gui, s:nord15_gui, s:aquarium_yellow2, s:nord6_gui]
-endif
-
-"+- Neovim Terminal Colors -+
-if has('nvim')
-  let g:terminal_color_0 = s:aquarium_background2
-  let g:terminal_color_1 = s:aquarium_red1
-  let g:terminal_color_2 = s:nord14_gui
-  let g:terminal_color_3 = s:aquarium_yellow1
-  let g:terminal_color_4 = s:nord9_gui
-  let g:terminal_color_5 = s:aquarium_red2
-  let g:terminal_color_6 = s:aquarium_cyan1
-  let g:terminal_color_7 = s:nord5_gui
-  let g:terminal_color_8 = s:aquarium_black1
-  let g:terminal_color_9 = s:aquarium_red1
-  let g:terminal_color_10 = s:nord14_gui
-  let g:terminal_color_11 = s:aquarium_yellow1
-  let g:terminal_color_12 = s:nord9_gui
-  let g:terminal_color_13 = s:aquarium_red2
-  let g:terminal_color_14 = s:aquarium_yellow2
-  let g:terminal_color_15 = s:nord6_gui
-endif
-
-"+--- Gutter ---+
-call s:hi("CursorColumn", "", s:aquarium_background2, "NONE", s:nord1_term, "", "")
-if g:nord_cursor_line_number_background == 0
-  call s:hi("CursorLineNr", s:aquarium_foreground1, "", "NONE", "", "NONE", "")
-else
-  call s:hi("CursorLineNr", s:aquarium_foreground1, s:aquarium_background2, "NONE", s:nord1_term, "NONE", "")
-endif
-call s:hi("Folded", s:aquarium_black1, s:aquarium_background2, s:nord3_term, s:nord1_term, s:bold, "")
-call s:hi("FoldColumn", s:aquarium_black1, s:aquarium_background1, s:nord3_term, "NONE", "", "")
-call s:hi("SignColumn", s:aquarium_background2, s:aquarium_background1, s:nord1_term, "NONE", "", "")
-
-"+--- Navigation ---+
-call s:hi("Directory", s:aquarium_cyan1, "", s:nord8_term, "NONE", "", "")
-
+"+-+-+-+-+-+-+-+-+-+-+-+
 "+--- Prompt/Status ---+
-call s:hi("EndOfBuffer", s:aquarium_background2, "", s:nord1_term, "NONE", "", "")
+"+-+-+-+-+-+-+-+-+-+-+-+
+#call s:hi("EndOfBuffer", s:aquarium_background2, "", s:nord1_term, "NONE", "", "")
 call s:hi("ErrorMsg", s:aquarium_foreground1, s:aquarium_red2, "NONE", s:nord11_term, "", "")
 call s:hi("ModeMsg", s:aquarium_foreground1, "", "", "", "", "")
 call s:hi("MoreMsg", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
 call s:hi("Question", s:aquarium_foreground1, "", "NONE", "", "", "")
-if g:nord_uniform_status_lines == 0
-  call s:hi("StatusLine", s:aquarium_cyan1, s:aquarium_black1, s:nord8_term, s:nord3_term, "NONE", "")
-  call s:hi("StatusLineNC", s:aquarium_foreground1, s:aquarium_background2, "NONE", s:nord1_term, "NONE", "")
-  call s:hi("StatusLineTerm", s:aquarium_cyan1, s:aquarium_black1, s:nord8_term, s:nord3_term, "NONE", "")
-  call s:hi("StatusLineTermNC", s:aquarium_foreground1, s:aquarium_background2, "NONE", s:nord1_term, "NONE", "")
-else
-  call s:hi("StatusLine", s:aquarium_cyan1, s:aquarium_black1, s:nord8_term, s:nord3_term, "NONE", "")
-  call s:hi("StatusLineNC", s:aquarium_foreground1, s:aquarium_black1, "NONE", s:nord3_term, "NONE", "")
-  call s:hi("StatusLineTerm", s:aquarium_cyan1, s:aquarium_black1, s:nord8_term, s:nord3_term, "NONE", "")
-  call s:hi("StatusLineTermNC", s:aquarium_foreground1, s:aquarium_black1, "NONE", s:nord3_term, "NONE", "")
-endif
-call s:hi("WarningMsg", s:aquarium_background1, s:aquarium_yellow1, s:nord1_term, s:nord13_term, "", "")
-call s:hi("WildMenu", s:aquarium_cyan1, s:aquarium_background2, s:nord8_term, s:nord1_term, "", "")
 
-"+--- Search ---+
-call s:hi("IncSearch", s:nord6_gui, s:aquarium_blue1, s:nord6_term, s:nord10_term, s:underline, "")
-call s:hi("Search", s:aquarium_background2, s:aquarium_cyan1, s:nord1_term, s:nord8_term, "NONE", "")
+"+-+-+-+-+-+-+-+-+-+-+-+
+"+--- Prompt/Status ---+
+"+-+-+-+-+-+-+-+-+-+-+-+
+call s:h("StatusLine", { "fg": s:aquarium_fg1, "bg": s:aquarium_bg2 }) " status line of current window
+call s:h("StatusLineNC", { "fg": s:aquarium_bg2 }) "status lines of not-current windows Note: if this is equal to 'StatusLine' Vim will use '^^^' in the status line of the current window.
+call s:h("StatusLineTerm", { "fg": s:aquarium_fg1, "bg": s:aquarium_bg2 }) " status line of current :terminal window
+call s:h("StatusLineTermNC", { "fg": s:aquarium_bg2 }) " status line of non-current :terminal window
 
-"+--- Tabs ---+
-call s:hi("TabLine", s:aquarium_foreground1, s:aquarium_background2, "NONE", s:nord1_term, "NONE", "")
-call s:hi("TabLineFill", s:aquarium_foreground1, s:aquarium_background2, "NONE", s:nord1_term, "NONE", "")
-call s:hi("TabLineSel", s:aquarium_cyan1, s:aquarium_black1, s:nord8_term, s:nord3_term, "NONE", "")
-
-"+--- Window ---+
-call s:hi("Title", s:aquarium_foreground1, "", "NONE", "", "NONE", "")
-
-if g:nord_bold_vertical_split_line == 0
-  call s:hi("VertSplit", s:nord2_gui, s:aquarium_background1, s:nord3_term, "NONE", "NONE", "")
-else
-  call s:hi("VertSplit", s:nord2_gui, s:aquarium_background2, s:nord3_term, s:nord1_term, "NONE", "")
-endif
-
-"+----------------------+
-"+ Language Base Groups +
-"+----------------------+
-call s:hi("Boolean", s:nord9_gui, "", s:nord9_term, "", "", "")
-call s:hi("Character", s:nord14_gui, "", s:nord14_term, "", "", "")
-call s:hi("Comment", s:aquarium_black1, "", s:nord3_term, "", s:italicize_comments, "")
-call s:hi("Conceal", "", "NONE", "", "NONE", "", "")
-call s:hi("Conditional", s:nord9_gui, "", s:nord9_term, "", "", "")
-call s:hi("Constant", s:aquarium_foreground1, "", "NONE", "", "", "")
-call s:hi("Define", s:nord9_gui, "", s:nord9_term, "", "", "")
-call s:hi("Delimiter", s:nord6_gui, "", s:nord6_term, "", "", "")
-call s:hi("Exception", s:nord9_gui, "", s:nord9_term, "", "", "")
-call s:hi("Float", s:aquarium_red2, "", s:nord15_term, "", "", "")
-call s:hi("Function", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
-call s:hi("Identifier", s:aquarium_foreground1, "", "NONE", "", "NONE", "")
-call s:hi("Include", s:nord9_gui, "", s:nord9_term, "", "", "")
-call s:hi("Keyword", s:nord9_gui, "", s:nord9_term, "", "", "")
-call s:hi("Label", s:nord9_gui, "", s:nord9_term, "", "", "")
-call s:hi("Number", s:aquarium_red1, "", s:nord15_term, "", "", "")
-call s:hi("Operator", s:nord9_gui, "", s:nord9_term, "", "NONE", "")
-call s:hi("PreProc", s:nord9_gui, "", s:nord9_term, "", "NONE", "")
-call s:hi("Repeat", s:nord9_gui, "", s:nord9_term, "", "", "")
-call s:hi("Special", s:aquarium_foreground1, "", "NONE", "", "", "")
-call s:hi("SpecialChar", s:aquarium_yellow1, "", s:nord13_term, "", "", "")
-call s:hi("SpecialComment", s:aquarium_cyan1, "", s:nord8_term, "", s:italicize_comments, "")
-call s:hi("Statement", s:nord9_gui, "", s:nord9_term, "", "", "")
-call s:hi("StorageClass", s:nord9_gui, "", s:nord9_term, "", "", "")
-call s:hi("String", s:nord14_gui, "", s:nord14_term, "", "", "")
-call s:hi("Structure", s:nord9_gui, "", s:nord9_term, "", "", "")
-call s:hi("Tag", s:aquarium_foreground1, "", "", "", "", "")
-call s:hi("Todo", s:aquarium_yellow1, "NONE", s:nord13_term, "NONE", "", "")
-call s:hi("Type", s:nord9_gui, "", s:nord9_term, "", "NONE", "")
-call s:hi("Typedef", s:nord9_gui, "", s:nord9_term, "", "", "")
-hi! link Macro Define
-hi! link PreCondit PreProc
-
-"+-----------+
-"+ Languages +
-"+-----------+
-call s:hi("asciidocAttributeEntry", s:aquarium_blue1, "", s:nord10_term, "", "", "")
-call s:hi("asciidocAttributeList", s:aquarium_blue1, "", s:nord10_term, "", "", "")
-call s:hi("asciidocAttributeRef", s:aquarium_blue1, "", s:nord10_term, "", "", "")
-call s:hi("asciidocHLabel", s:nord9_gui, "", s:nord9_term, "", "", "")
-call s:hi("asciidocListingBlock", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("asciidocMacroAttributes", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
-call s:hi("asciidocOneLineTitle", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
-call s:hi("asciidocPassthroughBlock", s:nord9_gui, "", s:nord9_term, "", "", "")
-call s:hi("asciidocQuotedMonospaced", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("asciidocTriplePlusPassthrough", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
+"+-+-+-+-+-+-+-+-+-+-+-+-+
+"+--- Ascii Hightlight --+
+"+-+-+-+-+-+-+-+-+-+-+-+-+
+call s:hi("asciidocAttributeEntry", {"fg": s:aquarium_blue })
+call s:hi("asciidocAttributeList", {"fg": s:aquarium_blue })
+call s:hi("asciidocAttributeRef", {"fg": s:aquarium_blue })
+call s:hi("asciidocHLabel", {"fg": s:aquarium_magenta })
+call s:hi("asciidocListingBlock", {"fg": s:aquarium_yellow })
+call s:hi("asciidocMacroAttributes",{"fg": s:aquarium_cyan })
+call s:hi("asciidocOneLineTitle", {"fg": s:aquarium_cyan })
+call s:hi("asciidocPassthroughBlock", {"fg": s:aquarium_magenta })
+call s:hi("asciidocQuotedMonospaced", {"fg": s:aquarium_yellow })
+call s:hi("asciidocTriplePlusPassthrough", {"fg": s:aquarium_yellow })
 hi! link asciidocAdmonition Keyword
 hi! link asciidocAttributeRef markdownH1
 hi! link asciidocBackslash Keyword
@@ -337,8 +507,11 @@ hi! link asciidocQuotedUnconstrainedBold asciidocQuotedBold
 hi! link asciidocQuotedUnconstrainedEmphasized asciidocQuotedEmphasized
 hi! link asciidocURL markdownLinkText
 
-call s:hi("awkCharClass", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("awkPatterns", s:nord9_gui, "", s:nord9_term, "", s:bold, "")
+"+-+-+-+-+-+-+-+-+-+-+
+"+-- Awk Highlight --+
+"+-+-+-+-+-+-+-+-+-+-+
+call s:hi("awkCharClass", {"fg": s:aquarium_yellow })
+call s:hi("awkPatterns", {"fg": s:aquarium_cyan,  "gui": "italic", "cterm": "italic" })
 hi! link awkArrayElement Identifier
 hi! link awkBoolLogic Keyword
 hi! link awkBrktRegExp SpecialChar
@@ -354,447 +527,107 @@ hi! link awkSpecialCharacter SpecialChar
 hi! link awkSpecialPrintf SpecialChar
 hi! link awkVariables Identifier
 
-call s:hi("cIncluded", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-hi! link cOperator Operator
-hi! link cPreCondit PreCondit
+"+-+-+-+-+-+-+-+-+-+-+-+-+
+"+--- Cmake Hightlight --+
+"+-+-+-+-+-+-+-+-+-+-+-+-+
+call s:hi("cmakeGeneratorExpression", {"fg": s:aquarium_blue })
 
-call s:hi("cmakeGeneratorExpression", s:aquarium_blue1, "", s:nord10_term, "", "", "")
-
-hi! link csPreCondit PreCondit
-hi! link csType Type
-hi! link csXmlTag SpecialComment
-
-call s:hi("cssAttributeSelector", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("cssDefinition", s:aquarium_yellow2, "", s:nord7_term, "", "NONE", "")
-call s:hi("cssIdentifier", s:aquarium_yellow2, "", s:nord7_term, "", s:underline, "")
-call s:hi("cssStringQ", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-hi! link cssAttr Keyword
-hi! link cssBraces Delimiter
-hi! link cssClassName cssDefinition
-hi! link cssColor Number
-hi! link cssProp cssDefinition
-hi! link cssPseudoClass cssDefinition
-hi! link cssPseudoClassId cssPseudoClass
-hi! link cssVendor Keyword
-
-call s:hi("dosiniHeader", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
-hi! link dosiniLabel Type
-
-call s:hi("dtBooleanKey", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("dtExecKey", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("dtLocaleKey", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("dtNumericKey", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("dtTypeKey", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-hi! link dtDelim Delimiter
-hi! link dtLocaleValue Keyword
-hi! link dtTypeValue Keyword
-
-if g:nord_uniform_diff_background == 0
-  call s:hi("DiffAdd", s:nord14_gui, s:aquarium_background1, s:nord14_term, "NONE", "inverse", "")
-  call s:hi("DiffChange", s:aquarium_yellow1, s:aquarium_background1, s:nord13_term, "NONE", "inverse", "")
-  call s:hi("DiffDelete", s:aquarium_red1, s:aquarium_background1, s:nord11_term, "NONE", "inverse", "")
-  call s:hi("DiffText", s:nord9_gui, s:aquarium_background1, s:nord9_term, "NONE", "inverse", "")
-else
-  call s:hi("DiffAdd", s:nord14_gui, s:aquarium_background2, s:nord14_term, s:nord1_term, "", "")
-  call s:hi("DiffChange", s:aquarium_yellow1, s:aquarium_background2, s:nord13_term, s:nord1_term, "", "")
-  call s:hi("DiffDelete", s:aquarium_red1, s:aquarium_background2, s:nord11_term, s:nord1_term, "", "")
-  call s:hi("DiffText", s:nord9_gui, s:aquarium_background2, s:nord9_term, s:nord1_term, "", "")
+if has("nvim")
+  " Neovim LSP 
+  call s:h("LspDiagnosticsDefaultError", { "fg": s:aquarium_red })
+  call s:h("LspDiagnosticsDefaultWarning", { "fg": s:aquarium_yellow })
+  call s:h("LspDiagnosticsDefaultInformation", { "fg": s:aquarium_blue })
+  call s:h("LspDiagnosticsDefaultHint", { "fg": s:aquarium_cyan })
+  call s:h("LspDiagnosticsUnderlineError", { "fg": s:aquarium_red, "gui": "underline", "cterm": "underline" })
+  call s:h("LspDiagnosticsUnderlineWarning", { "fg": s:aquarium_red, "gui": "underline", "cterm": "underline" })
+  call s:h("LspDiagnosticsUnderlineInformation", { "fg": s:aquarium_blue, "gui": "underline", "cterm": "underline" })
+  call s:h("LspDiagnosticsUnderlineHint", { "fg": s:aquarium_cyan, "gui": "underline", "cterm": "underline" })
+  call s:h("LspDiagnosticsVirtualTextError", { "fg": s:aquarium_red, "bg": s:aquarium_bg2  })
+  call s:h("LspDiagnosticsVirtualTextWarning", { "fg": s:aquarium_yellow, "bg": s:aquarium_bg2 })
+  call s:h("LspDiagnosticsVirtualTextInformation", { "fg": s:aquarium_blue, "bg": s:aquarium_bg2  })
+  call s:h("LspDiagnosticsVirtualTextHint", { "fg": s:aquarium_cyan, "bg": s:aquarium_bg2  })
 endif
-" Legacy groups for official git.vim and diff.vim syntax
-hi! link diffAdded DiffAdd
-hi! link diffChanged DiffChange
-hi! link diffRemoved DiffDelete
 
-call s:hi("gitconfigVariable", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-
-call s:hi("goBuiltins", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-hi! link goConstants Keyword
-
-call s:hi("helpBar", s:aquarium_black1, "", s:nord3_term, "", "", "")
-call s:hi("helpHyperTextJump", s:aquarium_cyan1, "", s:nord8_term, "", s:underline, "")
-
-call s:hi("htmlArg", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("htmlLink", s:aquarium_foreground1, "", "", "", "NONE", "NONE")
-hi! link htmlBold Bold
-hi! link htmlEndTag htmlTag
-hi! link htmlItalic Italic
-hi! link htmlH1 markdownH1
-hi! link htmlH2 markdownH1
-hi! link htmlH3 markdownH1
-hi! link htmlH4 markdownH1
-hi! link htmlH5 markdownH1
-hi! link htmlH6 markdownH1
-hi! link htmlSpecialChar SpecialChar
-hi! link htmlTag Keyword
-hi! link htmlTagN htmlTag
-
-call s:hi("javaDocTags", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-hi! link javaCommentTitle Comment
-hi! link javaScriptBraces Delimiter
-hi! link javaScriptIdentifier Keyword
-hi! link javaScriptNumber Number
-
-call s:hi("jsonKeyword", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-
-call s:hi("lessClass", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-hi! link lessAmpersand Keyword
-hi! link lessCssAttribute Delimiter
-hi! link lessFunction Function
-hi! link cssSelectorOp Keyword
-
-hi! link lispAtomBarSymbol SpecialChar
-hi! link lispAtomList SpecialChar
-hi! link lispAtomMark Keyword
-hi! link lispBarSymbol SpecialChar
-hi! link lispFunc Function
-
-hi! link luaFunc Function
-
-call s:hi("markdownBlockquote", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("markdownCode", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("markdownCodeDelimiter", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("markdownFootnote", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("markdownId", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("markdownIdDeclaration", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("markdownH1", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
-call s:hi("markdownLinkText", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
-call s:hi("markdownUrl", s:aquarium_foreground1, "", "NONE", "", "NONE", "")
-hi! link markdownBold Bold
-hi! link markdownBoldDelimiter Keyword
-hi! link markdownFootnoteDefinition markdownFootnote
-hi! link markdownH2 markdownH1
-hi! link markdownH3 markdownH1
-hi! link markdownH4 markdownH1
-hi! link markdownH5 markdownH1
-hi! link markdownH6 markdownH1
-hi! link markdownIdDelimiter Keyword
-hi! link markdownItalic Italic
-hi! link markdownItalicDelimiter Keyword
-hi! link markdownLinkDelimiter Keyword
-hi! link markdownLinkTextDelimiter Keyword
-hi! link markdownListMarker Keyword
-hi! link markdownRule Keyword
-hi! link markdownHeadingDelimiter Keyword
-
-call s:hi("perlPackageDecl", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-
-call s:hi("phpClasses", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("phpClass", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("phpDocTags", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-hi! link phpDocCustomTags phpDocTags
-hi! link phpMemberSelector Keyword
-hi! link phpMethod Function
-hi! link phpFunction Function
-
-call s:hi("podCmdText", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("podVerbatimLine", s:aquarium_foreground1, "", "NONE", "", "", "")
-hi! link podFormat Keyword
-
-hi! link pythonBuiltin Type
-hi! link pythonEscape SpecialChar
-
-call s:hi("rubyConstant", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("rubySymbol", s:nord6_gui, "", s:nord6_term, "", s:bold, "")
-hi! link rubyAttribute Identifier
-hi! link rubyBlockParameterList Operator
-hi! link rubyInterpolationDelimiter Keyword
-hi! link rubyKeywordAsMethod Function
-hi! link rubyLocalVariableOrMethod Function
-hi! link rubyPseudoVariable Keyword
-hi! link rubyRegexp SpecialChar
-
-call s:hi("rustAttribute", s:aquarium_blue1, "", s:nord10_term, "", "", "")
-call s:hi("rustEnum", s:aquarium_yellow2, "", s:nord7_term, "", s:bold, "")
-call s:hi("rustMacro", s:aquarium_cyan1, "", s:nord8_term, "", s:bold, "")
-call s:hi("rustModPath", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("rustPanic", s:nord9_gui, "", s:nord9_term, "", s:bold, "")
-call s:hi("rustTrait", s:aquarium_yellow2, "", s:nord7_term, "", s:italic, "")
-hi! link rustCommentLineDoc Comment
-hi! link rustDerive rustAttribute
-hi! link rustEnumVariant rustEnum
-hi! link rustEscape SpecialChar
-hi! link rustQuestionMark Keyword
-
-call s:hi("sassClass", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("sassId", s:aquarium_yellow2, "", s:nord7_term, "", s:underline, "")
-hi! link sassAmpersand Keyword
-hi! link sassClassChar Delimiter
-hi! link sassControl Keyword
-hi! link sassControlLine Keyword
-hi! link sassExtend Keyword
-hi! link sassFor Keyword
-hi! link sassFunctionDecl Keyword
-hi! link sassFunctionName Function
-hi! link sassidChar sassId
-hi! link sassInclude SpecialChar
-hi! link sassMixinName Function
-hi! link sassMixing SpecialChar
-hi! link sassReturn Keyword
-
-hi! link shCmdParenRegion Delimiter
-hi! link shCmdSubRegion Delimiter
-hi! link shDerefSimple Identifier
-hi! link shDerefVar Identifier
-
-hi! link sqlKeyword Keyword
-hi! link sqlSpecial Keyword
-
-call s:hi("vimAugroup", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("vimMapRhs", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("vimNotation", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-hi! link vimFunc Function
-hi! link vimFunction Function
-hi! link vimUserFunc Function
-
-call s:hi("xmlAttrib", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("xmlCdataStart", s:aquarium_magenta_2, "", s:nord3_term, "", s:bold, "")
-call s:hi("xmlNamespace", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-hi! link xmlAttribPunct Delimiter
-hi! link xmlCdata Comment
-hi! link xmlCdataCdata xmlCdataStart
-hi! link xmlCdataEnd xmlCdataStart
-hi! link xmlEndTag xmlTagName
-hi! link xmlProcessingDelim Keyword
-hi! link xmlTagName Keyword
-
-call s:hi("yamlBlockMappingKey", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-hi! link yamlBool Keyword
-hi! link yamlDocumentStart Keyword
-
-"+----------------+
-"+ Plugin Support +
-"+----------------+
-"+--- UI ---+
-" ALE
-" > w0rp/ale
-call s:hi("ALEWarningSign", s:aquarium_yellow1, "", s:nord13_term, "", "", "")
-call s:hi("ALEErrorSign" , s:aquarium_red1, "", s:nord11_term, "", "", "")
-call s:hi("ALEWarning" , s:aquarium_yellow1, "", s:nord13_term, "", "undercurl", "")
-call s:hi("ALEError" , s:aquarium_red1, "", s:nord11_term, "", "undercurl", "")
-
-" Coc
-" > neoclide/coc
-call s:hi("CocWarningHighlight" , s:aquarium_yellow1, "", s:nord13_term, "", "undercurl", "")
-call s:hi("CocErrorHighlight" , s:aquarium_red1, "", s:nord11_term, "", "undercurl", "")
-call s:hi("CocWarningSign", s:aquarium_yellow1, "", s:nord13_term, "", "", "")
-call s:hi("CocErrorSign" , s:aquarium_red1, "", s:nord11_term, "", "", "")
-call s:hi("CocInfoSign" , s:aquarium_cyan1, "", s:nord8_term, "", "", "")
-call s:hi("CocHintSign" , s:aquarium_blue1, "", s:nord10_term, "", "", "")
-
-" Neovim LSP
-" > neovim/nvim-lspconfig
-call s:hi("LspDiagnosticsDefaultWarning", s:aquarium_yellow1, "", s:nord13_term, "", "", "")
-call s:hi("LspDiagnosticsDefaultError" , s:aquarium_red1, "", s:nord11_term, "", "", "")
-call s:hi("LspDiagnosticsDefaultInformation" , s:aquarium_cyan1, "", s:nord8_term, "", "", "")
-call s:hi("LspDiagnosticsDefaultHint" , s:aquarium_blue1, "", s:nord10_term, "", "", "")
-call s:hi("LspDiagnosticsUnderlineWarning" , s:aquarium_yellow1, "", s:nord13_term, "", "undercurl", "")
-call s:hi("LspDiagnosticsUnderlineError" , s:aquarium_red1, "", s:nord11_term, "", "undercurl", "")
-call s:hi("LspDiagnosticsUnderlineInformation" , s:aquarium_cyan1, "", s:nord8_term, "", "undercurl", "")
-call s:hi("LspDiagnosticsUnderlineHint" , s:aquarium_blue1, "", s:nord10_term, "", "undercurl", "")
-
-" GitGutter
-" > airblade/vim-gitgutter
-call s:hi("GitGutterAdd", s:nord14_gui, "", s:nord14_term, "", "", "")
-call s:hi("GitGutterChange", s:aquarium_yellow1, "", s:nord13_term, "", "", "")
-call s:hi("GitGutterChangeDelete", s:aquarium_red1, "", s:nord11_term, "", "", "")
-call s:hi("GitGutterDelete", s:aquarium_red1, "", s:nord11_term, "", "", "")
-
-" Signify
-" > mhinz/vim-signify
-call s:hi("SignifySignAdd", s:nord14_gui, "", s:nord14_term, "", "", "")
-call s:hi("SignifySignChange", s:aquarium_yellow1, "", s:nord13_term, "", "", "")
-call s:hi("SignifySignChangeDelete", s:aquarium_red1, "", s:nord11_term, "", "", "")
-call s:hi("SignifySignDelete", s:aquarium_red1, "", s:nord11_term, "", "", "")
-
+"+-+-+-+-+-+-+-+-+-+-+-+
+"+-- Plug-in Support --+
+"+-+-+-+-+-+-+-+-+-+-+-+
 " fugitive.vim
 " > tpope/vim-fugitive
-call s:hi("gitcommitDiscardedFile", s:aquarium_red1, "", s:nord11_term, "", "", "")
-call s:hi("gitcommitUntrackedFile", s:aquarium_red1, "", s:nord11_term, "", "", "")
-call s:hi("gitcommitSelectedFile", s:nord14_gui, "", s:nord14_term, "", "", "")
-
-" davidhalter/jedi-vim
-call s:hi("jediFunction", s:aquarium_foreground1, s:aquarium_black1, "", s:nord3_term, "", "")
-call s:hi("jediFat", s:aquarium_cyan1, s:aquarium_black1, s:nord8_term, s:nord3_term, s:underline.s:bold, "")
-
-" NERDTree
-" > scrooloose/nerdtree
-call s:hi("NERDTreeExecFile", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-hi! link NERDTreeDirSlash Keyword
-hi! link NERDTreeHelp Comment
-
-" CtrlP
-" > ctrlpvim/ctrlp.vim
-hi! link CtrlPMatch Keyword
-hi! link CtrlPBufferHid Normal
-
-" vim-clap
-" > liuchengxu/vim-clap
-call s:hi("ClapDir", s:aquarium_foreground1, "", "", "", "", "")
-call s:hi("ClapDisplay", s:aquarium_foreground1, s:aquarium_background2, "", s:nord1_term, "", "")
-call s:hi("ClapFile", s:aquarium_foreground1, "", "", "NONE", "", "")
-call s:hi("ClapMatches", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
-call s:hi("ClapNoMatchesFound", s:aquarium_yellow1, "", s:nord13_term, "", "", "")
-call s:hi("ClapSelected", s:aquarium_yellow2, "", s:nord7_term, "", s:bold, "")
-call s:hi("ClapSelectedSign", s:nord9_gui, "", s:nord9_term, "", "", "")
-
-let s:clap_matches = [
-        \ [s:aquarium_cyan1,  s:nord8_term] ,
-        \ [s:nord9_gui,  s:nord9_term] ,
-        \ [s:aquarium_blue1, s:nord10_term] ,
-        \ ]
-for s:nord_clap_match_i in range(1,12)
-  let clap_match_color = s:clap_matches[s:nord_clap_match_i % len(s:clap_matches) - 1]
-  call s:hi("ClapMatches" . s:nord_clap_match_i, clap_match_color[0], "", clap_match_color[1], "", "", "")
-  call s:hi("ClapFuzzyMatches" . s:nord_clap_match_i, clap_match_color[0], "", clap_match_color[1], "", "", "")
-endfor
-unlet s:nord_clap_match_i
-
-hi! link ClapCurrentSelection PmenuSel
-hi! link ClapCurrentSelectionSign ClapSelectedSign
-hi! link ClapInput Pmenu
-hi! link ClapPreview Pmenu
-hi! link ClapProviderAbout ClapDisplay
-hi! link ClapProviderColon Type
-hi! link ClapProviderId Type
+call s:hi("gitcommitDiscardedFile", {"fg": s:aquarium_red })
+call s:hi("gitcommitUntrackedFile", {"fg": s:aquarium_cyan })
+call s:hi("gitcommitSelectedFile", {"fg": s:aquarium_green })
+call s:h("diffAdded", { "fg": s:aquarium_green })
+call s:h("diffRemoved", { "fg": s:aquarium_red })
 
 " vim-indent-guides
 " > nathanaelkane/vim-indent-guides
-call s:hi("IndentGuidesEven", "", s:aquarium_background2, "", s:nord1_term, "", "")
-call s:hi("IndentGuidesOdd", "", s:nord2_gui, "", s:nord3_term, "", "")
+call s:hi("IndentGuidesEven", {"bg": s:aquarium_bg2 })
+call s:hi("IndentGuidesOdd", {"bg": s:aquarium_bg3 })
 
 " vim-plug
 " > junegunn/vim-plug
-call s:hi("plugDeleted", s:aquarium_red1, "", "", s:nord11_term, "", "")
+call s:hi("plugDeleted", {"fg": s:aquarium_red })
 
-" vim-signature
-" > kshenoy/vim-signature
-call s:hi("SignatureMarkText", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
+" neoclide/coc.nvim
+call s:h("CocErrorSign", { "fg": s:aquarium_red })
+call s:h("CocWarningSign", { "fg": s:aquarium_yellow })
+call s:h("CocInfoSign", { "fg": s:aquarium_blue })
+call s:h("CocHintSign", { "fg": s:aquarium_cyan })
 
-" vim-startify
-" > mhinz/vim-startify
-call s:hi("StartifyFile", s:nord6_gui, "", s:nord6_term, "", "", "")
-call s:hi("StartifyFooter", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("StartifyHeader", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
-call s:hi("StartifyNumber", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("StartifyPath", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
-hi! link StartifyBracket Delimiter
-hi! link StartifySlash Normal
-hi! link StartifySpecial Comment
+" neomake/neomake
+call s:h("NeomakeErrorSign", { "fg": s:aquarium_red })
+call s:h("NeomakeWarningSign", { "fg": s:aquarium_yellow })
+call s:h("NeomakeInfoSign", { "fg": s:aquarium_blue })
 
-"+--- Languages ---+
-" Haskell
-" > neovimhaskell/haskell-vim
-call s:hi("haskellPreProc", s:aquarium_blue1, "", s:nord10_term, "", "", "")
-call s:hi("haskellType", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-hi! link haskellPragma haskellPreProc
+" airblade/vim-gitgutter
+call s:h("GitGutterAdd", { "fg": s:aquarium_green })
+call s:h("GitGutterChange", { "fg": s:aquarium_yellow })
+call s:h("GitGutterDelete", { "fg": s:aquarium_red })
 
-" JavaScript
-" > pangloss/vim-javascript
-call s:hi("jsGlobalNodeObjects", s:aquarium_cyan1, "", s:nord8_term, "", s:italic, "")
-hi! link jsBrackets Delimiter
-hi! link jsFuncCall Function
-hi! link jsFuncParens Delimiter
-hi! link jsThis Keyword
-hi! link jsNoise Delimiter
-hi! link jsPrototype Keyword
-hi! link jsRegexpString SpecialChar
+" plasticboy/vim-markdown (keep consistent with Markdown, above)
+call s:h("mkdDelimiter", { "fg": s:aquarium_magenta })
+call s:h("mkdHeading", { "fg": s:aquarium_red })
+call s:h("mkdLink", { "fg": s:aquarium_blue })
+call s:h("mkdURL", { "fg": s:aquarium_cyan, "gui": "underline", "cterm": "underline" })
 
-" TypeScript
-" > HerringtonDarkholme/yats.vim
-call s:hi("typescriptBOMWindowMethod", s:aquarium_cyan1, "", s:nord8_term, "", s:italic, "")
-call s:hi("typescriptClassName", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-call s:hi("typescriptDecorator", s:nord12_gui, "", s:nord12_term, "", "", "")
-call s:hi("typescriptInterfaceName", s:aquarium_yellow2, "", s:nord7_term, "", s:bold, "")
-call s:hi("typescriptRegexpString", s:aquarium_yellow1, "", s:nord13_term, "", "", "")
-" TypeScript JSX
- call s:hi("tsxAttrib", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
-hi! link typescriptOperator Operator
-hi! link typescriptBinaryOp Operator
-hi! link typescriptAssign Operator
-hi! link typescriptMember Identifier
-hi! link typescriptDOMStorageMethod Identifier
-hi! link typescriptArrowFuncArg Identifier
-hi! link typescriptGlobal typescriptClassName
-hi! link typescriptBOMWindowProp Function
-hi! link typescriptArrowFuncDef Function
-hi! link typescriptAliasDeclaration Function
-hi! link typescriptPredefinedType Type
-hi! link typescriptTypeReference typescriptClassName
-hi! link typescriptTypeAnnotation Structure
-hi! link typescriptDocNamedParamType SpecialComment
-hi! link typescriptDocNotation Keyword
-hi! link typescriptDocTags Keyword
-hi! link typescriptImport Keyword
-hi! link typescriptExport Keyword
-hi! link typescriptTry Keyword
-hi! link typescriptVariable Keyword
-hi! link typescriptBraces Normal
-hi! link typescriptObjectLabel Normal
-hi! link typescriptCall Normal
-hi! link typescriptClassHeritage typescriptClassName
-hi! link typescriptFuncTypeArrow Structure
-hi! link typescriptMemberOptionality Structure
-hi! link typescriptNodeGlobal typescriptGlobal
-hi! link typescriptTypeBrackets Structure
-hi! link tsxEqual Operator
-hi! link tsxIntrinsicTagName htmlTag
-hi! link tsxTagName tsxIntrinsicTagName
-
-" Markdown
-call s:hi("mkdFootnote", s:aquarium_cyan1, "", s:nord8_term, "", "", "")
-call s:hi("mkdRule", s:aquarium_blue1, "", s:nord10_term, "", "", "")
-call s:hi("mkdLineBreak", s:nord9_gui, "", s:nord9_term, "", "", "")
-hi! link mkdBold Bold
-hi! link mkdItalic Italic
-hi! link mkdString Keyword
-hi! link mkdCodeStart mkdCode
-hi! link mkdCodeEnd mkdCode
-hi! link mkdBlockquote Comment
-hi! link mkdListItem Keyword
-hi! link mkdListItemLine Normal
-hi! link mkdFootnotes mkdFootnote
-hi! link mkdLink markdownLinkText
-hi! link mkdURL markdownUrl
-hi! link mkdInlineURL mkdURL
-hi! link mkdID Identifier
-hi! link mkdLinkDef mkdLink
-hi! link mkdLinkDefTarget mkdURL
-hi! link mkdLinkTitle mkdInlineURL
-hi! link mkdDelimiter Keyword
-
-" Vimwiki
-" > vimwiki/vimwiki
-if !exists("g:vimwiki_hl_headers") || g:vimwiki_hl_headers == 0
-  for s:i in range(1,6)
-    call s:hi("VimwikiHeader".s:i, s:aquarium_cyan1, "", s:nord8_term, "", s:bold, "")
-  endfor
-else
-  let s:vimwiki_hcolor_guifg = [s:aquarium_yellow2, s:aquarium_cyan1, s:nord9_gui, s:aquarium_blue1, s:nord14_gui, s:aquarium_red2]
-  let s:vimwiki_hcolor_ctermfg = [s:nord7_term, s:nord8_term, s:nord9_term, s:nord10_term, s:nord14_term, s:nord15_term]
-  for s:i in range(1,6)
-    call s:hi("VimwikiHeader".s:i, s:vimwiki_hcolor_guifg[s:i-1] , "", s:vimwiki_hcolor_ctermfg[s:i-1], "", s:bold, "")
-  endfor
-endif
-
-call s:hi("VimwikiLink", s:aquarium_cyan1, "", s:nord8_term, "", s:underline, "")
-hi! link VimwikiHeaderChar markdownHeadingDelimiter
-hi! link VimwikiHR Keyword
-hi! link VimwikiList markdownListMarker
+" prabirshrestha/vim-lsp
+call s:h("LspError", { "fg": s:aquarium_red })
+call s:h("LspWarning", { "fg": s:aquarium_yellow })
+call s:h("LspInformation", { "fg": s:aquarium_blue })
+call s:h("LspHint", { "fg": s:aquarium_cyan })
 
 " YAML
 " > stephpy/vim-yaml
-call s:hi("yamlKey", s:aquarium_yellow2, "", s:nord7_term, "", "", "")
+call s:hi("yamlKey", { "fg": s:aquarium_red })
 
-"+------------+
-"+ Public API +
-"+------------+
-"+--- Functions ---+
+" dense-analysis/ale
+call s:h("ALEError", { "fg": s:aquarium_red, "gui": "underline", "cterm": "underline" })
+call s:h("ALEWarning", { "fg": s:aquarium_yellow, "gui": "underline", "cterm": "underline"})
+call s:h("ALEInfo", { "gui": "underline", "cterm": "underline"})
 
-function! NordPalette() abort
-  let ret = {}
-  for color in range(16)
-    execute 'let ret["nord'.color.'"] = s:nord'.color.'_gui'
-  endfor
-  let ret["nord3_bright"] = s:aquarium_magenta_2
-  return ret
-endfunction
+" easymotion/vim-easymotion
+call s:h("EasyMotionTarget", { "fg": s:aquarium_red, "gui": "bold", "cterm": "bold" })
+call s:h("EasyMotionTarget2First", { "fg": s:aquarium_yellow, "gui": "bold", "cterm": "bold" })
+call s:h("EasyMotionTarget2Second", { "fg": s:aquarium_yellow, "gui": "bold", "cterm": "bold" })
+call s:h("EasyMotionShade",  { "fg": s:aquarium_bg2 })
+
+" davidhalter/jedi-vim
+call s:hi("jediFunction", { "fg": s:aquarium_fg2, "bg":aquarium_black })
+call s:hi("jediFat", { "fg": s:aquarium_cyan, "bg":aquarium_black, "cterm": "italic", "gui": "italic" })
+
+" NERDTree
+" > scrooloose/nerdtree
+call s:hi("NERDTreeExecFile", { "fg": s:aquarium_magenta })
+hi! link NERDTreeDirSlash Keyword
+hi! link NERDTreeHelp Comment
+
+" Signify
+" > mhinz/vim-signify
+call s:hi("SignifySignAdd", { "fg": s:aquarium_cyan })
+call s:hi("SignifySignChange", { "fg": s:aquarium_yellow })
+call s:hi("SignifySignChangeDelete", { "fg": s:aquarium_red })
+call s:hi("SignifySignDelete", { "fg": s:aquarium_yellow })
+
+" Must appear at the end of the file to work around this oddity:
+" https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
+set background=dark
