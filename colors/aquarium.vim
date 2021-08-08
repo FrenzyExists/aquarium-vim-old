@@ -22,6 +22,8 @@ endif
 let g:colors_name = "aquarium"
 let s:nord_vim_version="0.2.0"
 
+set background=dark
+
 "+
 "+ Color Reference
 "+
@@ -78,4 +80,5 @@ let s:aquarium12_term = "11"
 let s:aquarium13_term = "3"
 let s:aquarium14_term = "2"
 
-
+"+--- Editor ---+
+call s:hi("ColorColumn", "", s:aquarium_bg2, "NONE", s:aquarium1_term, "", "")
