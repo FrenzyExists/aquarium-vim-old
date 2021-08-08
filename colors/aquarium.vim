@@ -133,7 +133,7 @@ call s:hi("fishConditional", { "fg": s:aquarium_magenta })
 "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 call s:hi("Todo", { "fg": s:aquarium_magenta }) " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 call s:hi("Type", { "fg": s:aquarium_yellow }) " int, long, char, etc.
-call s:hi("Boolean", { "fg": aquarium_yellow }) " a boolean constant: TRUE, false
+call s:hi("Boolean", { "fg": s:aquarium_yellow }) " a boolean constant: TRUE, false
 call s:hi("Number", { "fg": s:aquarium_yellow }) " a number constant: 234, 0xff
 call s:hi("String", { "fg": s:aquarium_green }) " a string constant: 'this is a string'
 call s:hi("Character", { "fg": s:aquarium_green }) " a character constant: 'c', '\n'
@@ -175,4 +175,20 @@ hi! link rustDerive rustAttribute
 hi! link rustEnumVariant rustEnum
 hi! link rustEscape SpecialChar
 hi! link rustQuestionMark Keyword
+
+"+----------------------+
+"+ JSON Lang Hightlight +
+"+----------------------+
+call s:hi("jsonCommentError", { "fg": s:aquarium_fg2 })
+call s:hi("jsonKeyword", { "fg": s:aquarium_red })
+call s:hi("jsonBoolean", { "fg": s:aquarium_yellow })
+call s:hi("jsonNumber", { "fg": s:aquarium_yellow })
+call s:hi("jsonQuote", { "fg": s:aquarium_fg2 })
+call s:hi("jsonMissingCommaError", { "fg": s:aquarium_red, "gui": "reverse" })
+call s:hi("jsonNoQuotesError", { "fg": s:aquarium_red, "gui": "reverse" })
+call s:hi("jsonNumError", { "fg": s:aquarium_red, "gui": "reverse" })
+call s:hi("jsonString", { "fg": s:aquarium_green })
+call s:hi("jsonStringSQError", { "fg": s:aquarium_red, "gui": "reverse" })
+call s:hi("jsonSemicolonError", { "fg": s:aquarium_red, "gui": "reverse" })
+
 
