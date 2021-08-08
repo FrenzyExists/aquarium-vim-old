@@ -148,8 +148,8 @@ call s:hi("Bold", "", "", "", "", s:bold, "")
 call s:hi("Italic", "", "", "", "", s:italic, "")
 call s:hi("Underline", "", "", "", "", s:underline, "")
 
-"+--- Editor ---+
-call s:hi("ColorColumn", "", s:aquarium_bg2, "NONE", s:aquarium1_term, "", "")
+"+-+-+-+-+-+-+-+-+-+-+
+"+----- Editor ------+
+"+-+-+-+-+-+-+-+-+-+-+
+call s:hi("ColorColumn", { "fg": s:aquarium_bg2 }) " used for the columns set with 'colorcolumn'
 
-"+--- Editor ---+
-call s:hi("ColorColumn", "", s:aquarium_bg2, "NONE", s:aquarium1_term, "", "")
