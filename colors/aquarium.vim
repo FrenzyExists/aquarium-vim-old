@@ -149,7 +149,7 @@ call s:hi("Italic", "", "", "", "", s:italic, "")
 call s:hi("Underline", "", "", "", "", s:underline, "")
 
 "+--- Editor ---+
-call s:hi("ColorColumn", "", s:aquarium_background2, "NONE", s:nord1_term, "", "")
+call s:hi("ColorColumn", "", s:aquarium_bg2, "NONE", s:aquarium1_term, "", "")
 
 "+--- Editor ---+
 call s:hi("ColorColumn", "", s:aquarium_bg2, "NONE", s:aquarium1_term, "", "")
