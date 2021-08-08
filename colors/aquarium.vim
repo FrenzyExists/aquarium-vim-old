@@ -109,4 +109,5 @@ call s:hi("Error", s:aquarium_fg1, s:aquarium_red, "", s:aquarium11_term, "", ""
 call s:hi("Normal", s:aquarium_fg1, s:aquarium_bg1, "NONE", "NONE", "", "")
 
 call s:hi("Boolean", s:aquarium_cyan, "", s:aquarium5_term, "", "", "")
-
+call s:hi("Comment", s:aquarium_bg3, "", "", "", "italic", "")
+call s:hi("Function", s:aquarium_cyan, "", "", "", "italic", "")
