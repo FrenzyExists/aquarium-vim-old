@@ -94,7 +94,7 @@ function! s:hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
     exec "hi " . a:group . " ctermbg=" . a:ctermbg
   endif
   if a:attr != ""
-    exec "hi " . a:group . " gui=" . a:attr . " cterm=" . substitute(a:attr, "undercurl", s:underline, "")
+    exec "hi " . a:group . " gui=" . a:attr . " cterm=" . substitute(a:attr, "undercurl", "underline,", "")
   endif
   if a:guisp != ""
     exec "hi " . a:group . " guisp=" . a:guisp
@@ -106,3 +106,7 @@ call s:hi("ColorColumn", "", s:aquarium_bg2, "NONE", s:aquarium1_term, "", "")
 call s:hi("Cursor", s:aquarium_bg1, s:aquarium_fg1, "", "NONE", "", "")
 call s:hi("CursorLine", "", s:aquarium_bg2, "NONE", s:aquarium1_term, "NONE", "")
 call s:hi("Error", s:aquarium_fg1, s:aquarium_red, "", s:aquarium11_term, "", "")
+call s:hi("Normal", s:aquarium_fg1, s:aquarium_bg1, "NONE", "NONE", "", "")
+
+call s:hi("Boolean", s:aquarium_cyan, "", s:aquarium5_term, "", "", "")
+
