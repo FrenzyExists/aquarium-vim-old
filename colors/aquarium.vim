@@ -78,10 +78,4 @@ let s:aquarium12_term = "11"
 let s:aquarium13_term = "3"
 let s:aquarium14_term = "2"
 
-"+---------------+
-"+ UI Components +
-"+---------------+
-"+--- Attributes ---+
-call s:hi("Bold", "", "", "", "", s:bold, "")
-call s:hi("Italic", "", "", "", "", s:italic, "")
-call s:hi("Underline", "", "", "", "", s:underline, "")
+
