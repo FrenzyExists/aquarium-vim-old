@@ -100,6 +100,7 @@ function! s:hi(group, style, ...)
     let s:highlight = a:style
     let s:group_colors[a:group] = s:highlight " Cache default highlight group settings
   endif
+endfunction
 
 "+---------------+
 "+ UI Components +
@@ -109,4 +110,19 @@ function! s:hi(group, style, ...)
 "+----- Editor ------+
 "+-+-+-+-+-+-+-+-+-+-+
 call s:hi("ColorColumn", { "fg": s:aquarium_bg2 }) " used for the columns set with 'colorcolumn'
+
+"+---------------------+
+"+ Rust Lang Highlight +
+"+---------------------+
+call s:hi("rustAttribute", { "fg": s:aquarium_blue })
+call s:hi("rustEnum", { "fg": s:aquarium_yellow, "cterm": "bold", "gui": "bold" })
+call s:hi("rustMacro", { "fg": s:aquarium_cyan, "cterm": "bold", "gui": "bold" })
+call s:hi("rustModPath", { "fg": s:aquarium_yellow })
+call s:hi("rustPanic", { "fg": s:aquarium_red, "cterm": "bold", "gui": "bold" })
+call s:hi("rustTrait", { "fg": s:aquarium_yellow, "cterm": "italic", "gui": "italic" })
+hi! link rustCommentLineDoc Comment
+hi! link rustDerive rustAttribute
+hi! link rustEnumVariant rustEnum
+hi! link rustEscape SpecialChar
+hi! link rustQuestionMark Keyword
 
