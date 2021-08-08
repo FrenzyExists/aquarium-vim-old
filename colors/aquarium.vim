@@ -100,6 +100,15 @@ function! s:hi(group, style, ...)
     let s:highlight = a:style
     let s:group_colors[a:group] = s:highlight " Cache default highlight group settings
   endif
+
+  execute "highlight" a:group
+    \ "guifg="   (has_key(s:highlight, "fg")    ? s:highlight.fg.gui   : "NONE")
+    \ "guibg="   (has_key(s:highlight, "bg")    ? s:highlight.bg.gui   : "NONE")
+    \ "guisp="   (has_key(s:highlight, "sp")    ? s:highlight.sp.gui   : "NONE")
+    \ "gui="     (has_key(s:highlight, "gui")   ? s:highlight.gui      : "NONE")
+    \ "ctermfg=" . l:ctermfg
+    \ "ctermbg=" . l:ctermbg
+    \ "cterm="   (has_key(s:highlight, "cterm") ? s:highlight.cterm    : "NONE")
 endfunction
 
 "+---------------+
