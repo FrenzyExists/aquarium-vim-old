@@ -80,5 +80,76 @@ let s:aquarium12_term = "11"
 let s:aquarium13_term = "3"
 let s:aquarium14_term = "2"
 
+
+if !exists("g:aquarium_bold")
+  let g:aquarium_bold = 1
+endif
+
+let s:bold = "bold,"
+if g:aquarium_bold == 0
+  let s:bold = ""
+endif
+
+if !exists("g:aquarium_italic")
+  if has("gui_running") || $TERM_ITALICS == "true"
+    let g:nord_italic = 1
+  else
+    let g:nord_italic = 0
+  endif
+endif
+
+let s:italic = "italic,"
+if g:nord_italic == 0
+  let s:italic = ""
+endif
+
+let s:underline = "underline,"
+if ! get(g:, "aquarium_underline", 1)
+  let s:underline = "NONE,"
+endif
+
+let s:italicize_comments = ""
+if exists("g:aquarium_italic_comments")
+  if g:nord_italic_comments == 1
+    let s:italicize_comments = s:italic
+  endif
+endif
+
+if !exists('g:aquarium_uniform_status_lines')
+  let g:nord_uniform_status_lines = 0
+endif
+
+function! s:hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
+  if a:guifg != ""
+    exec "hi " . a:group . " guifg=" . a:guifg
+  endif
+  if a:guibg != ""
+    exec "hi " . a:group . " guibg=" . a:guibg
+  endif
+  if a:ctermfg != ""
+    exec "hi " . a:group . " ctermfg=" . a:ctermfg
+  endif
+  if a:ctermbg != ""
+    exec "hi " . a:group . " ctermbg=" . a:ctermbg
+  endif
+  if a:attr != ""
+    exec "hi " . a:group . " gui=" . a:attr . " cterm=" . substitute(a:attr, "undercurl", s:underline, "")
+  endif
+  if a:guisp != ""
+    exec "hi " . a:group . " guisp=" . a:guisp
+  endif
+endfunction
+
+"+---------------+
+"+ UI Components +
+"+---------------+
+"+--- Attributes ---+
+call s:hi("Bold", "", "", "", "", s:bold, "")
+call s:hi("Italic", "", "", "", "", s:italic, "")
+call s:hi("Underline", "", "", "", "", s:underline, "")
+
+"+--- Editor ---+
+call s:hi("ColorColumn", "", s:aquarium_background2, "NONE", s:nord1_term, "", "")
+
 "+--- Editor ---+
 call s:hi("ColorColumn", "", s:aquarium_bg2, "NONE", s:aquarium1_term, "", "")
