@@ -106,6 +106,12 @@ endfunction
 "+ UI Components +
 "+---------------+
 
+"+-------------------+
+"+ Comments and Such +
+"+-------------------+
+call s:hi("Comment", {"fg": s:aquarium_black, "gui": "italic", "cterm": "italic" })
+call s:hi("SpecialComment", {"fg": s:aquarium_cyan, "gui": "italic", "cterm": "italic" })
+
 "+-+-+-+-+-+-+-+-+-+-+
 "+----- Editor ------+
 "+-+-+-+-+-+-+-+-+-+-+
@@ -121,6 +127,39 @@ call s:hi("Error", { "fg": s:aquarium_red }) " any erroneous construct
 "+-+-+-+-+-+-+-+-+
 call s:hi("fishKeyword", { "fg": s:aquarium_magenta, "cterm": "italic", "gui": "italic" })
 call s:hi("fishConditional", { "fg": s:aquarium_magenta })
+
+"+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+"+-- Lang Specifics aka Fallbacks ---+
+"+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+call s:hi("Todo", { "fg": s:aquarium_magenta }) " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+call s:hi("Type", { "fg": s:aquarium_yellow }) " int, long, char, etc.
+call s:hi("Boolean", { "fg": aquarium_yellow }) " a boolean constant: TRUE, false
+call s:hi("Number", { "fg": s:aquarium_yellow }) " a number constant: 234, 0xff
+call s:hi("String", { "fg": s:aquarium_green }) " a string constant: 'this is a string'
+call s:hi("Character", { "fg": s:aquarium_green }) " a character constant: 'c', '\n'
+call s:hi("Macro", { "fg": s:aquarium_magenta }) " same as Define
+call s:hi("Exception", { "fg": s:aquarium_magenta }) " try, catch, throw
+call s:hi("StorageClass", { "fg": s:aquarium_yellow }) " static, register, volatile, etc.
+call s:hi("Structure", { "fg": s:aquarium_yellow }) " struct, union, enum, etc.
+call s:hi("Typedef", { "fg": s:aquarium_yellow }) " A typedef
+call s:hi("Special", { "fg": s:aquarium_blue }) " any special symbol
+call s:hi("SpecialChar", { "fg": s:aquarium_yellow }) " special character in a constant
+call s:hi("Tag", {}) " you can use CTRL-] on this
+call s:hi("Delimiter", {}) " character that needs attention
+call s:hi("Operator", { "fg": s:aquarium_magenta }) " sizeof", "+", "*", etc.
+call s:hi("Keyword", { "fg": s:aquarium_red }) " any other keyword
+call s:hi("Debug", {}) " debugging statements
+call s:hi("Underlined", { "gui": "underline", "cterm": "underline" }) " text that stands out, HTML links
+call s:hi("Ignore", {}) " left blank, hidden
+call s:hi("Float", { "fg": s:aquarium_magenta }) " a floating point constant: 2.3e10
+call s:hi("Identifier", { "fg": s:aquarium_red }) " any variable name
+call s:hi("Function", { "fg": s:aquarium_blue }) " function name (also: methods for classes)
+call s:hi("Include", { "fg": s:aquarium_blue }) " preprocessor #include
+call s:hi("Statement", { "fg": s:aquarium_magenta }) " any statement
+call s:hi("Conditional", { "fg": s:aquarium_magenta }) " if, then, else, endif, switch, etc.
+call s:hi("Repeat", { "fg": s:aquarium_magenta }) " for, do, while, etc.
+call s:hi("Label", { "fg": s:aquarium_magenta }) " case, default, etc.
+"-----------------------------------------------------------------------------------------
 
 "+---------------------+
 "+ Rust Lang Highlight +
