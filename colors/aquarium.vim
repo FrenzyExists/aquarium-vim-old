@@ -110,6 +110,17 @@ endfunction
 "+----- Editor ------+
 "+-+-+-+-+-+-+-+-+-+-+
 call s:hi("ColorColumn", { "fg": s:aquarium_bg2 }) " used for the columns set with 'colorcolumn'
+call s:hi("Cursor", { "fg": s:aquarium_bg2, "bg": s:aquarium_blue }) " the character under the cursor
+call s:h("CursorIM", {}) " like Cursor, but used when in IME mode
+call s:h("Conceal", { "fg": s:aquarium_yellow }) " placeholder characters substituted for concealed text (see 'conceallevel')
+call s:hi("CursorLine", { "bg": s:aquarium_bg2 })
+call s:h("Error", { "fg": s:aquarium_red }) " any erroneous construct
+
+"+-+-+-+-+-+-+-+-+
+"+-- Fish Shell -+
+"+-+-+-+-+-+-+-+-+
+call s:h("fishKeyword", { "fg": s:aquarium_magenta, "cterm": "italic", "gui": "italic" })
+call s:h("fishConditional", { "fg": s:aquarium_magenta })
 
 "+---------------------+
 "+ Rust Lang Highlight +
