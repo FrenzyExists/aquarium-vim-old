@@ -81,6 +81,5 @@ let s:aquarium14_term = "2"
 "+-------------------+
 "+ Comments and Such +
 "+-------------------+
-call s:hi("Comment", {"fg": s:aquarium_black, "gui": "italic", "cterm": "italic" })
-call s:hi("SpecialComment", {"fg": s:aquarium_cyan, "gui": "italic", "cterm": "italic" })
-
+call s:hi("Comment", s:aquarium_black, "", s:aquarium3_term, "", "italic", "")
+call s:hi("SpecialComment", s:aquarium_cyan, "", s:aquarium8_term, "", "italic", "")
