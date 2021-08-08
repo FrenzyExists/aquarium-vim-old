@@ -78,8 +78,10 @@ let s:aquarium12_term = "11"
 let s:aquarium13_term = "3"
 let s:aquarium14_term = "2"
 
-"+-------------------+
-"+ Comments and Such +
-"+-------------------+
-call s:hi("Comment", s:aquarium_black, "", s:aquarium3_term, "", "italic", "")
-call s:hi("SpecialComment", s:aquarium_cyan, "", s:aquarium8_term, "", "italic", "")
+"+---------------+
+"+ UI Components +
+"+---------------+
+"+--- Attributes ---+
+call s:hi("Bold", "", "", "", "", s:bold, "")
+call s:hi("Italic", "", "", "", "", s:italic, "")
+call s:hi("Underline", "", "", "", "", s:underline, "")
