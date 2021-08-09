@@ -20,7 +20,7 @@ endif
 "+ Totally not an Identify Crisis +
 "+--------------------------------+
 let g:colors_name = "aquarium"
-let s:nord_vim_version="0.2.0"
+let s:aquarium_vim_version="0.2.0"
 
 set background=dark
 
@@ -362,6 +362,36 @@ call s:hi("jsonStringSQError", s:aquarium_red, "", "", "", "reverse", "")
 call s:hi("jsonSemicolonError", s:aquarium_red, "", "", "", "reverse", "")
 
 "+------------------+
+"+ C Lang Highlight +
+"+------------------+
+call s:hi("cIncluded", s:aquarium_yellow, "", "", "", "", "")
+hi! link cOperator Operator
+hi! link cPreCondit PreCondit
+
+"+--------------------+
+"+ CS Lang Hightlight +
+"+--------------------+
+hi! link csPreCondit PreCondit
+hi! link csType Type
+hi! link csXmlTag SpecialComment
+
+"+--------------------+
+"+ CS Lang Hightlight +
+"+--------------------+
+call s:hi("cssAttributeSelector", s:aquarium_yellow, "", "", "", "", "")
+call s:hi("cssDefinition", s:aquarium_yellow, "", "", "", "NONE", "")
+call s:hi("cssIdentifier", s:aquarium_yellow, "", "", "", "underline", "")
+call s:hi("cssStringQ", s:aquarium_yellow, "", "", "", "", "")
+hi! link cssAttr Keyword
+hi! link cssBraces Delimiter
+hi! link cssClassName cssDefinition
+hi! link cssColor Number
+hi! link cssProp cssDefinition
+hi! link cssPseudoClass cssDefinition
+hi! link cssPseudoClassId cssPseudoClass
+hi! link cssVendor Keyword
+
+"+------------------+
 "+ Git Highlighting +
 "+------------------+
 call s:hi("gitcommitComment", s:aquarium_fg3, "", "", "", "", "")
@@ -423,7 +453,7 @@ call s:hi("VisualNOS", s:aquarium_bg2, "", "", "", "", "")
 "+----- Editor ------+
 "+-+-+-+-+-+-+-+-+-+-+
 call s:hi("ColorColumn", "", s:aquarium_bg2, "NONE", s:aquarium1_term, "", "")
-call s:hi("Cursor", s:aquarium_bg1, s:aquarium_fg1, "", "NONE", "", "")
+call s:hi("Cursor", s:aquarium_bg1, s:aquarium_bg2, "", "NONE", "", "")
 call s:hi("CursorLine", "", s:aquarium_bg2, "NONE", s:aquarium1_term, "NONE", "")
 call s:hi("Error", s:aquarium_red, s:aquarium_bg2, "", "", "italic", "")
 call s:hi("Normal", s:aquarium_fg1, s:aquarium_bg1, "NONE", "NONE", "", "")
@@ -439,7 +469,7 @@ call s:hi("iCursor", s:aquarium_bg3, s:aquarium_fg1, "", "NONE", "", "")
 call s:hi("LineNr", s:aquarium_bg3, s:aquarium_bg1, "", "", "bold", "") " The Number Columns
 call s:hi("MatchParen", s:aquarium_cyan, s:aquarium_black, "", "", "", "")
 call s:hi("NonText", s:aquarium_fg2, s:aquarium_black, "", "", "", "")
-
+call s:hi("Special", s:aquarium_yellow, "", "", "", "italic", "")
 "+-+-+-+-+-+-+-+-+-+-+-+-+
 "+--- Window Highlight --+
 "+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -473,6 +503,15 @@ call s:hi("Special", s:aquarium_blue, "", "", "", "", "") " any special symbol
 call s:hi("SpecialChar", s:aquarium_bg2, "", "", "", "", "") " special character in a constant
 call s:hi("Tag", s:aquarium_yellow, "", "", "", "", "") " you can use CTRL-] on this
 call s:hi("Delimiter", s:aquarium_blue, "", "", "", "bold", "") " character that needs attention, parenthesis for example
+call s:hi("Macro", s:aquarium_magenta, "", "", "", "", "") " same as Define
+call s:hi("Exception", s:aquarium_magenta, "", "", "", "", "") " try, catch, throw
+call s:hi("Delimiter", "", "", "", "", "", "") " character that needs attention
+call s:hi("Keyword", s:aquarium_red, "", "", "", "italic", "") " any other keyword
+call s:hi("Debug", "", "", "", "", "", "") " debugging statements
+call s:hi("Underlined", "", "", "", "", "underline", "") " text that stands out, HTML links
+call s:hi("Identifier", s:aquarium_red, "", "", "", "", "") " any variable name
+hi! link PreCondit PreProc
+"-----------------------------------------------------------------------------------------
 
 "+-+-+-+-+-+-+-+-+-+-+-+
 "+--- Prompt/Status ---+
