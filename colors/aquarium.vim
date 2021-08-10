@@ -747,7 +747,7 @@ let s:bg0 = { 'ctermbg': '60', 'guibg': s:aquarium_bg1 }
 let s:palette.input = s:bg0
 let s:palette.indicator = extend({ 'ctermfg': '238', 'guifg': s:aquarium_bg2 }, s:bg0)
 let s:palette.spinner = extend({ 'ctermfg': '11', 'guifg': s:aquarium_yellow, 'cterm': 'bold', 'gui': 'bold'}, s:bg0)
-let s:palette.search_text = extend({ 'ctermfg': '4', 'guifg': s:aquarium_bg1, 'cterm': 'bold', 'gui': 'bold' }, s:bg0)
+let s:palette.search_text = extend({ 'ctermfg': '4', 'guifg': s:aquarium_blue, 'cterm': 'bold', 'gui': 'bold' }, s:bg0)
 
 let s:palette.preview = { 'ctermbg': '238', 'guibg': s:aquarium_bg1 }
 
