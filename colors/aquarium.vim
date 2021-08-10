@@ -399,122 +399,32 @@ call s:hi("haskellOperators", s:aquarium_cyan, "", "", "", "", "")
 call s:hi("haskellNumber", s:aquarium_magenta, "", "", "", "", "")
 call s:hi("haskellPragma", s:aquarium_magenta, "", "", "", "", "")
 
-"+------------------------+
+"+----------------------+
 "+ Java Lang Hightlight +
-"+------------------------+
+"+----------------------+
 " > Java motherfucker! Do you speak it?!?!
-"javaAnnotation
-"javaDocTags
-"javaCommentTitle
-"javaParen
-"javaParen1
-"javaParen2
-"javaParen3
-"javaParen4
-"javaParen5
-"javaOperator
-"javaVarArg
+call s:hi("javaAnnotation", s:aquarium_cyan, "", "", "", "italic", "")
+call s:hi("javaDocTags", s:aquarium_yellow, "", "", "", "italic", "")
+call s:hi("javaCommentTitle", s:aquarium_bg3, "", "", "", "italic", "")
+call s:hi("javaParen", s:aquarium_bg3, "", "", "", "italic", "")
+call s:hi("javaParen1", s:aquarium_green, "", "", "", "", "")
+call s:hi("javaParen2", s:aquarium_green, "", "", "", "", "")
+call s:hi("javaParen3", s:aquarium_green, "", "", "", "", "")
+call s:hi("javaParen4", s:aquarium_green, "", "", "", "", "")
+call s:hi("javaParen5", s:aquarium_green, "", "", "", "", "")
+call s:hi("javaVarArg", s:aquarium_cyan, "", "", "", "", "")
 
-" Python
-"hi! link pythonBuiltin GruvboxOrange
-"hi! link pythonBuiltinObj GruvboxOrange
-"hi! link pythonBuiltinFunc GruvboxOrange
-"hi! link pythonFunction GruvboxAqua
-"hi! link pythonDecorator GruvboxRed
-"hi! link pythonInclude GruvboxBlue
-"hi! link pythonImport GruvboxBlue
-"hi! link pythonRun GruvboxBlue
-"hi! link pythonCoding GruvboxBlue
-"hi! link pythonOperator GruvboxRed
-"hi! link pythonException GruvboxRed
-"hi! link pythonExceptions GruvboxPurple
-"hi! link pythonBoolean GruvboxPurple
-"hi! link pythonDot GruvboxFg3
-"hi! link pythonConditional GruvboxRed
-"hi! link pythonRepeat GruvboxRed
-"hi! link pythonDottedName GruvboxGreenBold
-
-" Clojure
-"hi! link clojureKeyword GruvboxBlue
-"hi! link clojureCond GruvboxOrange
-"hi! link clojureSpecial GruvboxOrange
-"hi! link clojureDefine GruvboxOrange
-
-"hi! link clojureFunc GruvboxYellow
-"hi! link clojureRepeat GruvboxYellow
-"hi! link clojureCharacter GruvboxAqua
-"hi! link clojureStringEscape GruvboxAqua
-"hi! link clojureException GruvboxRed
-
-"hi! link clojureRegexp GruvboxAqua
-"hi! link clojureRegexpEscape GruvboxAqua
-"call s:HL('clojureRegexpCharClass', s:fg3, s:none, s:bold)
-"hi! link clojureRegexpMod clojureRegexpCharClass
-"hi! link clojureRegexpQuantifier clojureRegexpCharClass
-
-"hi! link clojureParen GruvboxFg3
-"hi! link clojureAnonArg GruvboxYellow
-"hi! link clojureVariable GruvboxBlue
-"hi! link clojureMacro GruvboxOrange
-
-"hi! link clojureMeta GruvboxYellow
-"hi! link clojureDeref GruvboxYellow
-"hi! link clojureQuote GruvboxYellow
-"hi! link clojureUnquote GruvboxYellow
-
-
-"Vimscript
+"+---------------------------+
+"+ Vimscript Lang Hightlight +
+"+---------------------------+
 call s:hi("vimCommentTitle", s:aquarium_blue, "", "", "", "italic", "")
-
-"hi! link vimNotation GruvboxOrange
-"hi! link vimBracket GruvboxOrange
-"hi! link vimMapModKey GruvboxOrange
-"hi! link vimFuncSID GruvboxFg3
-"hi! link vimSetSep GruvboxFg3
-"hi! link vimSep GruvboxFg3
-"hi! link vimContinue GruvboxFg3
-
-"+------------------------+
-"+ Lua Lang Hightlight +
-"+------------------------+
-"hi! link luaIn GruvboxRed
-"hi! link luaFunction GruvboxAqua
-"hi! link luaTable GruvboxOrange
-
-"+------------------------+
-"+ Objective C Lang Hightlight +
-"+------------------------+
-"hi! link objcTypeModifier GruvboxRed
-"hi! link objcDirective GruvboxBlue
-
-"+------------------------+
-"+ CoffeScript Lang Hightlight +
-"+------------------------+
-"hi! link coffeeExtendedOp GruvboxFg3
-"hi! link coffeeSpecialOp GruvboxFg3
-"hi! link coffeeCurly GruvboxOrange
-"hi! link coffeeParen GruvboxFg3
-"hi! link coffeeBracket GruvboxOrange
-
-"+------------------------+
-"+ PureScript Lang Hightlight +
-"+------------------------+
-"hi! link purescriptModuleKeyword GruvboxAqua
-"hi! link purescriptModuleName GruvboxFg1
-"hi! link purescriptWhere GruvboxAqua
-"hi! link purescriptDelimiter GruvboxFg4
-"hi! link purescriptType GruvboxFg1
-"hi! link purescriptImportKeyword GruvboxAqua
-"hi! link purescriptHidingKeyword GruvboxAqua
-"hi! link purescriptAsKeyword GruvboxAqua
-"hi! link purescriptStructure GruvboxAqua
-"hi! link purescriptOperator GruvboxBlue
-
-"hi! link purescriptTypeVar GruvboxFg1
-"hi! link purescriptConstructor GruvboxFg1
-"hi! link purescriptFunction GruvboxFg1
-"hi! link purescriptConditional GruvboxOrange
-"hi! link purescriptBacktick GruvboxOrange
+call s:hi("vimBracket", s:aquarium_magenta, "", "", "", "", "")
+call s:hi("vimMapModKey", s:aquarium_blue, "", "", "", "italic", "")
+call s:hi("vimFuncSID", s:aquarium_blue, "", "", "", "italic", "")
+call s:hi("vimSetSep", s:aquarium_cyan, "", "", "", "", "")
+call s:hi("vimSep", s:aquarium_red, "", "", "", "", "")
+call s:hi("vimContinue", s:aquarium_blue, "", "", "", "", "")
+call s:hi("vimNotation", s:aquarium_yellow, "", "", "", "", "")
 
 "+----------------------+
 "+ JSON Lang Hightlight +
@@ -789,8 +699,6 @@ hi! link NERDTreeHelp GruvboxFg1
 hi! link NERDTreeToggleOn GruvboxGreen
 hi! link NERDTreeToggleOff GruvboxRed
 
-
-
 " fugitive.vim
 " > tpope/vim-fugitive
 call s:hi("gitcommitDiscardedFile", s:aquarium_red, "", "", "", "", "" )
@@ -799,21 +707,18 @@ call s:hi("gitcommitSelectedFile", s:aquarium_green, "", "", "", "", "" )
 call s:hi("diffAdded", s:aquarium_green, "", "", "", "", "" )
 call s:hi("diffRemoved", s:aquarium_red, "", "", "", "", "" )
 
-
-
-
 " Rainbow Parentheses
-
+" > Science XD
 if !exists('g:rbpt_colorpairs')
   let g:rbpt_colorpairs =
     \ [
-      \ ['blue', '#cddbf9'], ['magenta', '#b16286'],
-      \ ['red',  '#cc241d'], ['166',     '#d65d0e']
+      \ ['blue', '#cddbf9'], ['magenta', '#f6bbe7'],
+      \ ['red',  '#ebb9b9'], ['yellow',     '#ebe3b9']
     \ ]
 endif
 
-let g:rainbow_guifgs = [ '#d65d0e', '#cc241d', '#b16286', '#458588' ]
-let g:rainbow_ctermfgs = [ '166', 'red', 'magenta', 'blue' ]
+let g:rainbow_guifgs = [ '#ebe3b9', '#ebb9b9', '#f6bbe7', '#cddbf9' ]
+let g:rainbow_ctermfgs = [ 'yellow', 'red', 'magenta', 'blue' ]
 
 if !exists('g:rainbow_conf')
    let g:rainbow_conf = {}
@@ -828,3 +733,37 @@ endif
 let g:niji_dark_colours = g:rbpt_colorpairs
 let g:niji_light_colours = g:rbpt_colorpairs
 
+" Vim Clap
+" > liuchengxu/vim-clap
+let s:save_cpo = &cpoptions
+set cpoptions&vim
+
+let s:palette = {}
+
+let s:palette.display = { 'ctermbg': '0', 'guibg': 'aquarium_bg2' }
+
+" Let ClapInput, ClapSpinner and ClapSearchText use the same background.
+let s:bg0 = { 'ctermbg': '60', 'guibg': s:aquarium_bg1 }
+let s:palette.input = s:bg0
+let s:palette.indicator = extend({ 'ctermfg': '238', 'guifg': s:aquarium_bg2 }, s:bg0)
+let s:palette.spinner = extend({ 'ctermfg': '11', 'guifg': s:aquarium_yellow, 'cterm': 'bold', 'gui': 'bold'}, s:bg0)
+let s:palette.search_text = extend({ 'ctermfg': '4', 'guifg': s:aquarium_bg1, 'cterm': 'bold', 'gui': 'bold' }, s:bg0)
+
+let s:palette.preview = { 'ctermbg': '238', 'guibg': s:aquarium_bg1 }
+
+let s:palette.selected = { 'ctermfg': '81', 'guifg': s:aquarium_cyan, 'cterm': 'bold,underline', 'gui': 'bold,underline' }
+let s:palette.current_selection = { 'ctermbg': '236', 'guibg': s:aquarium_bg2, 'cterm': 'bold', 'gui': 'bold' }
+
+let s:palette.selected_sign = { 'ctermfg': '196', 'guifg': s:aquarium_yellow }
+let s:palette.current_selection_sign = s:palette.selected_sign
+
+let g:clap_fuzzy_match_hl_groups = [
+  \ ['75', s:aquarium_yellow],
+\ ]
+
+let g:clap#themes#aquarium#palette = s:palette
+
+let &cpoptions = s:save_cpo
+unlet s:save_cpo
+
+let g:clap_theme = 'aquarium'
