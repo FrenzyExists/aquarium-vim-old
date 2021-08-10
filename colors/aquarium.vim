@@ -158,6 +158,22 @@ call s:hi("rubySymbol", s:aquarium_cyan, "", "", "", "", "")
 call s:hi("typescriptReserved", s:aquarium_yellow, "", "", "", "", "")
 call s:hi("typescriptEndColons", s:aquarium_fg2, "", "", "", "", "")
 call s:hi("typescriptBraces", s:aquarium_fg2, "", "", "", "", "")
+call s:hi("typeScriptLabel", s:aquarium_cyan, "", "", "", "", "" )
+call s:hi("typeScriptFuncKeyword", s:aquarium_red, "", "", "", "", "" )
+call s:hi("typeScriptIdentifier", s:aquarium_cyan, "", "", "", "", "" )
+call s:hi("typeScriptDOMObjects", s:aquarium_green, "", "", "", "", "")
+call s:hi("typeScriptAjaxMethods", s:aquarium_yellow, "", "", "", "", "")
+call s:hi("typeScriptGlobalObject", s:aquarium_yellow, "", "", "", "", "")
+call s:hi("typeScriptInterpolationDelimiter", s:aquarium_magenta, "", "", "", "", "")
+call s:hi("typeScriptNull", s:aquarium_magenta, "", "", "", "", "")
+call s:hi("typeScriptNull", s:aquarium_magenta, "", "", "", "", "")
+call s:hi("typeScriptParens", s:aquarium_red, "", "", "", "", "")
+hi! link typeScriptOpSymbols Boolean
+hi! link typeScriptHtmlElemProperties Special
+hi! link typeScriptLogicSymbols Boolean
+hi! link typeScriptDocSeeTag Comment
+hi! link typeScriptDocParam Comment
+hi! link typeScriptDocTags vimCommentTitle
 
 "+-------------------+
 "+ Go Lang Highlight +
@@ -279,6 +295,35 @@ call s:hi("cssSelectorOp", s:aquarium_magenta, "", "", "", "", "" )
 call s:hi("cssSelectorOp2", s:aquarium_magenta, "", "", "", "", "" )
 call s:hi("cssTagName", s:aquarium_red, "", "", "", "", "" )
 
+
+hi! link cssColor GruvboxBlue
+hi! link cssSelectorOp GruvboxBlue
+hi! link cssSelectorOp2 GruvboxBlue
+hi! link cssVendor GruvboxFg1
+
+hi! link cssTextProp GruvboxAqua
+hi! link cssAnimationProp GruvboxAqua
+hi! link cssUIProp GruvboxYellow
+hi! link cssTransformProp GruvboxAqua
+hi! link cssTransitionProp GruvboxAqua
+hi! link cssPrintProp GruvboxAqua
+hi! link cssPositioningProp GruvboxYellow
+hi! link cssBoxProp GruvboxAqua
+hi! link cssFontDescriptorProp GruvboxAqua
+hi! link cssFlexibleBoxProp GruvboxAqua
+hi! link cssBorderOutlineProp GruvboxAqua
+hi! link cssBackgroundProp GruvboxAqua
+hi! link cssMarginProp GruvboxAqua
+hi! link cssListProp GruvboxAqua
+hi! link cssTableProp GruvboxAqua
+hi! link cssFontProp GruvboxAqua
+hi! link cssPaddingProp GruvboxAqua
+hi! link cssDimensionProp GruvboxAqua
+hi! link cssRenderProp GruvboxAqua
+hi! link cssColorProp GruvboxAqua
+hi! link cssGeneratedContentProp GruvboxAqua
+
+
 "+--------------------+
 " Perl Lang Highlight +
 "+--------------------+
@@ -345,6 +390,131 @@ call s:hi("markdownListMarker", s:aquarium_red, "", "", "", "", "")
 call s:hi("markdownOrderedListMarker", s:aquarium_red, "", "", "", "", "")
 call s:hi("markdownRule", s:aquarium_fg2, "", "", "", "", "")
 call s:hi("markdownUrl", s:aquarium_cyan, "", "", "", "undercurl", "")
+
+"+------------------------+
+"+ Haskel Lang Hightlight +
+"+------------------------+
+call s:hi("haskellType", s:aquarium_yellow, "", "", "", "", "")
+call s:hi("haskellOperators", s:aquarium_cyan, "", "", "", "", "")
+call s:hi("haskellNumber", s:aquarium_magenta, "", "", "", "", "")
+call s:hi("haskellPragma", s:aquarium_magenta, "", "", "", "", "")
+
+"+------------------------+
+"+ Java Lang Hightlight +
+"+------------------------+
+" > Java motherfucker! Do you speak it?!?!
+"javaAnnotation
+"javaDocTags
+"javaCommentTitle
+"javaParen
+"javaParen1
+"javaParen2
+"javaParen3
+"javaParen4
+"javaParen5
+"javaOperator
+"javaVarArg
+
+" Python
+"hi! link pythonBuiltin GruvboxOrange
+"hi! link pythonBuiltinObj GruvboxOrange
+"hi! link pythonBuiltinFunc GruvboxOrange
+"hi! link pythonFunction GruvboxAqua
+"hi! link pythonDecorator GruvboxRed
+"hi! link pythonInclude GruvboxBlue
+"hi! link pythonImport GruvboxBlue
+"hi! link pythonRun GruvboxBlue
+"hi! link pythonCoding GruvboxBlue
+"hi! link pythonOperator GruvboxRed
+"hi! link pythonException GruvboxRed
+"hi! link pythonExceptions GruvboxPurple
+"hi! link pythonBoolean GruvboxPurple
+"hi! link pythonDot GruvboxFg3
+"hi! link pythonConditional GruvboxRed
+"hi! link pythonRepeat GruvboxRed
+"hi! link pythonDottedName GruvboxGreenBold
+
+" Clojure
+"hi! link clojureKeyword GruvboxBlue
+"hi! link clojureCond GruvboxOrange
+"hi! link clojureSpecial GruvboxOrange
+"hi! link clojureDefine GruvboxOrange
+
+"hi! link clojureFunc GruvboxYellow
+"hi! link clojureRepeat GruvboxYellow
+"hi! link clojureCharacter GruvboxAqua
+"hi! link clojureStringEscape GruvboxAqua
+"hi! link clojureException GruvboxRed
+
+"hi! link clojureRegexp GruvboxAqua
+"hi! link clojureRegexpEscape GruvboxAqua
+"call s:HL('clojureRegexpCharClass', s:fg3, s:none, s:bold)
+"hi! link clojureRegexpMod clojureRegexpCharClass
+"hi! link clojureRegexpQuantifier clojureRegexpCharClass
+
+"hi! link clojureParen GruvboxFg3
+"hi! link clojureAnonArg GruvboxYellow
+"hi! link clojureVariable GruvboxBlue
+"hi! link clojureMacro GruvboxOrange
+
+"hi! link clojureMeta GruvboxYellow
+"hi! link clojureDeref GruvboxYellow
+"hi! link clojureQuote GruvboxYellow
+"hi! link clojureUnquote GruvboxYellow
+
+
+"Vimscript
+call s:hi("vimCommentTitle", s:aquarium_blue, "", "", "", "italic", "")
+
+"hi! link vimNotation GruvboxOrange
+"hi! link vimBracket GruvboxOrange
+"hi! link vimMapModKey GruvboxOrange
+"hi! link vimFuncSID GruvboxFg3
+"hi! link vimSetSep GruvboxFg3
+"hi! link vimSep GruvboxFg3
+"hi! link vimContinue GruvboxFg3
+
+"+------------------------+
+"+ Lua Lang Hightlight +
+"+------------------------+
+"hi! link luaIn GruvboxRed
+"hi! link luaFunction GruvboxAqua
+"hi! link luaTable GruvboxOrange
+
+"+------------------------+
+"+ Objective C Lang Hightlight +
+"+------------------------+
+"hi! link objcTypeModifier GruvboxRed
+"hi! link objcDirective GruvboxBlue
+
+"+------------------------+
+"+ CoffeScript Lang Hightlight +
+"+------------------------+
+"hi! link coffeeExtendedOp GruvboxFg3
+"hi! link coffeeSpecialOp GruvboxFg3
+"hi! link coffeeCurly GruvboxOrange
+"hi! link coffeeParen GruvboxFg3
+"hi! link coffeeBracket GruvboxOrange
+
+"+------------------------+
+"+ PureScript Lang Hightlight +
+"+------------------------+
+"hi! link purescriptModuleKeyword GruvboxAqua
+"hi! link purescriptModuleName GruvboxFg1
+"hi! link purescriptWhere GruvboxAqua
+"hi! link purescriptDelimiter GruvboxFg4
+"hi! link purescriptType GruvboxFg1
+"hi! link purescriptImportKeyword GruvboxAqua
+"hi! link purescriptHidingKeyword GruvboxAqua
+"hi! link purescriptAsKeyword GruvboxAqua
+"hi! link purescriptStructure GruvboxAqua
+"hi! link purescriptOperator GruvboxBlue
+
+"hi! link purescriptTypeVar GruvboxFg1
+"hi! link purescriptConstructor GruvboxFg1
+"hi! link purescriptFunction GruvboxFg1
+"hi! link purescriptConditional GruvboxOrange
+"hi! link purescriptBacktick GruvboxOrange
 
 "+----------------------+
 "+ JSON Lang Hightlight +
@@ -457,9 +627,9 @@ call s:hi("Cursor", s:aquarium_bg1, s:aquarium_bg2, "", "NONE", "", "")
 call s:hi("CursorLine", "", s:aquarium_bg2, "NONE", s:aquarium1_term, "NONE", "")
 call s:hi("Error", s:aquarium_red, s:aquarium_bg2, "", "", "italic", "")
 call s:hi("Normal", s:aquarium_fg1, s:aquarium_bg1, "NONE", "NONE", "", "")
-call s:hi("Pmenu", s:aquarium_fg2, s:aquarium_black, "", "", "", "")
-call s:hi("PmenuSbar",  s:aquarium_fg2, s:aquarium_black, "", "", "", "")
-call s:hi("PmenuSel", s:aquarium_cyan, s:aquarium_black, "", "", "", "")
+call s:hi("Pmenu", s:aquarium_fg2, s:aquarium_bg2, "", "", "", "")
+call s:hi("PmenuSbar",  s:aquarium_fg2, s:aquarium_bg2, "", "", "", "")
+call s:hi("PmenuSel", s:aquarium_cyan, s:aquarium_bg2, "", "", "", "")
 call s:hi("PmenuThumb", s:aquarium_cyan, s:aquarium_bg2, "", "", "", "")
 call s:hi("SpecialKey", s:aquarium_black, "", "", "", "", "")
 call s:hi("Search", s:aquarium_yellow, s:aquarium_black, "", "", "", "") " Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
@@ -470,6 +640,7 @@ call s:hi("LineNr", s:aquarium_bg3, s:aquarium_bg1, "", "", "bold", "") " The Nu
 call s:hi("MatchParen", s:aquarium_cyan, s:aquarium_black, "", "", "", "")
 call s:hi("NonText", s:aquarium_fg2, s:aquarium_black, "", "", "", "")
 call s:hi("Special", s:aquarium_yellow, "", "", "", "italic", "")
+
 "+-+-+-+-+-+-+-+-+-+-+-+-+
 "+--- Window Highlight --+
 "+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -510,6 +681,8 @@ call s:hi("Keyword", s:aquarium_red, "", "", "", "italic", "") " any other keywo
 call s:hi("Debug", "", "", "", "", "", "") " debugging statements
 call s:hi("Underlined", "", "", "", "", "underline", "") " text that stands out, HTML links
 call s:hi("Identifier", s:aquarium_red, "", "", "", "", "") " any variable name
+call s:hi("Constant", s:aquarium_magenta, "", "", "", "italic", "")
+call s:hi("WildMenu", s:aquarium_blue, s:aquarium_bg2, "", "", "", "")
 hi! link PreCondit PreProc
 "-----------------------------------------------------------------------------------------
 
@@ -600,6 +773,24 @@ call s:hi("NERDTreeExecFile", s:aquarium_magenta, "", "", "", "", "")
 hi! link NERDTreeDirSlash Keyword
 hi! link NERDTreeHelp Comment
 
+hi! link NERDTreeDir GruvboxAqua
+hi! link NERDTreeDirSlash GruvboxAqua
+
+hi! link NERDTreeOpenable GruvboxOrange
+hi! link NERDTreeClosable GruvboxOrange
+
+hi! link NERDTreeFile GruvboxFg1
+hi! link NERDTreeExecFile GruvboxYellow
+
+hi! link NERDTreeUp GruvboxGray
+hi! link NERDTreeCWD GruvboxGreen
+hi! link NERDTreeHelp GruvboxFg1
+
+hi! link NERDTreeToggleOn GruvboxGreen
+hi! link NERDTreeToggleOff GruvboxRed
+
+
+
 " fugitive.vim
 " > tpope/vim-fugitive
 call s:hi("gitcommitDiscardedFile", s:aquarium_red, "", "", "", "", "" )
@@ -607,3 +798,33 @@ call s:hi("gitcommitUntrackedFile", s:aquarium_cyan, "", "", "", "", "" )
 call s:hi("gitcommitSelectedFile", s:aquarium_green, "", "", "", "", "" )
 call s:hi("diffAdded", s:aquarium_green, "", "", "", "", "" )
 call s:hi("diffRemoved", s:aquarium_red, "", "", "", "", "" )
+
+
+
+
+" Rainbow Parentheses
+
+if !exists('g:rbpt_colorpairs')
+  let g:rbpt_colorpairs =
+    \ [
+      \ ['blue', '#cddbf9'], ['magenta', '#b16286'],
+      \ ['red',  '#cc241d'], ['166',     '#d65d0e']
+    \ ]
+endif
+
+let g:rainbow_guifgs = [ '#d65d0e', '#cc241d', '#b16286', '#458588' ]
+let g:rainbow_ctermfgs = [ '166', 'red', 'magenta', 'blue' ]
+
+if !exists('g:rainbow_conf')
+   let g:rainbow_conf = {}
+endif
+if !has_key(g:rainbow_conf, 'guifgs')
+   let g:rainbow_conf['guifgs'] = g:rainbow_guifgs
+endif
+if !has_key(g:rainbow_conf, 'ctermfgs')
+   let g:rainbow_conf['ctermfgs'] = g:rainbow_ctermfgs
+endif
+
+let g:niji_dark_colours = g:rbpt_colorpairs
+let g:niji_light_colours = g:rbpt_colorpairs
+
