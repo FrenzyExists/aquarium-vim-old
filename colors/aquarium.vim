@@ -546,7 +546,7 @@ call s:hi("Search", s:aquarium_yellow, s:aquarium_black, "", "", "", "") " Last 
 call s:hi("CursorIM", s:aquarium_bg1, s:aquarium_fg1, "", "NONE", "", "") " like Cursor, but used when in IME mode
 call s:hi("Conceal", "", s:aquarium_yellow, "", "NONE", "", "") " placeholder characters substituted for concealed text (see 'conceallevel')
 call s:hi("iCursor", s:aquarium_bg3, s:aquarium_fg1, "", "NONE", "", "")
-call s:hi("LineNr", s:aquarium_bg3, s:aquarium:cyan, "", "", "bold", "") " The Number Columns
+call s:hi("LineNr", s:aquarium_bg3, s:aquarium_cyan, "", "", "bold", "") " The Number Columns
 call s:hi("MatchParen", s:aquarium_cyan, s:aquarium_black, "", "", "", "")
 call s:hi("NonText", s:aquarium_fg2, s:aquarium_black, "", "", "", "")
 call s:hi("Special", s:aquarium_yellow, "", "", "", "italic", "")
