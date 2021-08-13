@@ -526,7 +526,7 @@ call s:hi("SpellRare", s:aquarium_blue, s:aquarium_bg2, "", "", "undercurl", "")
 "+-+-+-+-+-+-+-+-+-+-+-+
 " Visual Something
 "+-+-+-+-+-+-+-+-+-+-+-+
-call s:hi("Visual", s:aquarium_bg2, "", "", "", "", "")
+call s:hi("Visual", "reverse", s:aquarium_bg3, "", "", "", "")
 call s:hi("VisualNOS", s:aquarium_bg2, "", "", "", "", "")
 
 "+-+-+-+-+-+-+-+-+-+-+
@@ -566,7 +566,7 @@ call s:hi("StatusLineTermNC", s:aquarium_bg2, "", "", "", "", "") " status line 
 "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 "+-- Lang Specifics aka Fallbacks ---+
 "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-call s:hi("Todo", s:aquarium_magenta, "", "", "", "", "") " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+call s:hi("Todo", s:aquarium_magenta, s:aquarium_black, "", "", "bold", "") " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 call s:hi("Boolean", s:aquarium_cyan, "", "", "", "", "") " a boolean constant: TRUE, false
 call s:hi("Type", s:aquarium_yellow, "", "", "", "italic", "" ) " int, long, char, etc.
 call s:hi("Function", s:aquarium_cyan, "", "", "", "italic", "") " a floating point constant: 2.3e10
