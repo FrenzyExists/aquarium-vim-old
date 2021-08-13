@@ -546,7 +546,7 @@ call s:hi("Search", s:aquarium_yellow, s:aquarium_black, "", "", "", "") " Last 
 call s:hi("CursorIM", s:aquarium_bg1, s:aquarium_fg1, "", "NONE", "", "") " like Cursor, but used when in IME mode
 call s:hi("Conceal", "", s:aquarium_yellow, "", "NONE", "", "") " placeholder characters substituted for concealed text (see 'conceallevel')
 call s:hi("iCursor", s:aquarium_bg3, s:aquarium_fg1, "", "NONE", "", "")
-call s:hi("LineNr", s:aquarium_bg3, s:aquarium_bg1, "", "", "bold", "") " The Number Columns
+call s:hi("LineNr", s:aquarium_bg3, s:aquarium:cyan, "", "", "bold", "") " The Number Columns
 call s:hi("MatchParen", s:aquarium_cyan, s:aquarium_black, "", "", "", "")
 call s:hi("NonText", s:aquarium_fg2, s:aquarium_black, "", "", "", "")
 call s:hi("Special", s:aquarium_yellow, "", "", "", "italic", "")
@@ -555,7 +555,7 @@ call s:hi("Special", s:aquarium_yellow, "", "", "", "italic", "")
 "+--- Window Highlight --+
 "+-+-+-+-+-+-+-+-+-+-+-+-+
 call s:hi("VertSplit", s:aquarium_bg2, s:aquarium_bg1, "", "NONE", "bold", "")
-call s:hi("StatusLine", s:aquarium_fg1, s:aquarium_bg1, "", "", "", "") " status line of current window
+call s:hi("StatusLine", s:aquarium_bg1, s:aquarium_bg1, "", "", "", "") " status line of current window
 call s:hi("StatusLineNC", s:aquarium_bg1, "", "", "", "", "") "status lines of not-current windows Note: if this is equal to 'StatusLine' Vim will use '^^^' in the status line of the current window.
 call s:hi("StatusLineTerm", s:aquarium_fg1, s:aquarium_bg1, "", "", "", "" ) " status line of current :terminal window
 call s:hi("StatusLineTermNC", s:aquarium_bg2, "", "", "", "", "") " status line of non-current :terminal window
@@ -756,6 +756,9 @@ let s:palette.current_selection = { 'ctermbg': '236', 'guibg': s:aquarium_bg2, '
 
 let s:palette.selected_sign = { 'ctermfg': '196', 'guifg': s:aquarium_yellow }
 let s:palette.current_selection_sign = s:palette.selected_sign
+
+hi ClapShadow guibg=#3b3b4d
+
 
 let g:clap_fuzzy_match_hl_groups = [
   \ ['75', s:aquarium_yellow],
