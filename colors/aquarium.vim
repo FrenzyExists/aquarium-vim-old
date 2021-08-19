@@ -536,7 +536,7 @@ call s:hi("SignColumn", "", s:aquarium_bg1, "NONE", "", "", "")
 call s:hi("ColorColumn", "", s:aquarium_bg2, "NONE", s:aquarium1_term, "", "")
 call s:hi("CursorColumn", s:aquarium_cyan, "", "NONE", "", "", "")
 call s:hi("Cursor", s:aquarium_bg1, s:aquarium_bg2, "", "NONE", "", "")
-call s:hi("CursorLine", "", "", "NONE", "", "NONE", "") " Changes the color focused line where the cursor is
+call s:hi("CursorLine", s:aquarium_bg1, "", "NONE", "", "NONE", "") " Changes the color focused line where the cursor is
 call s:hi("CursorLineNr", s:aquarium_cyan, s:aquarium_bg3, "NONE", s:aquarium1_term, "NONE", "") " Changes the color focused column number where the cursor is
 call s:hi("Error", s:aquarium_red, s:aquarium_bg2, "", "", "italic", "")
 call s:hi("Normal", s:aquarium_fg1, s:aquarium_bg1, "NONE", "NONE", "", "")
