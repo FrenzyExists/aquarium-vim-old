@@ -20,7 +20,7 @@ endif
 "+ Totally not an Identify Crisis +
 "+--------------------------------+
 let g:colors_name = "aquarium"
-let s:aquarium_vim_version="0.2.0"
+let s:aquarium_vim_version="0.3.0"
 
 set background=dark
 
@@ -28,12 +28,12 @@ set background=dark
 "+ Color Reference
 "+
 
-" +---------------------------------------------+
-" |  Color Name  |         RGB        |   Hex   |
+" +------------------------+
+" |  Color Name  |   Hex   |
 " |--------------+--------------------+---------|
-" | Black        | rgb(40, 44, 52)    | #282c34 |
+" | Black        | #282c34 |
 " |--------------+--------------------+---------|
-" | Foreground   | rgb(171, 178, 191) | #7c7c93 |
+" | Foreground   | #7c7c93 |
 " |--------------+--------------------+---------|
 " | Red          | rgb(190, 80, 70)   | #ebb9b9 |
 " |--------------+--------------------+---------|
@@ -526,8 +526,8 @@ call s:hi("SpellRare", s:aquarium_blue, s:aquarium_bg2, "", "", "undercurl", "")
 "+-+-+-+-+-+-+-+-+-+-+-+
 " Visual Something
 "+-+-+-+-+-+-+-+-+-+-+-+
-call s:hi("Visual", "reverse", s:aquarium_bg3, "", "", "", "")
-call s:hi("VisualNOS", s:aquarium_bg2, "", "", "", "", "")
+call s:hi("Visual", "reverse", s:aquarium_bg2, "", "", "", "")
+call s:hi("VisualNOS", "reverse", s:aquarium_bg2, "", "", "", "")
 
 "+-+-+-+-+-+-+-+-+-+-+
 "+----- Editor ------+
@@ -536,7 +536,7 @@ call s:hi("SignColumn", "", s:aquarium_bg1, "NONE", "", "", "")
 call s:hi("ColorColumn", "", s:aquarium_bg2, "NONE", s:aquarium1_term, "", "")
 call s:hi("CursorColumn", s:aquarium_cyan, "", "NONE", "", "", "")
 call s:hi("Cursor", s:aquarium_bg1, s:aquarium_bg2, "", "NONE", "", "")
-call s:hi("CursorLine", "", s:aquarium_bg2, "NONE", s:aquarium1_term, "NONE", "") " Changes the color focused line where the cursor is
+call s:hi("CursorLine", "", "", "NONE", "", "NONE", "") " Changes the color focused line where the cursor is
 call s:hi("CursorLineNr", s:aquarium_cyan, s:aquarium_bg3, "NONE", s:aquarium1_term, "NONE", "") " Changes the color focused column number where the cursor is
 call s:hi("Error", s:aquarium_red, s:aquarium_bg2, "", "", "italic", "")
 call s:hi("Normal", s:aquarium_fg1, s:aquarium_bg1, "NONE", "NONE", "", "")
