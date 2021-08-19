@@ -535,7 +535,7 @@ call s:hi("VisualNOS", "reverse", s:aquarium_bg2, "", "", "", "")
 call s:hi("SignColumn", "", s:aquarium_bg1, "NONE", "", "", "")
 call s:hi("ColorColumn", "", s:aquarium_bg2, "NONE", s:aquarium1_term, "", "")
 call s:hi("CursorColumn", s:aquarium_cyan, "", "NONE", "", "", "")
-call s:hi("Cursor", s:aquarium_bg1, s:aquarium_bg2, "", "NONE", "", "")
+call s:hi("Cursor", "", s:aquarium_bg2, "", "NONE", "", "")
 call s:hi("CursorLine", "", s:aquarium_bg1, "NONE", "", "NONE", "") " Changes the color focused line where the cursor is
 call s:hi("CursorLineNr", s:aquarium_cyan, s:aquarium_bg3, "NONE", s:aquarium1_term, "NONE", "") " Changes the color focused column number where the cursor is
 call s:hi("Error", s:aquarium_red, s:aquarium_bg2, "", "", "italic", "")
@@ -585,6 +585,7 @@ call s:hi("Structure", s:aquarium_yellow, "", "", "", "", "" ) " struct, union, 
 call s:hi("Typedef", s:aquarium_yellow, "", "", "", "", "") " A typedef
 call s:hi("Special", s:aquarium_blue, "", "", "", "", "") " any special symbol
 call s:hi("SpecialChar", s:aquarium_bg2, "", "", "", "", "") " special character in a constant
+call s:hi("Decorator", s:aquarium_magenta, "", "", "", "", "")
 call s:hi("Tag", s:aquarium_yellow, "", "", "", "", "") " you can use CTRL-] on this
 call s:hi("Delimiter", s:aquarium_blue, "", "", "", "bold", "") " character that needs attention, parenthesis for example
 call s:hi("Macro", s:aquarium_magenta, "", "", "", "", "") " same as Define
@@ -597,6 +598,8 @@ call s:hi("Identifier", s:aquarium_red, "", "", "", "", "") " any variable name
 call s:hi("Constant", s:aquarium_magenta, "", "", "", "italic", "")
 call s:hi("WildMenu", s:aquarium_blue, s:aquarium_bg2, "", "", "", "")
 hi! link PreCondit PreProc
+hi! link Annotation Decorator
+hi! link Variable Identifier
 "-----------------------------------------------------------------------------------------
 
 "+-+-+-+-+-+-+-+-+-+-+-+
