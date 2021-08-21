@@ -127,7 +127,7 @@ call s:hi("NonText", s:aquarium_fg, s:aquarium_black, "", "", "", "")
 call s:hi("Special", s:aquarium_yellow, "", "", "", "italic", "")
 call s:hi("SpecialKey", s:aquarium_black, "", "", "", "", "")
 call s:hi("Conceal", "", s:aquarium_bg3, "", "NONE", "", "") " placeholder characters substituted for concealed text (see 'conceallevel')
-call s:hi("IncSearch", s:aquarium_magenta, s:aquarium_bg2, "", "NONE", "", "")
+call s:hi("IncSearch", s:aquarium_magenta, s:aquarium_bg2, "NONE", "NONE", "", "")
 
 " Comments and Such
 call s:hi("Comment", s:aquarium_bg3, "", "", "", "italic", "")
@@ -719,31 +719,6 @@ call s:hi("yamlKey", s:aquarium_red, "", "", "", "italic", "")
 call s:hi("jediFunction", s:aquarium_magenta, s:aquarium_black, "", "", "italic", "")
 call s:hi("jediFat", s:aquarium_cyan, s:aquarium_black, "", "", "italic", "")
 
-" Rainbow Parentheses
-" > Science XD
-if !exists('g:rbpt_colorpairs')
-  let g:rbpt_colorpairs =
-    \ [
-      \ ['blue', '#cddbf9'], ['magenta', '#f6bbe7'],
-      \ ['red',  '#ebb9b9'], ['yellow',     '#E6DFB8']
-    \ ]
-endif
-
-let g:rainbow_guifgs = [ '#E6DFB8', '#ebb9b9', '#f6bbe7', '#cddbf9' ]
-let g:rainbow_ctermfgs = [ 'yellow', 'red', 'magenta', 'blue' ]
-
-if !exists('g:rainbow_conf')
-   let g:rainbow_conf = {}
-endif
-if !has_key(g:rainbow_conf, 'guifgs')
-   let g:rainbow_conf['guifgs'] = g:rainbow_guifgs
-endif
-if !has_key(g:rainbow_conf, 'ctermfgs')
-   let g:rainbow_conf['ctermfgs'] = g:rainbow_ctermfgs
-endif
-
-let g:niji_dark_colours = g:rbpt_colorpairs
-let g:niji_light_colours = g:rbpt_colorpairs
 
 " tree-sitter
 " > nvim-treesitter/nvim-treesitter
