@@ -129,26 +129,26 @@ call s:hi("SpecialKey", s:aquarium_black, "", "", "", "", "")
 call s:hi("Conceal", "", s:aquarium_bg3, "", "NONE", "", "") " placeholder characters substituted for concealed text (see 'conceallevel')
 call s:hi("IncSearch" s:aquarium_magenta, s:aquarium_bg2, "", "NONE", "", "")
 
-# Comments and Such
+" Comments and Such
 call s:hi("Comment", s:aquarium_bg3, "", "", "", "italic", "")
 call s:hi("SpecialComment", s:aquarium_black, "", "", "", "italic", "")
 
-# Line Stuff
+" Line Stuff
 call s:hi("LineNr", s:aquarium_bg3, s:aquarium_bg1, "", "", "bold", "") " The Number Columns
 call s:hi("CursorLine", "", s:aquarium_bg1, "NONE", "", "NONE", "") " Changes the color focused line where the cursor is
 call s:hi("CursorLineNr", s:aquarium_cyan, s:aquarium_bg3, "NONE", "", "NONE", "") " Changes the color focused column number where the cursor is
 
-# Cursor
+" Cursor
 call s:hi("Cursor", "", s:aquarium_bg_light, s:aquarium_bg_dim, "NONE", "", "") " Regular Cursor thing
 call s:hi("CursorIM", s:aquarium_bg_light, s:aquarium_bg_dim, "", "NONE", "", "") " like Cursor, but used when in IME mode
 call s:hi("iCursor", s:aquarium_bg_light, s:aquarium_bg_dim, "", "NONE", "", "")
 
-# Columns
+" Columns
 call s:hi("SignColumn", "", s:aquarium_bg1, "NONE", "", "", "")
 call s:hi("ColorColumn", "", s:aquarium_bg2, "NONE", "", "", "")
 call s:hi("CursorColumn", s:aquarium_cyan, "", "NONE", "", "", "")
 
-# Pmenu
+" Pmenu
 call s:hi("Pmenu", s:aquarium_fg, s:aquarium_bg2, "", "", "", "")
 call s:hi("PmenuSbar",  s:aquarium_fg, s:aquarium_bg2, "", "", "", "")
 call s:hi("PmenuSel", s:aquarium_cyan, s:aquarium_bg2, "", "", "", "")
@@ -502,7 +502,7 @@ call s:hi("markdownH4", s:aquarium_red, "", "", "", "", "" )
 call s:hi("markdownH5", s:aquarium_red, "", "", "", "", "" )
 call s:hi("markdownH6", s:aquarium_red, "", "", "", "", "" )
 call s:hi("markdownHeadingDelimiter", s:aquarium_red, "", "", "", "", "")
-call s:hi("markdownHeadingRule", s:aquarium_fg_cyan, "", "", "", "", "")
+call s:hi("markdownHeadingRule", s:aquarium_cyan, "", "", "", "", "")
 call s:hi("markdownId", s:aquarium_magenta, "", "", "", "", "")
 call s:hi("markdownIdDeclaration", s:aquarium_blue, "", "", "", "", "")
 call s:hi("markdownIdDelimiter", s:aquarium_magenta, "", "", "", "", "")
