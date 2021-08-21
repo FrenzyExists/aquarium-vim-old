@@ -127,7 +127,16 @@ call s:hi("NonText", s:aquarium_fg, s:aquarium_black, "", "", "", "")
 call s:hi("Special", s:aquarium_yellow, "", "", "", "italic", "")
 call s:hi("SpecialKey", s:aquarium_black, "", "", "", "", "")
 call s:hi("Conceal", "", s:aquarium_bg3, "", "NONE", "", "") " placeholder characters substituted for concealed text (see 'conceallevel')
-call s:hi("IncSearch", s:aquarium_magenta, s:aquarium_bg, "NONE", "NONE", "", "")
+call s:hi("IncSearch", s:aquarium_magenta, s:aquarium_bg3, "NONE", "NONE", "", "")
+
+" Comments and Such
+call s:hi("Comment", s:aquarium_bg3, "", "", "", "italic", "")
+call s:hi("SpecialComment", s:aquarium_black, "", "", "", "italic", "")
+
+" Line Stuff
+call s:hi("LineNr", s:aquarium_bg3, s:aquarium_bg1, "", "", "bold", "") " The Number Columns
+call s:hi("CursorLine", "", s:aquarium_bg1, "NONE", "", "NONE", "") " Changes the color focused line where the cursor is
+call s:hi("CursorLineNr", s:aquarium_cyan, s:aquarium_bg3, "NONE", "", "NONE", "") " Changes the color focused column number where the cursor is
 
 
 "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
