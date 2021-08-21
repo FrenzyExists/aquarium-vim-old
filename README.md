@@ -1,8 +1,76 @@
-Aquarium theme for vim
 
-The structure of the vimfile is forked from the Nord Vim, currently this is still in development, I apoligize for all the terrible rough edges
+<p align="center">
+    <a href="https://github.com/FrenzyExists" target="_blank">
+        <img src="screenshots/frame_1.png" alt="Aquarium Banner" width="630"/>
+    </a>
+</p>
+<p align="center">
+    <a href="https://github.com/FrenzyExists/aquarium-vim/stargazers"><img src="https://img.shields.io/github/stars/FrenzyExists/aquarium-vim?colorA=20202a&colorB=cddbf9&style=for-the-badge&logo=starship style=flat-square"></a>
+    <a href="https://github.com/FrenzyExists/aquarium-vim/releases/latest"><img src="https://img.shields.io/github/release/FrenzyExists/aquarium-vim.svg?style=flat-square&label=Release&logo=github&logoColor=eceff4&colorA=4c566a&colorB=88c0d0"/></a> 
+    <a href="https://github.com/FrenzyExists/aquarium-vim/issues"><img src="https://img.shields.io/github/issues/FrenzyExists/aquarium-vim?colorA=20202a&colorB=e6dfb8&style=for-the-badge&logo=bugatti"></a>
+    <a href="https://github.com/FrenzyExists/aquarium-vim/network/members"><img src="https://img.shields.io/github/forks/FrenzyExists/aquarium-vim?colorA=20202a&colorB=ebb9b9&style=for-the-badge&logo=github"></a>
+</p>
 
+<br/>
+
+<p align="center">A colorful, dark cozy [Neovim](https://github.com/neovim/neovim) colorscheme.</p>
+
+Currently aquarium is at a very early stage, there's a large need for ports. At the time of this writting, you can visit (my dotfiles)[] for terminal configurations as well as my (tmux)[] config, which is partly ripped from (Hi I'm Bored)[].
+
+## Getting Started
+Aquarium currently has a vimscript version only, expect a lua version soon!
+
+### Quick Start
+
+* vim-plug
+```vim
+Plug 'frenzyexists/aquarium-vim', { 'branch': 'vimscript-version' }
+
+" Future plans for lua version are around, somewhere, i hope
+```
+
+* packer
+```lua
+use {
+    'frenzyexists/aquarium-vim',
+    branch = 'vimscript_version'
+}
+```
+## Features and Stuff
+The vimscript version currently have some support for a few plugins, bellow a list of supported plugins:
+- [pandoc](https://github.com/jgm/pandoc)
+- [Nvim-Treesitter](https://github.com/tree-sitter/tree-sitter)
+- [jedi](https://github.com/davidhalter/jedi)
+- [Vim Clap](https://github.com/liuchengxu/vim-clap/tree/master/test)
+- [fujitive.vim](https://github.com/tpope/vim-fugitive)
+
+### Screenshots
 Here's a demo of how it looks
 ![](screenshots/pic_1.png)
 
+### Pallete
+<p align="center">
+    <img src="screenshots/palette.png" alt="Aquarium Palette"/>
+</p>
+
+## Contributing
+Aquarium is open-source, and will always be forever and ever.
+
+There's a lot of ways to contribute, creating ports in particular. For example, you could submit a [pull request](https://github.com/frenzyexists/aquarium-vim/pulls) a [suggestion/enchantment](https://github.com/frenzyexists/aquarium-vim/issues) for this color theme.
+
+Other ways you can contribute is by adding a config of your favorite program using aquarium colors over [here](https://github.com/FrenzyExists/dotfiles).
+
+### To-do list
+- [ ] Add Scheme switch script
+- [ ] Glorify theme
+- [ ] Profit (hehe)
+
 I know, the bar is not the same color, still working on it :)
+
+
+<p align="center">
+    <a href="https://github.com/frenzyexists/aquarium-vim/blob/main/LICENSE">
+        <img src="https://img.shields.io/badge/license-MIT-orange.svg?colorA=20202A&colorB=b8dceb&style=for-the-badge&logo=mitsubishi">
+    </a>
+</p>
+
