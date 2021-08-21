@@ -139,6 +139,10 @@ call s:hi("PmenuSbar",  s:aquarium_fg, s:aquarium_bg2, "", "", "", "")
 call s:hi("PmenuSel", s:aquarium_cyan, s:aquarium_bg2, "", "", "", "")
 call s:hi("PmenuThumb", s:aquarium_cyan, s:aquarium_bg2, "", "", "", "")
 
+" Columns
+call s:hi("SignColumn", "", s:aquarium_bg1, "NONE", "", "", "")
+call s:hi("ColorColumn", "", s:aquarium_bg2, "NONE", "", "", "")
+call s:hi("CursorColumn", s:aquarium_cyan, "", "NONE", "", "", "")
 
 
 "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
