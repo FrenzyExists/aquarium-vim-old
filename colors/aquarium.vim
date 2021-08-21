@@ -22,7 +22,7 @@ let s:aquarium_vim_version="0.3.1"
 "+----- Color Thingy ------+
 "+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
-# BASE BG
+" BASE BG
 
 if !exists("s:aquarium_bg1")
     let s:aquarium_bg1 = "#20202A"
@@ -44,7 +44,7 @@ if !exists("s:aquarium_bg_light")
     let s:aquarium_bg_light = "#414560"
 endif
 
-# BASE FG
+" BASE FG
 
 if !exists("s:aquarium_fg")
     let s:aquarium_fg = "#c8cedc"
@@ -54,7 +54,7 @@ if !exists("s:aquarium_fg2")
     let s:aquarium_fg = "#63718b"
 endif
 
-# OTHER COLORS
+" OTHER COLORS
 
 if !exists("s:aquarium_red")
     let s:aquarium_red = "#ebb9b9"
