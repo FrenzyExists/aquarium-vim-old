@@ -133,10 +133,11 @@ call s:hi("IncSearch", s:aquarium_magenta, s:aquarium_bg2, "NONE", "NONE", "", "
 call s:hi("Comment", s:aquarium_bg3, "", "", "", "italic", "")
 call s:hi("SpecialComment", s:aquarium_black, "", "", "", "italic", "")
 
-" Cursor
-call s:hi("Cursor", "", s:aquarium_bg_light, s:aquarium_bg_dim, "NONE", "", "") " Regular Cursor thing
-call s:hi("CursorIM", s:aquarium_bg_light, s:aquarium_bg_dim, "", "NONE", "", "") " like Cursor, but used when in IME mode
-call s:hi("iCursor", s:aquarium_bg_light, s:aquarium_bg_dim, "", "NONE", "", "")
+" Pmenu
+call s:hi("Pmenu", s:aquarium_fg, s:aquarium_bg2, "", "", "", "")
+call s:hi("PmenuSbar",  s:aquarium_fg, s:aquarium_bg2, "", "", "", "")
+call s:hi("PmenuSel", s:aquarium_cyan, s:aquarium_bg2, "", "", "", "")
+call s:hi("PmenuThumb", s:aquarium_cyan, s:aquarium_bg2, "", "", "", "")
 
 
 
