@@ -1,6 +1,6 @@
 " Aquarium Theme
-" Name:       aquarium.vim
-" Maintainer: https://github.com/frenzyexists/aquarium.vim/
+" Name:       aquarium-vim
+" Maintainer: https://github.com/frenzyexists/aquarium-vim/
 " License: The MIT License (MIT)
 
 highlight clear
