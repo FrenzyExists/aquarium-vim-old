@@ -127,7 +127,7 @@ call s:hi("NonText", s:aquarium_fg, s:aquarium_black, "", "", "", "")
 call s:hi("Special", s:aquarium_yellow, "", "", "", "italic", "")
 call s:hi("SpecialKey", s:aquarium_black, "", "", "", "", "")
 call s:hi("Conceal", "", s:aquarium_bg3, "", "NONE", "", "") " placeholder characters substituted for concealed text (see 'conceallevel')
-call s:hi("IncSearch", s:aquarium_magenta, s:aquarium_bg, "NONE", "NONE", "", "")
+call s:hi("IncSearch", s:aquarium_magenta, s:aquarium_bg3, "NONE", "NONE", "", "")
 
 " Comments and Such
 call s:hi("Comment", s:aquarium_bg3, "", "", "", "italic", "")
