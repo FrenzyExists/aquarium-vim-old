@@ -133,6 +133,12 @@ call s:hi("IncSearch", s:aquarium_magenta, s:aquarium_bg2, "NONE", "NONE", "", "
 call s:hi("Comment", s:aquarium_bg3, "", "", "", "italic", "")
 call s:hi("SpecialComment", s:aquarium_black, "", "", "", "italic", "")
 
+" Cursor
+call s:hi("Cursor", "", s:aquarium_bg_light, s:aquarium_bg_dim, "NONE", "", "") " Regular Cursor thing
+call s:hi("CursorIM", s:aquarium_bg_light, s:aquarium_bg_dim, "", "NONE", "", "") " like Cursor, but used when in IME mode
+call s:hi("iCursor", s:aquarium_bg_light, s:aquarium_bg_dim, "", "NONE", "", "")
+
+
 
 "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 "+-- Lang Specifics aka Fallbacks ---+
