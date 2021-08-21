@@ -138,6 +138,11 @@ call s:hi("LineNr", s:aquarium_bg3, s:aquarium_bg1, "", "", "bold", "") " The Nu
 call s:hi("CursorLine", "", s:aquarium_bg1, "NONE", "", "NONE", "") " Changes the color focused line where the cursor is
 call s:hi("CursorLineNr", s:aquarium_cyan, s:aquarium_bg3, "NONE", "", "NONE", "") " Changes the color focused column number where the cursor is
 
+" Cursor
+call s:hi("Cursor", "", s:aquarium_bg_light, s:aquarium_bg_dim, "NONE", "", "") " Regular Cursor thing
+call s:hi("CursorIM", s:aquarium_bg_light, s:aquarium_bg_dim, "", "NONE", "", "") " like Cursor, but used when in IME mode
+call s:hi("iCursor", s:aquarium_bg_light, s:aquarium_bg_dim, "", "NONE", "", "")
+
 
 "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 "+-- Lang Specifics aka Fallbacks ---+
