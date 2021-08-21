@@ -108,6 +108,27 @@ function! s:hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
 endfunction
 
 
+"+-+-+-+-+-+-+-+-+-+-+
+"+--- Attributes ----+
+"+-+-+-+-+-+-+-+-+-+-+
+call s:hi("Bold", "", "", "", "", "bold", "")
+call s:hi("Italic", "", "", "", "", "italic", "")
+call s:hi("Underline", "", "", "", "", "underline", "")
+
+
+"+-+-+-+-+-+-+-+-+-+-+
+"+----- Editor ------+
+"+-+-+-+-+-+-+-+-+-+-+
+call s:hi("Normal", s:aquarium_fg, s:aquarium_bg1, "NONE", "NONE", "", "")
+call s:hi("Error", s:aquarium_red, s:aquarium_bg2, "", "", "italic", "")
+call s:hi("Search", s:aquarium_yellow, s:aquarium_black, "", "", "", "") " Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
+call s:hi("MatchParen", s:aquarium_cyan, s:aquarium_black, "", "", "", "")
+call s:hi("NonText", s:aquarium_fg, s:aquarium_black, "", "", "", "")
+call s:hi("Special", s:aquarium_yellow, "", "", "", "italic", "")
+call s:hi("SpecialKey", s:aquarium_black, "", "", "", "", "")
+call s:hi("Conceal", "", s:aquarium_bg3, "", "NONE", "", "") " placeholder characters substituted for concealed text (see 'conceallevel')
+call s:hi("IncSearch", s:aquarium_magenta, s:aquarium_bg, "NONE", "NONE", "", "")
+
 
 "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 "+-- Lang Specifics aka Fallbacks ---+
