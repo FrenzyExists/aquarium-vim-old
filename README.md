@@ -6,16 +6,16 @@
 </p>
 <p align="center">
     <a href="https://github.com/FrenzyExists/aquarium-vim/stargazers"><img src="https://img.shields.io/github/stars/FrenzyExists/aquarium-vim?colorA=20202a&colorB=cddbf9&style=for-the-badge&logo=starship style=flat-square"></a>
-    <a href="https://github.com/FrenzyExists/aquarium-vim/releases/latest"><img src="https://img.shields.io/github/release/FrenzyExists/aquarium-vim.svg?style=flat-square&label=Release&logo=github&logoColor=eceff4&colorA=4c566a&colorB=88c0d0"/></a> 
+    <a href="https://github.com/FrenzyExists/aquarium-vim/releases/latest"><img src="https://img.shields.io/github/release/FrenzyExists/aquarium-vim.svg?&style=for-the-badge&label=Release&logo=github&logoColor=eceff4&colorA=20202a&colorB=f6bbe7"/></a> 
     <a href="https://github.com/FrenzyExists/aquarium-vim/issues"><img src="https://img.shields.io/github/issues/FrenzyExists/aquarium-vim?colorA=20202a&colorB=e6dfb8&style=for-the-badge&logo=bugatti"></a>
     <a href="https://github.com/FrenzyExists/aquarium-vim/network/members"><img src="https://img.shields.io/github/forks/FrenzyExists/aquarium-vim?colorA=20202a&colorB=ebb9b9&style=for-the-badge&logo=github"></a>
 </p>
 
 <br/>
 
-<p align="center">A colorful, dark cozy [Neovim](https://github.com/neovim/neovim) colorscheme.</p>
+<p align="center">A colorful, dark cozy <a href="https://github.com/neovim/neovim">Neovim</a> colorscheme.</p>
 
-Currently aquarium is at a very early stage, there's a large need for ports. At the time of this writting, you can visit (my dotfiles)[] for terminal configurations as well as my (tmux)[] config, which is partly ripped from (Hi I'm Bored)[].
+Currently aquarium is at a very early stage, there's a large need for ports. At the time of this writting, you can visit (my dotfiles)[] for terminal configurations as well as my [tmux](https://github.com/FrenzyExists/dotfiles/blob/master/config/.tmux.conf) config, which is partly ripped from (Hi I'm Bored)[].
 
 ## Getting Started
 Aquarium currently has a vimscript version only, expect a lua version soon!
