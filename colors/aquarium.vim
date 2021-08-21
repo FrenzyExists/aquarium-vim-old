@@ -12,7 +12,7 @@ if version > 580
   endif
 endif
 
-# Background, stuff
+" Background, stuff
 set background=dark
 
 let colors_name = "aquarium"
