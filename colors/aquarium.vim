@@ -47,11 +47,11 @@ endif
 " BASE FG
 
 if !exists("s:aquarium_fg")
-    let s:aquarium_fg = "#c8cedc"
+    let s:aquarium_fg = "#63718b"
 endif
 
 if !exists("s:aquarium_fg2")
-    let s:aquarium_fg2 = "#63718b"
+    let s:aquarium_fg2 = "#c8cedc"
 endif
 
 " OTHER COLORS
