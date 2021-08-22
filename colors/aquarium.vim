@@ -787,3 +787,8 @@ hi! link pandocSimpleTableHeader pandocAtxHeader
 hi! link pandocStrong markdownBold
 hi! link pandocTableHeaderWord pandocAtxHeader
 hi! link pandocUListItemBullet Operator
+
+" Nvim-Tree
+" > kyazdani42/nvim-tree.lua
+call s:hi("NvimTreeeRootFolder", s:aquarium_yellow, "", "", "", "italic", "")
+call s:hi("NvimTreeeNormal", "", s:aquarium_bg_dim, "", "", "", "")
