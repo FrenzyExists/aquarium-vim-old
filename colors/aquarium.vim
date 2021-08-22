@@ -51,7 +51,7 @@ if !exists("s:aquarium_fg")
 endif
 
 if !exists("s:aquarium_fg2")
-    let s:aquarium_fg = "#63718b"
+    let s:aquarium_fg2 = "#63718b"
 endif
 
 " OTHER COLORS
