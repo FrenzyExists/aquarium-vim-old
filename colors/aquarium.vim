@@ -199,9 +199,9 @@ hi! link Variable Identifier
 "+-+-+-+-+-+-+-+-+-+-+-+-+
 call s:hi("VertSplit", s:aquarium_bg2, s:aquarium_bg1, "", "NONE", "bold", "")
 call s:hi("StatusLine", s:aquarium_bg1, s:aquarium_bg1, "", "", "", "") " status line of current window
-call s:hi("StatusLineNC", s:aquarium_bg1, s:aquarium_bg_dim, "", "", "underline", "") "status lines of not-current windows Note: if this is equal to 'StatusLine' Vim will use '^^^' in the status line of the current window.
+call s:hi("StatusLineNC", s:aquarium_bg_dim, s:aquarium_bg1, "", "", "underline", "") "status lines of not-current windows Note: if this is equal to 'StatusLine' Vim will use '^^^' in the status line of the current window.
 call s:hi("StatusLineTerm", s:aquarium_fg, s:aquarium_bg1, "", "", "", "" ) " status line of current :terminal window
-call s:hi("StatusLineTermNC", s:aquarium_bg2, s:aquarium_bg_dim, "", "", "underline", "") " status line of non-current :terminal window
+call s:hi("StatusLineTermNC", s:aquarium_bg_dim, s:aquarium_bg1, "", "", "underline", "") " status line of non-current :terminal window
 
 
 "+-+-+-+-+-+-+-+-+-+-+-+-+
