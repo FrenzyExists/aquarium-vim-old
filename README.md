@@ -43,6 +43,18 @@ The vimscript version currently have some support for a few plugins, bellow a li
 - [jedi](https://github.com/davidhalter/jedi)
 - [Vim Clap](https://github.com/liuchengxu/vim-clap/tree/master/test)
 - [fujitive.vim](https://github.com/tpope/vim-fugitive)
+- [lualine](https://github.com/hoob3rt/lualine.nvim)
+
+To Enable `aquarium` theme for `Lualine`, specify the theme in your lua config:
+
+```lua
+require('lualine').setup {
+  options = {
+    theme = 'aquarium'
+    -- ... your lualine config
+  }
+}
+```
 
 ### Screenshots
 Here's a demo of how it looks
