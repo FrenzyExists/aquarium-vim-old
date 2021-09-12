@@ -12,79 +12,162 @@ if version > 580
   endif
 endif
 
+" --| C O N F I G U R A T I O N |--
 " Background, stuff
 set background=dark
 
+" Naming
 let colors_name = "aquarium"
 let s:aquarium_vim_version="0.3.1"
+
+" Options
+let s:configuration = {}
+let s:configuration.style = get(g:, 'aquarium_style', 'dark')
+
+" Trigger bold
+if !exists("g:aqua_bold")
+  let g:aqua_bold = 1
+endif
+
+let s:bold = "bold,"
+if g:aqua_bold == 0
+  let s:bold = ""
+endif
 
 "+-+-+-+-+-+-+-+-+-+-+-+-+-+
 "+----- Color Thingy ------+
 "+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
-" BASE BG
+if s:configuration.style ==# 'dark'
 
-if !exists("s:aquarium_bg1")
-    let s:aquarium_bg1 = "#20202A"
-endif
+    " BASE BG
+    if !exists("s:aquarium_bg1")
+        let s:aquarium_bg1 = "#20202A"
+    endif
 
-if !exists("s:aquarium_bg2")
-    let s:aquarium_bg2 = "#2c2e3e"
-endif
+    if !exists("s:aquarium_bg2")
+        let s:aquarium_bg2 = "#2c2e3e"
+    endif
 
-if !exists("s:aquarium_bg3")
-    let s:aquarium_bg3 = "#3D4059"
-endif
+    if !exists("s:aquarium_bg3")
+        let s:aquarium_bg3 = "#3D4059"
+    endif
 
-if !exists("s:aquarium_bg_dim")
-    let s:aquarium_bg_dim = "#313449"
-endif
+    if !exists("s:aquarium_bg_dim")
+        let s:aquarium_bg_dim = "#313449"
+    endif
 
-if !exists("s:aquarium_bg_light")
-    let s:aquarium_bg_light = "#414560"
-endif
+    if !exists("s:aquarium_bg_light")
+        let s:aquarium_bg_light = "#414560"
+    endif
 
-" BASE FG
+    " BASE FG
+    if !exists("s:aquarium_fg")
+        let s:aquarium_fg = "#63718b"
+    endif
 
-if !exists("s:aquarium_fg")
-    let s:aquarium_fg = "#63718b"
-endif
+    if !exists("s:aquarium_fg2")
+        let s:aquarium_fg2 = "#c8cedc"
+    endif
 
-if !exists("s:aquarium_fg2")
-    let s:aquarium_fg2 = "#c8cedc"
-endif
-
-" OTHER COLORS
-
-if !exists("s:aquarium_red")
-    let s:aquarium_red = "#ebb9b9"
-endif
+    " OTHER COLORS
+    if !exists("s:aquarium_red")
+        let s:aquarium_red = "#ebb9b9"
+    endif
  
-if !exists("s:aquarium_blue") 
-    let s:aquarium_blue = "#cddbf9"
+    if !exists("s:aquarium_blue") 
+        let s:aquarium_blue = "#cddbf9"
+    endif
+
+    if !exists("s:aquarium_green")
+        let s:aquarium_green = "#b1dba4"
+    endif
+
+    if !exists("s:aquarium_yellow")
+        let s:aquarium_yellow = "#E6DFB8" 
+    endif
+
+    if !exists("s:aquarium_cyan")
+        let s:aquarium_cyan = "#b8dceb" 
+    endif
+
+    if !exists("s:aquarium_magenta")
+       let s:aquarium_magenta = "#f6bbe7" 
+    endif
+
+    if !exists("s:aquarium_black")
+        let s:aquarium_black = "#4c5664"
+    endif
+
+elseif s:configuration.style ==# 'day'
+
+    " BASE BG
+    if !exists("s:aquarium_bg1")
+        let s:aquarium_bg1 = "#E6E6F1"
+    endif
+
+    if !exists("s:aquarium_bg2")
+        let s:aquarium_bg2 = "#D5D4E0"
+    endif
+
+    if !exists("s:aquarium_bg3")
+        let s:aquarium_bg3 = "#C4C3D2"
+    endif
+
+    if !exists("s:aquarium_bg_dim")
+        let s:aquarium_bg_dim = "#9899A8"
+    endif
+
+    if !exists("s:aquarium_bg_light")
+        let s:aquarium_bg_light = "#B2B2C3"
+    endif
+
+    " BASE FG
+    if !exists("s:aquarium_fg")
+        let s:aquarium_fg = "#708190"
+    endif
+
+    if !exists("s:aquarium_fg2")
+        let s:aquarium_fg2 = "#7F8E9D"
+    endif
+
+    " OTHER COLORS
+    if !exists("s:aquarium_red")
+        let s:aquarium_red = "#D04B4B"
+    endif
+
+    if !exists("s:aquarium_green")
+        let s:aquarium_green = "#7EA070"
+    endif
+
+    if !exists("s:aquarium_blue") 
+        let s:aquarium_blue = "#547DB6"
+    endif
+
+    if !exists("s:aquarium_magenta")
+       let s:aquarium_magenta = "#9F78B8" 
+    endif
+
+    if !exists("s:aquarium_cyan")
+        let s:aquarium_cyan = "#93B5C6" 
+    endif
+
+    if !exists("s:aquarium_yellow")
+        let s:aquarium_yellow = "#E9BC1B" 
+    endif
+
 endif
 
-if !exists("s:aquarium_green")
-    let s:aquarium_green = "#b1dba4"
+" Focused line toggl#8958a7e
+if !exists("g:aqua_line")
+    let g:aqua_line = 1
 endif
 
-if !exists("s:aquarium_yellow")
-   let s:aquarium_yellow = "#E6DFB8" 
+let s:line = s:aquarium_bg2
+if g:aqua_line == 0
+    let s:line = ""
 endif
-
-if !exists("s:aquarium_cyan")
-    let s:aquarium_cyan = "#b8dceb" 
-endif
-
-if !exists("s:aquarium_magenta")
-   let s:aquarium_magenta = "#f6bbe7" 
-endif
-
-if !exists("s:aquarium_black")
-    let s:aquarium_black = "#4c5664"
-endif
-
-
+    
 " Function Loader thingy
 function! s:hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
   if a:guifg != ""
@@ -111,7 +194,7 @@ endfunction
 "+-+-+-+-+-+-+-+-+-+-+
 "+--- Attributes ----+
 "+-+-+-+-+-+-+-+-+-+-+
-call s:hi("Bold", "", "", "", "", "bold", "")
+call s:hi("Bold", "", "", "", "", s:bold, "")
 call s:hi("Italic", "", "", "", "", "italic", "")
 call s:hi("Underline", "", "", "", "", "underline", "")
 
@@ -149,16 +232,16 @@ call s:hi("Cursor", s:aquarium_bg_light, s:aquarium_bg_dim, "NONE", "NONE", "", 
 call s:hi("CursorIM", s:aquarium_bg_light, s:aquarium_bg_dim, "", "NONE", "", "") " like Cursor, but used when in IME mode
 call s:hi("iCursor", s:aquarium_bg_light, s:aquarium_bg_dim, "", "NONE", "", "")
 
-" Line Stuff
+" Line Stuff 
 call s:hi("LineNr", s:aquarium_bg3, s:aquarium_bg1, "", "", "bold", "") " The Number Columns
-call s:hi("CursorLine", "", s:aquarium_bg1, "NONE", "", "NONE", "") " Changes the color focused line where the cursor is
+call s:hi("CursorLine", "", s:line, "NONE", "", "NONE", "") " Changes the color focused line where the cursor is
 call s:hi("CursorLineNr", s:aquarium_cyan, s:aquarium_bg3, "NONE", "", "NONE", "") " Changes the color focused column number where the cursor is
 
 "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 "+-- Lang Specifics aka Fallbacks ---+
 "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 call s:hi("PreProc", s:aquarium_magenta, "", "", "", "", "")
-call s:hi("Todo", s:aquarium_magenta, s:aquarium_black, "", "", "bold", "") " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+call s:hi("Todo", s:aquarium_magenta, s:aquarium_black, "", "", s:bold, "") " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 call s:hi("Boolean", s:aquarium_cyan, "", "", "", "", "") " a boolean constant: TRUE, false
 call s:hi("Type", s:aquarium_yellow, "", "", "", "italic", "" ) " int, long, char, etc.
 call s:hi("Function", s:aquarium_cyan, "", "", "", "italic", "") " a floating point constant: 2.3e10
@@ -170,7 +253,7 @@ call s:hi("Label", s:aquarium_yellow,"", "", "", "", "") " case, default, etc.
 call s:hi("String", s:aquarium_green, "", "", "", "", "") " a string constant: 'this is a string'
 call s:hi("Character", s:aquarium_green, "", "", "", "", "") " a character constant: 'c', '\n'
 call s:hi("StorageClass", s:aquarium_red, "", "", "", "", "") " static, register, volatile, etc.
-call s:hi("Operator", s:aquarium_red, "", "", "", "bold", "") " sizeof, '+', '*', etc.
+call s:hi("Operator", s:aquarium_red, "", "", "", s:bold, "") " sizeof, '+', '*', etc.
 call s:hi("Number", s:aquarium_red, "", "", "", "", "") " a number constant: 234, 0xff
 call s:hi("Float", s:aquarium_red, "", "", "", "", "") " a floating point constant: 2.3e10
 call s:hi("Structure", s:aquarium_yellow, "", "", "", "", "" ) " struct, union, enum, etc.
@@ -179,7 +262,7 @@ call s:hi("Special", s:aquarium_blue, "", "", "", "", "") " any special symbol
 call s:hi("SpecialChar", s:aquarium_bg2, "", "", "", "", "") " special character in a constant
 call s:hi("Decorator", s:aquarium_magenta, "", "", "", "", "")
 call s:hi("Tag", s:aquarium_yellow, "", "", "", "", "") " you can use CTRL-] on this
-call s:hi("Delimiter", s:aquarium_blue, "", "", "", "bold", "") " character that needs attention, parenthesis for example
+call s:hi("Delimiter", s:aquarium_blue, "", "", "", s:bold, "") " character that needs attention, parenthesis for example
 call s:hi("Macro", s:aquarium_magenta, "", "", "", "", "") " same as Define
 call s:hi("Exception", s:aquarium_magenta, "", "", "", "", "") " try, catch, throw
 call s:hi("Delimiter", "", "", "", "", "", "") " character that needs attention
@@ -197,7 +280,7 @@ hi! link Variable Identifier
 "+-+-+-+-+-+-+-+-+-+-+-+-+
 "+--- Window Highlight --+
 "+-+-+-+-+-+-+-+-+-+-+-+-+
-call s:hi("VertSplit", s:aquarium_bg2, s:aquarium_bg1, "", "NONE", "bold", "")
+call s:hi("VertSplit", s:aquarium_bg2, s:aquarium_bg1, "", "NONE", s:bold, "")
 call s:hi("StatusLine", s:aquarium_bg1, s:aquarium_bg1, "", "", "", "") " status line of current window
 call s:hi("StatusLineNC", s:aquarium_bg_dim, s:aquarium_bg1, "", "", "underline", "") "status lines of not-current windows Note: if this is equal to 'StatusLine' Vim will use '^^^' in the status line of the current window.
 call s:hi("StatusLineTerm", s:aquarium_fg, s:aquarium_bg1, "", "", "", "" ) " status line of current :terminal window
@@ -409,10 +492,10 @@ call s:hi("goTypeDecl", s:aquarium_magenta, "", "", "", "", "" )
 "+ Rust Lang Highlight +
 "+---------------------+
 call s:hi("rustAttribute", s:aquarium_blue, "", "", "", "", "")
-call s:hi("rustEnum", s:aquarium_yellow, "", "", "", "bold", "")
-call s:hi("rustMacro", s:aquarium_cyan, "", "", "", "bold", "")
+call s:hi("rustEnum", s:aquarium_yellow, "", "", "", s:bold, "")
+call s:hi("rustMacro", s:aquarium_cyan, "", "", "", s:bold, "")
 call s:hi("rustModPath", s:aquarium_yellow, "", "", "", "", "")
-call s:hi("rustPanic", s:aquarium_red, "", "", "", "bold", "")
+call s:hi("rustPanic", s:aquarium_red, "", "", "", s:bold, "")
 call s:hi("rustTrait", s:aquarium_yellow, "", "", "", "italic", "")
 hi! link rustCommentLineDoc Comment
 hi! link rustDerive rustAttribute
@@ -490,7 +573,7 @@ call s:hi("jsonSemicolonError", s:aquarium_red, "", "", "", "reverse", "")
 "+ Markdown Lang Highlight +
 "+-------------------------+
 call s:hi("markdownBlockquote", s:aquarium_magenta, "", "", "", "", "" )
-call s:hi("markdownBold", s:aquarium_yellow, "", "", "", "bold", "")
+call s:hi("markdownBold", s:aquarium_yellow, "", "", "", s:bold, "")
 call s:hi("markdownCode", s:aquarium_green, "", "", "", "", "")
 call s:hi("markdownCodeBlock", s:aquarium_green, "", "", "", "", "")
 call s:hi("markdownCodeDelimiter", s:aquarium_green, "", "", "", "", "")
@@ -583,7 +666,7 @@ hi! link typeScriptDocTags vimCommentTitle
 "+ HTML Lang Highlight +
 "+---------------------+
 call s:hi("htmlArg", s:aquarium_yellow, "", "", "", "", "")
-call s:hi("htmlBold", s:aquarium_yellow, "", "", "", "bold", "")
+call s:hi("htmlBold", s:aquarium_yellow, "", "", "", s:bold, "")
 call s:hi("htmlEndTag", s:aquarium_magenta, "", "", "", "", "")
 call s:hi("htmlH1", s:aquarium_red, "", "", "", "italic", "")
 call s:hi("htmlH2", s:aquarium_red, "", "", "", "italic", "")
@@ -686,11 +769,11 @@ let s:palette.display = { 'ctermbg': '0', 'guibg': 'aquarium_bg2' }
 let s:bg0 = { 'ctermbg': '60', 'guibg': s:aquarium_bg1 }
 let s:palette.input = s:bg0
 let s:palette.indicator = extend({ 'ctermfg': '238', 'guifg': s:aquarium_bg2 }, s:bg0)
-let s:palette.spinner = extend({ 'ctermfg': '11', 'guifg': s:aquarium_yellow, 'cterm': 'bold', 'gui': 'bold'}, s:bg0)
-let s:palette.search_text = extend({ 'ctermfg': '4', 'guifg': s:aquarium_blue, 'cterm': 'bold', 'gui': 'bold' }, s:bg0)
+let s:palette.spinner = extend({ 'ctermfg': '11', 'guifg': s:aquarium_yellow, 'cterm': s:bold, 'gui': s:bold }, s:bg0)
+let s:palette.search_text = extend({ 'ctermfg': '4', 'guifg': s:aquarium_blue, 'cterm': s:bold, 'gui': s:bold }, s:bg0)
 let s:palette.preview = { 'ctermbg': '238', 'guibg': s:aquarium_bg1 }
 let s:palette.selected = { 'ctermfg': '81', 'guifg': s:aquarium_cyan, 'cterm': 'bold,underline', 'gui': 'bold,underline' }
-let s:palette.current_selection = { 'ctermbg': '236', 'guibg': s:aquarium_bg2, 'cterm': 'bold', 'gui': 'bold' }
+let s:palette.current_selection = { 'ctermbg': '236', 'guibg': s:aquarium_bg2, 'cterm': s:bold, 'gui': s:bold }
 let s:palette.selected_sign = { 'ctermfg': '196', 'guifg': s:aquarium_yellow }
 let s:palette.current_selection_sign = s:palette.selected_sign
 
