@@ -99,10 +99,6 @@ if s:configuration.style ==# 'dark'
         let s:aquarium_black = "#4c5664"
     endif
 
-    if !exists("s:line_color")
-        let s:aquarium_bg2 = "#2c2e3e"
-    endif
-
 elseif s:configuration.style ==# 'light'
 
     " BASE BG
@@ -159,22 +155,15 @@ elseif s:configuration.style ==# 'light'
     if !exists("s:aquarium_yellow")
         let s:aquarium_yellow = "#E9BC1B" 
     endif
-        
-    if !exists("s:aquarium_black")
-        let s:aquarium_black = "#313449"
-    endif
 
-    if !exists("s:line_color")
-        let s:aquarium_bg2 = "#D5D4E0"
-    endif
 endif
 
-" Focused line toggl#8958a7e
+" Focused line toggle
 if !exists("g:aqua_line")
     let g:aqua_line = 1
 endif
 
-let s:line = s:line_color
+let s:line = s:aquarium_bg2
 if g:aqua_line == 0
     let s:line = ""
 endif
