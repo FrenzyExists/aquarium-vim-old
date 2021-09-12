@@ -153,7 +153,7 @@ elseif s:configuration.style ==# 'light'
     endif
 
     if !exists("s:aquarium_yellow")
-        let s:aquarium_yellow = "#E9BC1B" 
+        let s:aquarium_yellow = "#EFB165" 
     endif
 
     if !exists("s:aquarium_black")
