@@ -156,6 +156,10 @@ elseif s:configuration.style ==# 'light'
         let s:aquarium_yellow = "#E9BC1B" 
     endif
 
+    if !exists("s:aquarium_black")
+        let s:aquarium_black = "#414560"
+    endif
+
 endif
 
 " Focused line toggle
