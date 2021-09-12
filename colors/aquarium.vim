@@ -99,7 +99,7 @@ if s:configuration.style ==# 'dark'
         let s:aquarium_black = "#4c5664"
     endif
 
-elseif s:configuration.style ==# 'day'
+elseif s:configuration.style ==# 'light'
 
     " BASE BG
     if !exists("s:aquarium_bg1")
@@ -155,7 +155,10 @@ elseif s:configuration.style ==# 'day'
     if !exists("s:aquarium_yellow")
         let s:aquarium_yellow = "#E9BC1B" 
     endif
-
+        
+    if !exists("s:aquarium_black")
+        let s:aquarium_black = "#313449"
+    endif
 endif
 
 " Focused line toggl#8958a7e
