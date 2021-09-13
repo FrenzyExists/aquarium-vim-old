@@ -99,7 +99,11 @@ if s:configuration.style ==# 'dark'
         let s:aquarium_black = "#4c5664"
 
     " Other
-    if !exists("s:linenr")
+    if !exists("s:linenr_bg")
+        let s:linenr = "#3D4059"
+    endif
+
+    if !exists("s:linenr_fg")
         let s:linenr = "#b8dceb"
     endif
 
@@ -167,7 +171,11 @@ elseif s:configuration.style ==# 'light'
     endif
     
     " Other
-    if !exists("s:linenr")
+    if !exists("s:linenr_bg")
+        let s:linenr = "#C4C3D2"
+    endif
+
+    if !exists("s:linenr_fg")
         let s:linenr = "#414560"
     endif
 
@@ -175,7 +183,7 @@ endif
 
 " Focused line toggle
 if !exists("g:aqua_line")
-    let g:aqua_line = 1
+    let g:aqua_line = 0
 endif
 
 let s:line = s:aquarium_bg2
@@ -189,7 +197,7 @@ if !exists("g:aqua_linenr")
 endif
 
 if g:aqua_linenr == 0
-    let s:linenr = ""
+    let s:linenr_bg = ""
 endif
 
 
@@ -260,7 +268,7 @@ call s:hi("iCursor", s:aquarium_bg_light, s:aquarium_bg_dim, "", "NONE", "", "")
 " Line Stuff 
 call s:hi("LineNr", s:aquarium_bg3, s:aquarium_bg1, "", "", "bold", "") " The Number Columns
 call s:hi("CursorLine", "", s:line, "NONE", "", "NONE", "") " Changes the color focused line where the cursor is
-call s:hi("CursorLineNr", s:linenr, s:aquarium_bg3, "NONE", "", "NONE", "") " Changes the color focused column number where the cursor is
+call s:hi("CursorLineNr", s:linenr_fg, s:linenr_bg, "NONE", "", "NONE", "") " Changes the color focused column number where the cursor is
 
 "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 "+-- Lang Specifics aka Fallbacks ---+
