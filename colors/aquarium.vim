@@ -188,7 +188,7 @@ endif
 
 let s:line = s:aquarium_bg2
 if g:aqua_line == 0
-    let s:line = ""
+    let s:line = "NONE"
 endif
 
 " Focused line Number toggle
