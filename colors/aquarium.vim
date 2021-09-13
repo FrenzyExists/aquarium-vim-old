@@ -443,7 +443,7 @@ if &diff
   " Don't change the background color in diff mode
   call s:hi("CursorLine", "", "", "", "", "underline", "") " the screen line that the cursor is in when 'cursorline' is set
 else
-  call s:hi("CursorLine", "", s:aquarium_bg2, "", "", "", "" ) " the screen line that the cursor is in when 'cursorline' is set
+  call s:hi("CursorLine", "", s:line, "", "", "", "" ) " the screen line that the cursor is in when 'cursorline' is set
 endif
 call s:hi("Directory", s:aquarium_blue, "", "", "", "", "") " directory names (and other special names in listings)
 call s:hi("DiffAdd", s:aquarium_green, s:aquarium_black, "", "", "", "") " diff mode: Added line
