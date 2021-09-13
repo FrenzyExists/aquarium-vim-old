@@ -1,4 +1,12 @@
-" Aquarium Airline
+" Copyright (C) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
+" Copyright (C) 2016-present Sven Greb <development@svengreb.de>
+
+" Project: Nord Vim
+" Repository: https://github.com/arcticicestudio/nord-vim
+" License: MIT
+
+let s:nord_vim_version="0.18.0"
+let g:airline#themes#nord#palette = {}
 
 let s:nord0_gui = "#2E3440"
 let s:nord1_gui = "#3B4252"
@@ -17,7 +25,6 @@ let s:nord13_gui = "#EBCB8B"
 let s:nord14_gui = "#A3BE8C"
 let s:nord15_gui = "#B48EAD"
 
-
 let s:nord0_term = "NONE"
 let s:nord1_term = "0"
 let s:nord2_term = "NONE"
@@ -35,10 +42,7 @@ let s:nord10_term = "12"
 let s:nord7_term = "14"
 let s:nord6_term = "15"
 
-:call colors()
-
-let s:NMain = [ s:bg2, s:blue, s:term_bg2, s:term_blue ]
-
+let s:NMain = [s:nord1_gui, s:nord8_gui, s:nord1_term, s:nord8_term]
 let s:NRight = [s:nord1_gui, s:nord9_gui, s:nord1_term, s:nord9_term]
 let s:NMiddle = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]
 let s:NWarn = [s:nord1_gui, s:nord13_gui, s:nord3_term, s:nord13_term]
@@ -83,7 +87,7 @@ else
 endif
 let s:IAWarn = [s:nord1_gui, s:nord13_gui, s:nord3_term, s:nord13_term]
 let s:IAError = [s:nord0_gui, s:nord11_gui, s:nord1_term, s:nord11_term]
-let g:airline#themes#nord#palette.inactive = airline#themes#generate_color_map(s:IAMain, s:IARight, s:IAMiddle)
+let g:airline#themes#nord#palette.inactive = airline#themes#generate_olor_map(s:IAMain, s:IARight, s:IAMiddle)
 let g:airline#themes#nord#palette.inactive.airline_warning = s:IAWarn
 let g:airline#themes#nord#palette.inactive.airline_error = s:IAError
 
@@ -92,4 +96,3 @@ let g:airline#themes#nord#palette.insert.airline_term = s:IMiddle
 let g:airline#themes#nord#palette.replace.airline_term = s:RMiddle
 let g:airline#themes#nord#palette.visual.airline_term = s:VMiddle
 let g:airline#themes#nord#palette.inactive.airline_term = s:IAMiddle
-
