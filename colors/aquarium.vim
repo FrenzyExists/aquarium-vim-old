@@ -97,6 +97,12 @@ if s:configuration.style ==# 'dark'
 
     if !exists("s:aquarium_black")
         let s:aquarium_black = "#4c5664"
+
+    " Other
+    if !exists("s:linenr")
+        let s:linenr = "#b8dceb"
+    endif
+
     endif
 
 elseif s:configuration.style ==# 'light'
@@ -159,6 +165,11 @@ elseif s:configuration.style ==# 'light'
     if !exists("s:aquarium_black")
         let s:aquarium_black = "#414560"
     endif
+    
+    " Other
+    if !exists("s:linenr")
+        let s:linenr = "#414560"
+    endif
 
 endif
 
@@ -171,7 +182,17 @@ let s:line = s:aquarium_bg2
 if g:aqua_line == 0
     let s:line = ""
 endif
-    
+
+" Focused line Number toggle
+if !exists("g:aqua_linenr")
+    let g:aqua_linenr = 0
+endif
+
+if g:aqua_linenr == 0
+    let s:linenr = ""
+endif
+
+
 " Function Loader thingy
 function! s:hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
   if a:guifg != ""
@@ -239,7 +260,7 @@ call s:hi("iCursor", s:aquarium_bg_light, s:aquarium_bg_dim, "", "NONE", "", "")
 " Line Stuff 
 call s:hi("LineNr", s:aquarium_bg3, s:aquarium_bg1, "", "", "bold", "") " The Number Columns
 call s:hi("CursorLine", "", s:line, "NONE", "", "NONE", "") " Changes the color focused line where the cursor is
-call s:hi("CursorLineNr", s:aquarium_cyan, s:aquarium_bg3, "NONE", "", "NONE", "") " Changes the color focused column number where the cursor is
+call s:hi("CursorLineNr", s:linenr, s:aquarium_bg3, "NONE", "", "NONE", "") " Changes the color focused column number where the cursor is
 
 "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 "+-- Lang Specifics aka Fallbacks ---+
@@ -286,7 +307,7 @@ hi! link Variable Identifier
 "+-+-+-+-+-+-+-+-+-+-+-+-+
 call s:hi("VertSplit", s:aquarium_bg2, s:aquarium_bg1, "", "NONE", s:bold, "")
 call s:hi("StatusLine", s:aquarium_bg1, s:aquarium_bg1, "", "", "", "") " status line of current window
-call s:hi("StatusLineNC", s:aquarium_bg_dim, s:aquarium_bg1, "", "", "underline", "") "status lines of not-current windows Note: if this is equal to 'StatusLine' Vim will use '^^^' in the status line of the current window.
+call s:hi("StatusLineNC", s:aquarium_bg_2, s:aquarium_bg1, "", "", "underline", "underline") "status lines of not-current windows Note: if this is equal to 'StatusLine' Vim will use '^^^' in the status line of the current window.
 call s:hi("StatusLineTerm", s:aquarium_fg, s:aquarium_bg1, "", "", "", "" ) " status line of current :terminal window
 call s:hi("StatusLineTermNC", s:aquarium_bg_dim, s:aquarium_bg1, "", "", "underline", "") " status line of non-current :terminal window
 
