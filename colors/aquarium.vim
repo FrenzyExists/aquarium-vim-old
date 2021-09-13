@@ -100,11 +100,11 @@ if s:configuration.style ==# 'dark'
 
     " Other
     if !exists("s:linenr_bg")
-        let s:linenr = "#3D4059"
+        let s:linenr_bg = "#3D4059"
     endif
 
     if !exists("s:linenr_fg")
-        let s:linenr = "#b8dceb"
+        let s:linenr_fg = "#b8dceb"
     endif
 
     endif
@@ -172,11 +172,11 @@ elseif s:configuration.style ==# 'light'
     
     " Other
     if !exists("s:linenr_bg")
-        let s:linenr = "#C4C3D2"
+        let s:linenr_bg = "#C4C3D2"
     endif
 
     if !exists("s:linenr_fg")
-        let s:linenr = "#414560"
+        let s:linenr_fg = "#414560"
     endif
 
 endif
