@@ -182,13 +182,13 @@ elseif s:configuration.style ==# 'light'
 endif
 
 " Focused line toggle
-let s:line = s:aquarium_bg2
 if !exists("g:aqua_line")
     let g:aqua_line = 0
 endif
 
-if g:aqua_line == 0
-    let s:line = "NONE"
+let s:line = ""
+if g:aqua_line == 1
+    let s:line = s:aquarium_bg2
 endif
 
 " Focused line Number toggle
