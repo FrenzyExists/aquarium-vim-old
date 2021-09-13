@@ -186,7 +186,7 @@ if !exists("g:aqua_line")
     let g:aqua_line = 0
 endif
 
-let s:line = ""
+let s:line = "NONE"
 if g:aqua_line == 1
     let s:line = s:aquarium_bg2
 endif
