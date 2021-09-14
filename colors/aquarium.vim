@@ -121,7 +121,7 @@ elseif s:configuration.style ==# 'light'
     endif
 
     if !exists("s:aquarium_bg3")
-        let s:aquarium_bg3 = "#C4C3D2"
+        let s:aquarium_bg3 = "#CCCBD9"
     endif
 
     if !exists("s:aquarium_bg_dim")
@@ -673,6 +673,13 @@ call s:hi("jsTemplateBraces", s:aquarium_red, "", "", "", "", "" )
 call s:hi("jsTemplateVar", s:aquarium_green, "", "", "", "", "" )
 call s:hi("jsThis", s:aquarium_red, "", "", "", "", "" )
 call s:hi("jsUndefined", s:aquarium_yellow, "", "", "", "", "" )
+
+"+----------------------+
+"+ Lisp Lang Hightlight +
+"+----------------------+
+"highlight! link lispAtomMark Purple
+"highlight! link lispKey Orange
+"highlight! link lispFunc Green
 
 "+----------------------------+
 "+ Typescript Lang Hightlight +
