@@ -2,17 +2,17 @@
 " For vim-airline (https://github.com/vim-airline/vim-airline)
 " By Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
 
-let s:scheme_slug = substitute("gruvbox-dark-pale", "-", "_", "g")
+let s:scheme_slug = substitute("aquarium_light", "-", "_", "g")
 
 let g:airline#themes#base16_{s:scheme_slug}#palette = {}
 
 " GUI color definitions
-let s:gui00 = '#262626'
+let s:gui00 = '#D5D4E0'
 let s:gui01 = '#3a3a3a'
 let s:gui02 = '#4e4e4e'
 let s:gui03 = '#8a8a8a'
 let s:gui04 = '#949494'
-let s:gui05 = '#dab997'
+let s:gui05 = '#7F8E9D'
 let s:gui06 = '#d5c4a1'
 let s:gui07 = '#ebdbb2'
 let s:gui08 = '#d75f5f'
