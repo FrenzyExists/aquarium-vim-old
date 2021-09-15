@@ -1,31 +1,33 @@
-" Base 16 Aquarium Light
+" Base 16 Aquarium Dark
 
-let s:scheme_slug = substitute("aquarium_light", "-", "_", "g")
+let s:scheme_slug = substitute("aquarium_dark", "-", "_", "g")
 let g:airline#themes#base16_{s:scheme_slug}#palette = {}
 
 "--------------------"
 " --| GUI COLORS |-- "
 "--------------------"
-let s:gui00 = '#E6E6F1' " Default Background
-let s:gui01 = '#D5D4E0' " Lighter Background (Used for status bars, line number and folding marks)
-let s:gui02 = '#3D4059' " Selection Background
-let s:gui03 = '#CCCBD9' " Comments, Invisibles, Line Highlighting
-let s:gui04 = '#7F8E9D' " Dark Foreground (Used for status bars)
-let s:gui05 = '#708190' " Default Foreground, Caret, Delimiters, Operators
-let s:gui06 = '#9CA6B9' " Light Foreground (Not often used)
-let s:gui07 = '#D9DBE6' " Light Background (Not often used)
-let s:gui08 = '#D04B4B' " Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted (red)
-let s:gui09 = '#D66652' " Integers, Boolean, Constants, XML Attributes, Markup Link Url (orange)
-let s:gui0A = '#EFB165' " Classes, Markup Bold, Search Text Background (yellow)
-let s:gui0B = '#7EA070' " Strings, Inherited Class, Markup Code, Diff Inserted (green)
-let s:gui0C = '#829FB0' " Support, Regular Expressions, Escape Characters, Markup Quotes (cyan)
-let s:gui0D = '#547DB6' " Functions, Methods, Attribute IDs, Headings (blue)
-let s:gui0E = '#9F78B8' " Keywords, Storage, Selector, Markup Italic, Diff Changed (magenta)
-let s:gui0F = '#E06B6B' " Deprecated, Opening/Closing Embedded Language Tags, e.g. `<?php ?>` (pink)
+
+let s:gui00 = "#20202A", " Default Background
+let s:gui01 = "#2c2e3e", " Lighter Background (Used for status bars, line number and folding marks)
+let s:gui02 = "#3D4059", " Selection Background
+let s:gui03 = "#313449", " Comments, Invisibles, Line Highlighting
+let s:gui04 = "#63718b", " Dark Foreground (Used for status bars)
+let s:gui05 = "#ced4df", " Default Foreground, Caret, Delimiters, Operators
+let s:gui06 = "#414560", " Light Foreground (Not often used)
+let s:gui07 = "#63718b", " Light Background (Not often used)
+let s:gui08 = "#ebb9b9", " Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted (red)
+let s:gui09 = "#e8cca7", " Integers, Boolean, Constants, XML Attributes, Markup Link Url (orange)
+let s:gui0A = "#e6dfb8", " Classes, Markup Bold, Search Text Background (yellow)
+let s:gui0B = "#b1dba4", " Strings, Inherited Class, Markup Code, Diff Inserted (green)
+let s:gui0C = "#b8dceb", " Support, Regular Expressions, Escape Characters, Markup Quotes (cyan)
+let s:gui0D = "#a3b8ef", " Functions, Methods, Attribute IDs, Headings (blue)
+let s:gui0E = "#f6bbe7", " Keywords, Storage, Selector, Markup Italic, Diff Changed (magenta)
+let s:gui0F = "#eAc1c1", " Deprecated, Opening/Closing Embedded Language Tags, e.g. `<?php ?>` (pink)
 
 "---------------------"
 " --| TERM COLORS |-- "
 "---------------------"
+" Terminal color definitions
 let s:cterm00        = "00"
 let s:cterm03        = "08"
 let s:cterm05        = "07"
@@ -36,21 +38,23 @@ let s:cterm0B        = "02"
 let s:cterm0C        = "06"
 let s:cterm0D        = "04"
 let s:cterm0E        = "05"
+
 if exists("base16colorspace") && base16colorspace == "256"
-	let s:cterm01        = "18"
-	let s:cterm02        = "19"
-	let s:cterm04        = "20"
-	let s:cterm06        = "21"
-	let s:cterm09        = "16"
-	let s:cterm0F        = "17"
+    let s:cterm01   = "18"
+	let s:cterm02   = "19"
+	let s:cterm04   = "20"
+	let s:cterm06   = "21"
+	let s:cterm09   = "16"
+	let s:cterm0F   = "17"
 else
-	let s:cterm01        = "10"
-	let s:cterm02        = "11"
-	let s:cterm04        = "12"
-	let s:cterm06        = "13"
-	let s:cterm09        = "09"
-	let s:cterm0F        = "14"
+	let s:cterm01    = "10"
+	let s:cterm02    = "11"
+	let s:cterm04    = "12"
+	let s:cterm06    = "13"
+	let s:cterm09    = "09"
+	let s:cterm0F    = "14":
 endif
+
 
 "---------------------"
 " --| NORMAL MODE |-- "
@@ -99,3 +103,5 @@ let g:airline#themes#base16_{s:scheme_slug}#palette.inactive = airline#themes#ge
 	\ [ s:gui01, s:gui01, s:cterm01, s:cterm01 ],
 	\ [ s:gui04, s:gui01, s:cterm04, s:cterm01 ],
 	\ [ s:gui05, s:gui01, s:cterm05, s:cterm01 ])
+
+
