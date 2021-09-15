@@ -1,6 +1,6 @@
 " Base 16 Aquarium Light
 
-let s:scheme_slug = substitute("gruvbox-dark-pale", "-", "_", "g")
+let s:scheme_slug = substitute("aquarium_light", "-", "_", "g")
 let g:airline#themes#base16_{s:scheme_slug}#palette = {}
 
 "--------------------"
@@ -74,7 +74,7 @@ let g:airline#themes#base16_{s:scheme_slug}#palette.replace_modified = {
 	\ 'airline_c' : [ s:gui07, s:gui01, s:cterm07, s:cterm01 ]}
 
 let g:airline#themes#base16_{s:scheme_slug}#palette.visual = airline#themes#generate_color_map(
-	\ [ s:gui01, s:gui09, s:cterm01, s:cterm09 ],
+	\ [ s:gui01, s:gui0D, s:cterm01, s:cterm0D ],
 	\ [ s:gui04, s:gui02, s:cterm04, s:cterm02 ],
 	\ [ s:gui04, s:gui01, s:cterm04, s:cterm01 ])
 let g:airline#themes#base16_{s:scheme_slug}#palette.visual_modified = {
