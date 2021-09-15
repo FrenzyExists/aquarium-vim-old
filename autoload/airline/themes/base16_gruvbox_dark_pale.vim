@@ -1,30 +1,31 @@
-" Base16 Gruvbox dark, pale vim-airline-theme (https://github.com/dawikur/base16-vim-airline-themes)
-" For vim-airline (https://github.com/vim-airline/vim-airline)
-" By Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+" Base 16 Aquarium Light
 
 let s:scheme_slug = substitute("gruvbox-dark-pale", "-", "_", "g")
-
 let g:airline#themes#base16_{s:scheme_slug}#palette = {}
 
-" GUI color definitions
-let s:gui00 = '#D5D4E0'
-let s:gui01 = '#3a3a3a'
-let s:gui02 = '#4e4e4e'
-let s:gui03 = '#8a8a8a'
-let s:gui04 = '#949494'
-let s:gui05 = '#7F8E9D'
-let s:gui06 = '#d5c4a1'
-let s:gui07 = '#ebdbb2'
-let s:gui08 = '#d75f5f'
-let s:gui09 = '#ff8700'
-let s:gui0A = '#ffaf00'
-let s:gui0B = '#afaf00'
-let s:gui0C = '#85ad85'
-let s:gui0D = '#83adad'
-let s:gui0E = '#d485ad'
-let s:gui0F = '#d65d0e'
+"--------------------"
+" --| GUI COLORS |-- "
+"--------------------"
+let s:gui00 = '#E6E6F1' " Default Background
+let s:gui01 = '#D5D4E0' " Lighter Background (Used for status bars, line number and folding marks)
+let s:gui02 = '#3D4059'
+let s:gui03 = '#CCCBD9'
+let s:gui04 = '#7F8E9D'
+let s:gui05 = '#708190'
+let s:gui06 = '#9CA6B9'
+let s:gui07 = '#D9DBE6'
+let s:gui08 = '#D04B4B'
+let s:gui09 = '#D66652'
+let s:gui0A = '#EFB165'
+let s:gui0B = '#7EA070'
+let s:gui0C = '#829FB0'
+let s:gui0D = '#547DB6'
+let s:gui0E = '#9F78B8'
+let s:gui0F = '#E06B6B' " Deprecated, Opening/Closing Embedded Language Tags, e.g. `<?php ?>` (pink)
 
-" Terminal color definitions
+"---------------------"
+" --| TERM COLORS |-- "
+"---------------------"
 let s:cterm00        = "00"
 let s:cterm03        = "08"
 let s:cterm05        = "07"
