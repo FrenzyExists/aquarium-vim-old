@@ -2,7 +2,7 @@
 " For vim-airline (https://github.com/vim-airline/vim-airline)
 " By Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
 
-let s:scheme_slug = substitute("aquarium_light", "-", "_", "g")
+let s:scheme_slug = substitute("gruvbox-dark-pale", "-", "_", "g")
 
 let g:airline#themes#base16_{s:scheme_slug}#palette = {}
 
