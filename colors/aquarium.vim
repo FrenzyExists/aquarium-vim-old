@@ -914,6 +914,6 @@ hi! link pandocUListItemBullet Operator
 " Nvim-Tree
 " > kyazdani42/nvim-tree.lua
 call s:hi("NvimTreeRootFolder", s:aquarium_yellow, "", "", "", "italic", "")
-call s:hi("NvimTreeNormal", "", s:aquarium_bg_dim, "", "", "", "")
+call s:hi("NvimTreeNormal", "", s:aquarium_bg2, "", "", "", "")
 call s:hi("NvimTreeImageFile", "", s:aquarium_cyan, "", "", "", "")
 call s:hi("NvimTreeExecFile", "", s:aquarium_fg2, "", "", "", "")
