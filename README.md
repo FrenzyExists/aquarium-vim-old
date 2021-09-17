@@ -44,6 +44,7 @@ The vimscript version currently have some support for a few plugins, bellow a li
 - [Vim Clap](https://github.com/liuchengxu/vim-clap/tree/master/test)
 - [fujitive.vim](https://github.com/tpope/vim-fugitive)
 - [lualine](https://github.com/hoob3rt/lualine.nvim)
+- [vim-airline]()
 
 To Enable `aquarium` theme for `Lualine`, specify the theme in your lua config:
 
@@ -54,6 +55,33 @@ require('lualine').setup {
     -- ... your lualine config
   }
 }
+```
+### Variables n Stuff
+```lua
+g.aqua_bold = 1 -- Bold stuff
+```
+
+### Modes
+Aquarium now has Light Mode!
+
+```lua
+-- To enable Lightmode change the style variable:
+local g = vim.g
+
+-- options: "light", "dark"
+g.aquarium_style = "light"
+
+```
+
+### Airline
+```lua
+-- Airline has two themes :D
+local g = vim.g
+
+-- options:
+--   base16_aquarium_light
+--   base16_aquarium_dark
+g.airline_theme = "base16_aquarium_light"
 ```
 
 ### Screenshots
@@ -75,10 +103,8 @@ Other ways you can contribute is by adding a config of your favorite program usi
 ### To-do list
 - [ ] Add Scheme switch script
 - [ ] Glorify theme
+- [ ] Add Mish Theme
 - [ ] Profit (hehe)
-
-I know, the bar is not the same color, still working on it :)
-
 
 <p align="center">
     <a href="https://github.com/frenzyexists/aquarium-vim/blob/main/LICENSE">
