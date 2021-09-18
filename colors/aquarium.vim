@@ -18,7 +18,7 @@ set background=dark
 
 " Naming
 let colors_name = "aquarium"
-let s:aquarium_vim_version="0.3.1"
+let s:aquarium_vim_version="0.3.2"
 
 " Options
 let s:configuration = {}
