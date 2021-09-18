@@ -24,7 +24,7 @@ Aquarium currently has a vimscript version only, expect a lua version soon!
 
 * vim-plug
 ```vim
-Plug 'frenzyexists/aquarium-vim', { 'branch': 'vimscript-version' }
+Plug 'frenzyexists/aquarium-vim', { 'branch': 'vimscript_version' }
 
 " Future plans for lua version are around, somewhere, i hope
 ```
