@@ -228,7 +228,7 @@ hi! link Variable Identifier
 "+--- Window Highlight --+
 "+-+-+-+-+-+-+-+-+-+-+-+-+
 call s:hi("VertSplit", s:gui01, s:gui00, "", "NONE", s:bold, "")
-call s:hi("StatusLine", s:gui00, s:aquarium_bg1, "", "", "", "") " status line of current window
+call s:hi("StatusLine", s:gui00, s:gui00, "", "", "", "") " status line of current window
 call s:hi("StatusLineNC", s:gui01, s:gui00, "", "", "underline", "underline") "status lines of not-current windows Note: if this is equal to 'StatusLine' Vim will use '^^^' in the status line of the current window.
 call s:hi("StatusLineTerm", s:gui05, s:gui00, "", "", "", "" ) " status line of current :terminal window
 call s:hi("StatusLineTermNC", s:aquarium_bg_dim, s:gui00, "", "", "underline", "") " status line of non-current :terminal window
