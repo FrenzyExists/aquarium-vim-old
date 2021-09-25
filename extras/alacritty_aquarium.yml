@@ -49,28 +49,28 @@ schemes:
       dim_foreground:    '#7F8E9D'
     
     cursor:
-      cursor: '#547DB6'
+      cursor: '#829FB0'
 
     vi_mode_cursor:
-      cursor: '#547DB6'
+      cursor: '#6A8CBC'
 
     bright:
       black:   '#313449'
-      red:     '#E06B6B'
-      green:   '#7EA070'
-      yellow:  '#DDA866'
-      blue:    '#4170ae'
-      magenta: '#8958a7'
+      red:     '#B7435E'
+      green:   '#7e8f80'
+      yellow:  '#D88B72'
+      blue:    '#6E7EBF'
+      magenta: '#7170C2'
       cyan:    '#728A9A'
       white:   '#CCCBD9'
 
     normal:
       black:   '#313449'
-      red:     '#D04B4B'
-      green:   '#7EA070'
-      yellow:  '#EFB165'
-      blue:    '#547DB6'
-      magenta: '#9F78B8'
+      red:     '#C34864'
+      green:   '#7D9685'
+      yellow:  '#DE956F'
+      blue:    '#6A8CBC'
+      magenta: '#8787BF'
       cyan:    '#829FB0'
       white:   '#D5D4E0'
 

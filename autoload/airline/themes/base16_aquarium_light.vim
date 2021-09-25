@@ -14,13 +14,13 @@ let s:gui04 = '#7F8E9D' " Dark Foreground (Used for status bars)
 let s:gui05 = '#708190' " Default Foreground, Caret, Delimiters, Operators
 let s:gui06 = '#9CA6B9' " Light Foreground (Not often used)
 let s:gui07 = '#D9DBE6' " Light Background (Not often used)
-let s:gui08 = '#D04B4B' " Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted (red)
+let s:gui08 = '#C34864' " Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted (red)
 let s:gui09 = '#D66652' " Integers, Boolean, Constants, XML Attributes, Markup Link Url (orange)
-let s:gui0A = '#EFB165' " Classes, Markup Bold, Search Text Background (yellow)
-let s:gui0B = '#7EA070' " Strings, Inherited Class, Markup Code, Diff Inserted (green)
+let s:gui0A = '#DE956F' " Classes, Markup Bold, Search Text Background (yellow)
+let s:gui0B = '#7D9685' " Strings, Inherited Class, Markup Code, Diff Inserted (green)
 let s:gui0C = '#829FB0' " Support, Regular Expressions, Escape Characters, Markup Quotes (cyan)
-let s:gui0D = '#547DB6' " Functions, Methods, Attribute IDs, Headings (blue)
-let s:gui0E = '#9F78B8' " Keywords, Storage, Selector, Markup Italic, Diff Changed (magenta)
+let s:gui0D = '#6A8CBC' " Functions, Methods, Attribute IDs, Headings (blue)
+let s:gui0E = '#8787BF' " Keywords, Storage, Selector, Markup Italic, Diff Changed (magenta)
 let s:gui0F = '#E06B6B' " Deprecated, Opening/Closing Embedded Language Tags, e.g. `<?php ?>` (pink)
 
 "---------------------"
