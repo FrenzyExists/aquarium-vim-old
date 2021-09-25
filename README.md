@@ -88,6 +88,9 @@ g.airline_theme = "base16_aquarium_light"
 Here's a demo of how it looks
 ![](screenshots/pic_1.png)
 
+Light Variant Colors Preview
+![](screenshots/preview-light.png)
+
 ### Pallete
 <p align="center">
     <img src="screenshots/palette.png" alt="Aquarium Palette"/>
