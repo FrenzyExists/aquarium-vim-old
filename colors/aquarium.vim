@@ -80,11 +80,11 @@ elseif s:configuration.style ==# 'light'
     let s:gui04 = "#7F8E9D"
 
     " OTHER COLORS
-    let s:gui08 = "#C34864"
+    let s:gui08 = "#CD667B"
     let s:gui09 = "#D66652"
-    let s:gui0B = "#7e8f80"
+    let s:gui0B = "#7D9685"
     let s:gui0D = "#6A8CBC"
-    let s:gui0E = "#9F78B8"
+    let s:gui0E = "#8787BF"
     let s:gui0F = "#E06B6B"
     let s:gui0C = "#829FB0" 
     let s:gui0A = "#DE956F" 
