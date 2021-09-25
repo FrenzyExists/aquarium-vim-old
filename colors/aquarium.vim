@@ -41,12 +41,12 @@ endif
 if s:configuration.style ==# 'dark'
 
     " BASE BG
-    if !exists("s:aquarium_bg1")
-        let s:aquarium_bg1 = "#20202A"
+    if !exists("s:gui00")
+        let s:gui00 = "#20202A"
     endif
 
-    if !exists("s:aquarium_bg2")
-        let s:aquarium_bg2 = "#2c2e3e"
+    if !exists("s:gui01")
+        let s:gui01 = "#2c2e3e"
     endif
 
     if !exists("s:aquarium_bg3")
@@ -112,12 +112,12 @@ if s:configuration.style ==# 'dark'
 elseif s:configuration.style ==# 'light'
 
     " BASE BG
-    if !exists("s:aquarium_bg1")
-        let s:aquarium_bg1 = "#E6E6F1"
+    if !exists("s:gui00")
+        let s:gui00 = "#E6E6F1"
     endif
 
-    if !exists("s:aquarium_bg2")
-        let s:aquarium_bg2 = "#D5D4E0"
+    if !exists("s:gui01")
+        let s:gui01 = "#D5D4E0"
     endif
 
     if !exists("s:aquarium_bg3")
@@ -188,7 +188,7 @@ endif
 
 let s:line = "NONE"
 if g:aqua_line == 1
-    let s:line = s:aquarium_bg2
+    let s:line = s:gui01
 endif
 
 " Focused line Number toggle
@@ -235,29 +235,29 @@ call s:hi("Underline", "", "", "", "", "underline", "")
 "+-+-+-+-+-+-+-+-+-+-+
 "+----- Editor ------+
 "+-+-+-+-+-+-+-+-+-+-+
-call s:hi("Normal", s:aquarium_fg, s:aquarium_bg1, "NONE", "NONE", "", "")
-call s:hi("Error", s:aquarium_red, s:aquarium_bg2, "", "", "italic", "")
+call s:hi("Normal", s:aquarium_fg, s:gui00, "NONE", "NONE", "", "")
+call s:hi("Error", s:aquarium_red, s:gui01, "", "", "italic", "")
 call s:hi("Search", s:aquarium_yellow, s:aquarium_black, "", "", "", "") " Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
 call s:hi("MatchParen", s:aquarium_cyan, s:aquarium_black, "", "", "", "")
 call s:hi("NonText", s:aquarium_fg, s:aquarium_black, "", "", "", "")
 call s:hi("Special", s:aquarium_yellow, "", "", "", "italic", "")
 call s:hi("SpecialKey", s:aquarium_black, "", "", "", "", "")
 call s:hi("Conceal", "", s:aquarium_bg3, "", "NONE", "", "") " placeholder characters substituted for concealed text (see 'conceallevel')
-call s:hi("IncSearch", s:aquarium_magenta, s:aquarium_bg2, "NONE", "NONE", "", "")
+call s:hi("IncSearch", s:aquarium_magenta, s:gui01, "NONE", "NONE", "", "")
 
 " Comments and Such
 call s:hi("Comment", s:aquarium_bg3, "", "", "", "italic", "")
 call s:hi("SpecialComment", s:aquarium_black, "", "", "", "italic", "")
 
 " Pmenu
-call s:hi("Pmenu", s:aquarium_fg, s:aquarium_bg2, "", "", "", "")
-call s:hi("PmenuSbar",  s:aquarium_fg, s:aquarium_bg2, "", "", "", "")
-call s:hi("PmenuSel", s:aquarium_cyan, s:aquarium_bg2, "", "", "", "")
-call s:hi("PmenuThumb", s:aquarium_cyan, s:aquarium_bg2, "", "", "", "")
+call s:hi("Pmenu", s:aquarium_fg, s:gui01, "", "", "", "")
+call s:hi("PmenuSbar",  s:aquarium_fg, s:gui01, "", "", "", "")
+call s:hi("PmenuSel", s:aquarium_cyan, s:gui01, "", "", "", "")
+call s:hi("PmenuThumb", s:aquarium_cyan, s:gui01, "", "", "", "")
 
 " Columns
-call s:hi("SignColumn", "", s:aquarium_bg1, "NONE", "", "", "")
-call s:hi("ColorColumn", "", s:aquarium_bg2, "NONE", "", "", "")
+call s:hi("SignColumn", "", s:gui00, "NONE", "", "", "")
+call s:hi("ColorColumn", "", s:gui01, "NONE", "", "", "")
 call s:hi("CursorColumn", s:aquarium_cyan, "", "NONE", "", "", "")
 
 " Cursor
@@ -266,7 +266,7 @@ call s:hi("CursorIM", s:aquarium_black, s:aquarium_bg_dim, "", "NONE", "", "") "
 call s:hi("iCursor", s:aquarium_bg_light, s:aquarium_bg_dim, "", "NONE", "", "")
 
 " Line Stuff 
-call s:hi("LineNr", s:aquarium_bg3, s:aquarium_bg1, "", "", "bold", "") " The Number Columns
+call s:hi("LineNr", s:aquarium_bg3, s:gui00, "", "", "bold", "") " The Number Columns
 call s:hi("CursorLine", "", s:line, "NONE", "", "NONE", "") " Changes the color focused line where the cursor is
 call s:hi("CursorLineNr", s:linenr_fg, s:linenr_bg, "NONE", "", "NONE", "") " Changes the color focused column number where the cursor is
 
@@ -292,7 +292,7 @@ call s:hi("Float", s:aquarium_red, "", "", "", "", "") " a floating point consta
 call s:hi("Structure", s:aquarium_yellow, "", "", "", "", "" ) " struct, union, enum, etc.
 call s:hi("Typedef", s:aquarium_yellow, "", "", "", "", "") " A typedef
 call s:hi("Special", s:aquarium_blue, "", "", "", "", "") " any special symbol
-call s:hi("SpecialChar", s:aquarium_bg2, "", "", "", "", "") " special character in a constant
+call s:hi("SpecialChar", s:gui01, "", "", "", "", "") " special character in a constant
 call s:hi("Decorator", s:aquarium_magenta, "", "", "", "", "")
 call s:hi("Tag", s:aquarium_yellow, "", "", "", "", "") " you can use CTRL-] on this
 call s:hi("Delimiter", s:aquarium_blue, "", "", "", s:bold, "") " character that needs attention, parenthesis for example
@@ -304,7 +304,7 @@ call s:hi("Debug", "", "", "", "", "", "") " debugging statements
 call s:hi("Underlined", "", "", "", "", "underline", "") " text that stands out, HTML links
 call s:hi("Identifier", s:aquarium_red, "", "", "", "", "") " any variable name
 call s:hi("Constant", s:aquarium_magenta, "", "", "", "italic", "")
-call s:hi("WildMenu", s:aquarium_blue, s:aquarium_bg2, "", "", "", "")
+call s:hi("WildMenu", s:aquarium_blue, s:gui01, "", "", "", "")
 hi! link PreCondit PreProc
 hi! link Annotation Decorator
 hi! link Variable Identifier
@@ -313,11 +313,11 @@ hi! link Variable Identifier
 "+-+-+-+-+-+-+-+-+-+-+-+-+
 "+--- Window Highlight --+
 "+-+-+-+-+-+-+-+-+-+-+-+-+
-call s:hi("VertSplit", s:aquarium_bg2, s:aquarium_bg1, "", "NONE", s:bold, "")
-call s:hi("StatusLine", s:aquarium_bg1, s:aquarium_bg1, "", "", "", "") " status line of current window
-call s:hi("StatusLineNC", s:aquarium_bg2, s:aquarium_bg1, "", "", "underline", "underline") "status lines of not-current windows Note: if this is equal to 'StatusLine' Vim will use '^^^' in the status line of the current window.
-call s:hi("StatusLineTerm", s:aquarium_fg, s:aquarium_bg1, "", "", "", "" ) " status line of current :terminal window
-call s:hi("StatusLineTermNC", s:aquarium_bg_dim, s:aquarium_bg1, "", "", "underline", "") " status line of non-current :terminal window
+call s:hi("VertSplit", s:gui01, s:gui00, "", "NONE", s:bold, "")
+call s:hi("StatusLine", s:gui00, s:aquarium_bg1, "", "", "", "") " status line of current window
+call s:hi("StatusLineNC", s:gui01, s:gui00, "", "", "underline", "underline") "status lines of not-current windows Note: if this is equal to 'StatusLine' Vim will use '^^^' in the status line of the current window.
+call s:hi("StatusLineTerm", s:aquarium_fg, s:gui00, "", "", "", "" ) " status line of current :terminal window
+call s:hi("StatusLineTermNC", s:aquarium_bg_dim, s:gui00, "", "", "underline", "") " status line of non-current :terminal window
 
 
 "+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -348,8 +348,8 @@ hi! link asciidocURL markdownLinkText
 "+-+-+-+-+-+-+-+-+-+-+-+
 "+--- Prompt/Status ---+
 "+-+-+-+-+-+-+-+-+-+-+-+
-call s:hi("EndOfBuffer", s:aquarium_bg1, "", "", "", "", "")
-call s:hi("ErrorMsg", s:aquarium_red, s:aquarium_bg1, "", "", "italic", "")
+call s:hi("EndOfBuffer", s:gui00, "", "", "", "", "")
+call s:hi("ErrorMsg", s:aquarium_red, s:gui00, "", "", "italic", "")
 call s:hi("ModeMsg", s:aquarium_fg, "", "", "", "", "")
 call s:hi("MoreMsg", s:aquarium_cyan, s:aquarium_black, "", "", "", "")
 call s:hi("Question", s:aquarium_fg, "", "NONE", "", "", "")
@@ -364,9 +364,9 @@ call s:hi("cmakeGeneratorExpression", s:aquarium_blue, "", "", "", "italic", "")
 "+-+-+-+-+-+-+-+-+-+-+-+
 "+- Neovim Support -+
 "+-+-+-+-+-+-+-+-+-+-+-+
-call s:hi("healthError", s:aquarium_red, s:aquarium_bg2, "", "", "", "")
-call s:hi("healthSuccess", s:aquarium_green, s:aquarium_bg2, "", "", "", "")
-call s:hi("healthWarning", s:aquarium_yellow, s:aquarium_bg2, "", "", "", "")
+call s:hi("healthError", s:aquarium_red, s:gui01, "", "", "", "")
+call s:hi("healthSuccess", s:aquarium_green, s:gui01, "", "", "", "")
+call s:hi("healthWarning", s:aquarium_yellow, s:gui01, "", "", "", "")
 
 
 "+-+-+-+-+-+-+-+-+-+-+
@@ -394,20 +394,20 @@ hi! link awkVariables Identifier
 "+-- Spell Check Highlight --+
 "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 " Word that is not recognized by the spellchecker. This will be combined with the highlighting used otherwise.
-call s:hi("SpellBad", s:aquarium_red, s:aquarium_bg2, "", "", "undercurl", "")
+call s:hi("SpellBad", s:aquarium_red, s:gui01, "", "", "undercurl", "")
 " Word that should start with a capital. This will be combined with the highlighting used otherwise.
-call s:hi("SpellCap", s:aquarium_yellow, s:aquarium_bg2, "", "", "undercurl", "")
+call s:hi("SpellCap", s:aquarium_yellow, s:gui01, "", "", "undercurl", "")
 " Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise.
-call s:hi("SpellLocal", s:aquarium_cyan, s:aquarium_bg2, "", "", "undercurl", "")
+call s:hi("SpellLocal", s:aquarium_cyan, s:gui01, "", "", "undercurl", "")
 " Word that is recognized by the spellchecker as one that is hardly ever used. spell This will be combined with the highlighting used otherwise.
-call s:hi("SpellRare", s:aquarium_blue, s:aquarium_bg2, "", "", "undercurl", "")
+call s:hi("SpellRare", s:aquarium_blue, s:gui01, "", "", "undercurl", "")
 
 
 "+-+-+-+-+-+-+-+-+-+-+
 "+ Visual Something  +
 "+-+-+-+-+-+-+-+-+-+-+
-call s:hi("Visual", "reverse", s:aquarium_bg2, "", "", "", "")
-call s:hi("VisualNOS", "reverse", s:aquarium_bg2, "", "", "", "")
+call s:hi("Visual", "reverse", s:gui01, "", "", "", "")
+call s:hi("VisualNOS", "reverse", s:gui01, "", "", "", "")
 
 
 "+-+-+-+-+-+-+-+-+-+-+
@@ -752,7 +752,7 @@ call s:hi("perlFiledescRead", s:aquarium_green, "", "", "", "", "" )
 call s:hi("perlFunction", s:aquarium_magenta, "", "", "", "", "" )
 call s:hi("perlMatchStartEnd", s:aquarium_blue, "", "", "", "", "" )
 call s:hi("perlMethod", s:aquarium_magenta, "", "", "", "", "" )
-call s:hi("perlPOD", s:aquarium_bg2, "", "", "", "", "" )
+call s:hi("perlPOD", s:gui01, "", "", "", "", "" )
 call s:hi("perlSharpBang", s:aquarium_fg, "", "", "", "", "" )
 call s:hi("perlSpecialString", s:aquarium_yellow, "", "", "", "", "" )
 call s:hi("perlStatementFiledesc", s:aquarium_red, "", "", "", "", "" )
@@ -803,17 +803,17 @@ call s:hi("diffRemoved", s:aquarium_red, "", "", "", "", "" )
 let s:save_cpo = &cpoptions
 set cpoptions&vim
 let s:palette = {}
-let s:palette.display = { 'ctermbg': '0', 'guibg': 'aquarium_bg2' }
+let s:palette.display = { 'ctermbg': '0', 'guibg': 'gui01' }
 
 " Let ClapInput, ClapSpinner and ClapSearchText use the same background.
-let s:bg0 = { 'ctermbg': '60', 'guibg': s:aquarium_bg1 }
+let s:bg0 = { 'ctermbg': '60', 'guibg': s:gui00 }
 let s:palette.input = s:bg0
-let s:palette.indicator = extend({ 'ctermfg': '238', 'guifg': s:aquarium_bg2 }, s:bg0)
+let s:palette.indicator = extend({ 'ctermfg': '238', 'guifg': s:gui01 }, s:bg0)
 let s:palette.spinner = extend({ 'ctermfg': '11', 'guifg': s:aquarium_yellow, 'cterm': s:bold, 'gui': s:bold }, s:bg0)
 let s:palette.search_text = extend({ 'ctermfg': '4', 'guifg': s:aquarium_blue, 'cterm': s:bold, 'gui': s:bold }, s:bg0)
-let s:palette.preview = { 'ctermbg': '238', 'guibg': s:aquarium_bg1 }
+let s:palette.preview = { 'ctermbg': '238', 'guibg': s:gui00 }
 let s:palette.selected = { 'ctermfg': '81', 'guifg': s:aquarium_cyan, 'cterm': 'bold,underline', 'gui': 'bold,underline' }
-let s:palette.current_selection = { 'ctermbg': '236', 'guibg': s:aquarium_bg2, 'cterm': s:bold, 'gui': s:bold }
+let s:palette.current_selection = { 'ctermbg': '236', 'guibg': s:gui01, 'cterm': s:bold, 'gui': s:bold }
 let s:palette.selected_sign = { 'ctermfg': '196', 'guifg': s:aquarium_yellow }
 let s:palette.current_selection_sign = s:palette.selected_sign
 
@@ -914,6 +914,6 @@ hi! link pandocUListItemBullet Operator
 " Nvim-Tree
 " > kyazdani42/nvim-tree.lua
 call s:hi("NvimTreeRootFolder", s:aquarium_yellow, "", "", "", "italic", "")
-call s:hi("NvimTreeNormal", "", s:aquarium_bg2, "", "", "", "")
+call s:hi("NvimTreeNormal", "", s:gui01, "", "", "", "")
 call s:hi("NvimTreeImageFile", "", s:aquarium_cyan, "", "", "", "")
 call s:hi("NvimTreeExecFile", "", s:aquarium_fg2, "", "", "", "")
