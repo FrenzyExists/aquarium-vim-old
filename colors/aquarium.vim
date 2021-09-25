@@ -73,7 +73,7 @@ elseif s:configuration.style ==# 'light'
     let s:gui01 = "#D5D4E0"
     let s:gui03 = "#CCCBD9"
     let s:aquarium_bg_dim = "#9CA6B9"
-    let s:aquarium_bg_light = "#B2B2C3"
+    let s:aquarium_bg_light = "#AFB5C6"
 
     " BASE FG
     let s:gui05 = "#708190"
