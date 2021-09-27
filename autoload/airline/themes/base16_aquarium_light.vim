@@ -55,47 +55,48 @@ endif
 "---------------------"
 " --| NORMAL MODE |-- "
 "---------------------"
-let g:airline#themes#base16_{s:scheme_slug}#palette.normal = airline#themes#generate_color_map(
+let g:airline#themes#base16_{s:scheme_slug}#palette.normal = airline#themes#generate_color_map (
 	\ [ s:gui01, s:gui04, s:cterm01, s:cterm04 ],
 	\ [ s:gui04, s:gui02, s:cterm04, s:cterm02 ],
 	\ [ s:gui04, s:gui01, s:cterm04, s:cterm01 ])
 let g:airline#themes#base16_{s:scheme_slug}#palette.normal_modified = {
-	\ 'airline_c' : [ s:gui07, s:gui01, s:cterm07, s:cterm01 ]}
+	\ 'airline_c' : [ s:gui0C, s:gui01, s:cterm07, s:cterm01 ]}
 
 "---------------------"
 " --| INSERT MODE |-- "
 "---------------------"
-let g:airline#themes#base16_{s:scheme_slug}#palette.insert = airline#themes#generate_color_map(
+let g:airline#themes#base16_{s:scheme_slug}#palette.insert = airline#themes#generate_color_map (
 	\ [ s:gui01, s:gui0B, s:cterm01, s:cterm0B ],
 	\ [ s:gui04, s:gui02, s:cterm04, s:cterm02 ],
 	\ [ s:gui04, s:gui01, s:cterm04, s:cterm01 ])
 let g:airline#themes#base16_{s:scheme_slug}#palette.insert_modified = {
-	\ 'airline_c' : [ s:gui07, s:gui01, s:cterm07, s:cterm01 ]}
+	\ 'airline_c' : [ s:gui0C, s:gui01, s:cterm07, s:cterm01 ]}
 
-"---------------------"
+"-----------------------"
 " --| REPLEACE MODE |-- "
-"---------------------"
-let g:airline#themes#base16_{s:scheme_slug}#palette.replace = airline#themes#generate_color_map(
+"-----------------------"
+let g:airline#themes#base16_{s:scheme_slug}#palette.replace = airline#themes#generate_color_map (
 	\ [ s:gui01, s:gui0E, s:cterm01, s:cterm0E ],
 	\ [ s:gui04, s:gui02, s:cterm04, s:cterm02 ],
 	\ [ s:gui04, s:gui01, s:cterm04, s:cterm01 ])
 let g:airline#themes#base16_{s:scheme_slug}#palette.replace_modified = {
-	\ 'airline_c' : [ s:gui07, s:gui01, s:cterm07, s:cterm01 ]}
+	\ 'airline_c' : [ s:gui0C, s:gui01, s:cterm07, s:cterm01 ]}
 
 "---------------------"
 " --| VISUAL MODE |-- "
 "---------------------"
-let g:airline#themes#base16_{s:scheme_slug}#palette.visual = airline#themes#generate_color_map(
+let g:airline#themes#base16_{s:scheme_slug}#palette.visual = airline#themes#generate_color_map (
 	\ [ s:gui01, s:gui0D, s:cterm01, s:cterm0D ],
 	\ [ s:gui04, s:gui02, s:cterm04, s:cterm02 ],
 	\ [ s:gui04, s:gui01, s:cterm04, s:cterm01 ])
 let g:airline#themes#base16_{s:scheme_slug}#palette.visual_modified = {
-	\ 'airline_c' : [ s:gui07, s:gui01, s:cterm07, s:cterm01 ]}
+	\ 'airline_c' : [ s:gui0C, s:gui01, s:cterm07, s:cterm01 ]}
 
 "-----------------------"
 " --| INACTIVE MODE |-- "
 "-----------------------"
-let g:airline#themes#base16_{s:scheme_slug}#palette.inactive = airline#themes#generate_color_map(
+let g:airline#themes#base16_{s:scheme_slug}#palette.inactive = airline#themes#generate_color_map (
 	\ [ s:gui01, s:gui01, s:cterm01, s:cterm01 ],
 	\ [ s:gui04, s:gui01, s:cterm04, s:cterm01 ],
 	\ [ s:gui05, s:gui01, s:cterm05, s:cterm01 ])
+
