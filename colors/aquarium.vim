@@ -69,8 +69,8 @@ if s:configuration.style ==# 'dark'
 elseif s:configuration.style ==# 'light'
 
     " BASE BG
-    " Old BG -> #E6E6F1
-    let s:gui00 = "#E1E3F2"
+    " Old BG -> #E6E6F1 #E1E3F2
+    let s:gui00 = "#E6E6F1"
     let s:gui01 = "#D5D4E0"
     let s:gui03 = "#CCCBD9"
     let s:aquarium_bg_dim = "#9CA6B9"
