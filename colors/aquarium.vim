@@ -91,7 +91,7 @@ elseif s:configuration.style ==# 'light'
     let s:gui02 = "#414560"
     
     " OTHER
-    let s:linenr_bg = "#C4C3D2"
+    let s:linenr_bg = "#D5D4E0"
     let s:linenr_fg = "#414560"
 endif
 
