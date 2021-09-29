@@ -190,7 +190,7 @@ call s:hi("CursorLineNr", s:linenr_fg, s:linenr_bg, "NONE", "", "NONE", "") " Ch
 "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 call s:hi("PreProc", s:gui0E, "", "", "", "", "")
 call s:hi("Todo", s:gui0E, s:gui02, "", "", s:bold, "") " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-call s:hi("Boolean", s:gui0C, "", "", "", "", "") " a boolean constant: TRUE, false
+call s:hi("Boolean", s:gui09, "", "", "", "", "") " a boolean constant: TRUE, false
 call s:hi("Type", s:gui0A, "", "", "", "italic", "" ) " int, long, char, etc.
 call s:hi("Function", s:gui0C, "", "", "", "italic", "") " a floating point constant: 2.3e10
 call s:hi("Include", s:gui0D, "", "", "", "", "" ) " preprocessor #include
@@ -200,9 +200,9 @@ call s:hi("Repeat", s:gui0A, "", "", "", "", "") " for, do, while, etc.
 call s:hi("Label", s:gui0A,"", "", "", "", "") " case, default, etc.
 call s:hi("String", s:gui0B, "", "", "", "", "") " a string constant: 'this is a string'
 call s:hi("Character", s:gui0B, "", "", "", "", "") " a character constant: 'c', '\n'
-call s:hi("StorageClass", s:gui08, "", "", "", "", "") " static, register, volatile, etc.
+call s:hi("StorageClass", s:gui0A, "", "", "", "", "") " static, register, volatile, etc.
 call s:hi("Operator", s:gui08, "", "", "", s:bold, "") " sizeof, '+', '*', etc.
-call s:hi("Number", s:gui08, "", "", "", "", "") " a number constant: 234, 0xff
+call s:hi("Number", s:gui09, "", "", "", "", "") " a number constant: 234, 0xff
 call s:hi("Float", s:gui08, "", "", "", "", "") " a floating point constant: 2.3e10
 call s:hi("Structure", s:gui0A, "", "", "", "", "" ) " struct, union, enum, etc.
 call s:hi("Typedef", s:gui0A, "", "", "", "", "") " A typedef
@@ -246,7 +246,7 @@ call s:hi("asciidocListingBlock", s:gui0A, "", "", "", "", "")
 call s:hi("asciidocMacroAttributes", s:gui0C, "", "", "", "", "")
 call s:hi("asciidocOneLineTitle", s:gui0C, "", "", "", "", "")
 call s:hi("asciidocPassthroughBlock", s:gui0E, "", "", "", "", "")
-call s:hi("asciidocQuotedMonospaced", s:gui0A, "", "", "", "", "")
+call s:hi("asciidocQuotedMonospaced", s:gui0C, "", "", "", "", "")
 call s:hi("asciidocTriplePlusPassthrough", s:gui0A, "", "", "", "", "")
 hi! link asciidocAdmonition Keyword
 hi! link asciidocAttributeRef markdownH1
@@ -384,7 +384,7 @@ hi! link cPreCondit PreCondit
 call s:hi("cssAttributeSelector", s:gui0A, "", "", "", "", "")
 call s:hi("cssDefinition", s:gui0A, "", "", "", "NONE", "")
 call s:hi("cssIdentifier", s:gui0A, "", "", "", "underline", "")
-call s:hi("cssStringQ", s:gui0A, "", "", "", "", "")
+call s:hi("cssStringQ", s:gui0B, "", "", "", "", "")
 hi! link cssAttr Keyword
 hi! link cssBraces Delimiter
 hi! link cssClassName cssDefinition
@@ -440,7 +440,7 @@ call s:hi("goTypeDecl", s:gui0E, "", "", "", "", "" )
 "+ Rust Lang Highlight +
 "+---------------------+
 call s:hi("rustAttribute", s:gui0D, "", "", "", "", "")
-call s:hi("rustEnum", s:gui0A, "", "", "", s:bold, "")
+call s:hi("rustEnum", s:gui09, "", "", "", s:bold, "")
 call s:hi("rustMacro", s:gui0C, "", "", "", s:bold, "")
 call s:hi("rustModPath", s:gui0A, "", "", "", "", "")
 call s:hi("rustPanic", s:gui08, "", "", "", s:bold, "")
@@ -507,12 +507,12 @@ call s:hi("vimOper", s:gui0E, "", "", "", "", "")
 "+----------------------+
 call s:hi("jsonCommentError", s:gui0E, "", "", "", "", "")
 call s:hi("jsonKeyword", s:gui08, "", "", "", "", "")
-call s:hi("jsonBoolean", s:gui0A, "", "", "", "", "")
-call s:hi("jsonNumber", s:gui0A, "", "", "", "", "")
-call s:hi("jsonQuote", s:gui0E, "", "", "", "", "")
+call s:hi("jsonBoolean", s:gui09, "", "", "", "", "")
+call s:hi("jsonNumber", s:gui09, "", "", "", "", "")
+call s:hi("jsonQuote", s:gui0C, "", "", "", "", "")
 call s:hi("jsonMissingCommaError", s:gui08, "", "", "", "reverse", "")
-call s:hi("jsonNoQuotesError", s:gui08, "", "", "", "reverse", "")
-call s:hi("jsonNumError", s:gui08, "", "", "", "reverse", "")
+call s:hi("jsonNoQuotesError", s:gui0F, "", "", "", "reverse", "")
+call s:hi("jsonNumError", s:gui0F, "", "", "", "reverse", "")
 call s:hi("jsonString", s:gui0B, "", "", "", "", "")
 call s:hi("jsonStringSQError", s:gui08, "", "", "", "reverse", "")
 call s:hi("jsonSemicolonError", s:gui08, "", "", "", "reverse", "")
@@ -549,7 +549,7 @@ call s:hi("markdownUrl", s:gui0C, "", "", "", "undercurl", "")
 "+------------------------+
 call s:hi("haskellType", s:gui0A, "", "", "", "", "")
 call s:hi("haskellOperators", s:gui0C, "", "", "", "", "")
-call s:hi("haskellNumber", s:gui0E, "", "", "", "", "")
+call s:hi("haskellNumber", s:gui09, "", "", "", "", "")
 call s:hi("haskellPragma", s:gui0E, "", "", "", "", "")
 
 "+----------------------------+
@@ -559,7 +559,7 @@ call s:hi("javaScriptBraces", s:gui0C, "", "", "", "", "")
 call s:hi("javaScriptFunction", s:gui0A, "", "", "", "", "")
 call s:hi("javaScriptIdentifier", s:gui0A, "", "", "", "", "")
 call s:hi("javaScriptNull", s:gui08, "", "", "", "", "")
-call s:hi("javaScriptNumber", s:gui0D, "", "", "", "", "")
+call s:hi("javaScriptNumber", s:gui09, "", "", "", "", "")
 call s:hi("javaScriptRequire", s:gui0C, "", "", "", "", "")
 call s:hi("javaScriptReserved", s:gui0E, "", "", "", "", "" )
 " https://github.com/pangloss/vim-javascript
@@ -669,7 +669,7 @@ call s:hi("perlMatchStartEnd", s:gui0D, "", "", "", "", "" )
 call s:hi("perlMethod", s:gui0E, "", "", "", "", "" )
 call s:hi("perlPOD", s:gui01, "", "", "", "", "" )
 call s:hi("perlSharpBang", s:gui05, "", "", "", "", "" )
-call s:hi("perlSpecialString", s:gui0A, "", "", "", "", "" )
+call s:hi("perlSpecialString", s:gui0B, "", "", "", "", "" )
 call s:hi("perlStatementFiledesc", s:gui08, "", "", "", "", "" )
 call s:hi("perlStatementFlow", s:gui08, "", "", "", "", "" )
 call s:hi("perlStatementInclude", s:gui0E, "", "", "", "", "" )
