@@ -809,4 +809,6 @@ call s:hi("NvimTreeExecFile",  s:gui04, "", "", "", "", "")
 call s:hi("NvimTreeVertSplit", s:gui00, "", "", "", "", "")
 
 
+" Bufferline
+call s:hi("BufferLineFill", "", s:gui07, "", "", "", "")
 
