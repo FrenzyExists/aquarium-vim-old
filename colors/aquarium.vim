@@ -824,3 +824,20 @@ call s:hi("BufferLineTabClose", s:gui08, s:gui01, "", "", "", "")
 
 call s:hi("BufferLineModifiedVisible", s:gui05, s:gui01, "", "", "", "")
 call s:hi("BufferLineModifiedSelected", s:gui0C, s:gui00, "", "", "", "")
+
+
+" LSP Diagnostics
+
+" Errors
+call s:hi("LspDiagnosticsSignError", s:gui0E, "", "", "", "italic", "")
+call s:hi("LspDiagnosticsSignWarning", s:gui0A, "", "", "", "italic", "")
+call s:hi("LspDiagnosticsVirtualTextError", s:gui0E, "", "", "", "italic", "")
+call s:hi("LspDiagnosticsVirtualTextWarning", s:gui0A, "", "", "", "italic", "")
+
+" Info
+call s:hi("LspDiagnosticsSignInformation", s:gui0B, "", "", "", "italic", "")
+call s:hi("LspDiagnosticsVirtualTextInformation", s:gui0B, "", "", "", "italic", "")
+
+" Hints
+call s:hi("LspDiagnosticsSignHint", s:gui0E, "", "", "", "italic", "")
+call s:hi("LspDiagnosticsVirtualTextHint", s:gui0E, "", "", "", "italic", "")
