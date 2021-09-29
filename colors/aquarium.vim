@@ -813,4 +813,14 @@ call s:hi("NvimTreeVertSplit", s:gui00, "", "", "", "", "")
 call s:hi("BufferLineFill", "", s:gui07, "", "", "", "")
 call s:hi("BufferLineSeparatorSelected", s:gui00, s:gui07, "", "", "", "")
 call s:hi("BufferLineSeparator", s:gui01, s:gui07, "", "", "", "")
+call s:hi("BufferLineSeparatorVisible", s:gui07, s:gui01, "", "", "", "")
 
+call s:hi("BufferLineBackground", s:gui05, s:gui01, "", "", "", "")
+
+call s:hi("BufferLineCloseButton", s:gui05, s:gui01, "", "", "", "")
+call s:hi("BufferLineCloseButtonVisible", s:gui05, s:gui01, "", "", "", "")
+call s:hi("BufferLineBufferVisible", s:gui05, s:gui01, "", "", "", "")
+call s:hi("BufferLineTabClose", s:gui08, s:gui01, "", "", "", "")
+
+call s:hi("BufferLineModifiedVisible", s:gui05, s:gui01, "", "", "", "")
+call s:hi("BufferLineModifiedSelected", s:gui0C, s:gui00, "", "", "", "")
