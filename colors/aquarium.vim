@@ -53,7 +53,7 @@ if s:configuration.style ==# 'dark'
     let s:gui04 = "#C8CEDC"
 
     " OTHER COLORS
-    let s:gui08 = "#ebb9b9"
+    let s:gui08 = "#EBB9B9"
     let s:gui09 = "#E8CCA7"
     let s:gui0D = "#CDDBF9"
     let s:gui0B = "#B1DBA4"
