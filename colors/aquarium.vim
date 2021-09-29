@@ -803,7 +803,7 @@ hi! link pandocUListItemBullet Operator
 " Nvim-Tree
 " > kyazdani42/nvim-tree.lua
 call s:hi("NvimTreeRootFolder", s:gui08, "", "", "", "italic", "")
-call s:hi("NvimTreeNormal", "", s:aquarium_bg_darkest, "", "", "", "")
+call s:hi("NvimTreeNormal", "", s:gui07, "", "", "", "")
 call s:hi("NvimTreeImageFile", s:gui0E, "NONE", "", "", "", "")
 call s:hi("NvimTreeExecFile",  s:gui04, "", "", "", "", "")
 call s:hi("NvimTreeVertSplit", s:gui00, "", "", "", "")
