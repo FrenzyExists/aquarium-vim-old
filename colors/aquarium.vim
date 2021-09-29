@@ -830,9 +830,9 @@ call s:hi("BufferLineModifiedSelected", s:gui0C, s:gui00, "", "", "", "")
 
 " Errors
 call s:hi("LspDiagnosticsSignError", s:gui0E, "", "", "", "italic", "")
-call s:hi("LspDiagnosticsSignWarning", s:gui0A, "", "", "", "italic", "")
+call s:hi("LspDiagnosticsSignWarning", s:gui09, "", "", "", "italic", "")
 call s:hi("LspDiagnosticsVirtualTextError", s:gui0E, "", "", "", "italic", "")
-call s:hi("LspDiagnosticsVirtualTextWarning", s:gui0A, "", "", "", "italic", "")
+call s:hi("LspDiagnosticsVirtualTextWarning", s:gui09, "", "", "", "italic", "")
 
 " Info
 call s:hi("LspDiagnosticsSignInformation", s:gui0B, "", "", "", "italic", "")
