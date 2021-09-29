@@ -841,3 +841,14 @@ call s:hi("LspDiagnosticsVirtualTextInformation", s:gui0B, "", "", "", "italic",
 " Hints
 call s:hi("LspDiagnosticsSignHint", s:gui0E, "", "", "", "italic", "")
 call s:hi("LspDiagnosticsVirtualTextHint", s:gui0E, "", "", "", "italic", "")
+
+lua << EOF
+local function lspSymbol(name, icon)
+   vim.fn.sign_define("LspDiagnosticsSign" .. name, { text = icon, numhl = "LspDiagnosticsDefault" .. name })
+end
+
+lspSymbol("Error", "")
+lspSymbol("Information", "")
+lspSymbol("Hint", "")
+lspSymbol("Warning", "")
+EOF
