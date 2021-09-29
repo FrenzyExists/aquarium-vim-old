@@ -806,7 +806,7 @@ call s:hi("NvimTreeRootFolder", s:gui08, "", "", "", "italic", "")
 call s:hi("NvimTreeNormal", "", s:gui07, "", "", "", "")
 call s:hi("NvimTreeImageFile", s:gui0E, "NONE", "", "", "", "")
 call s:hi("NvimTreeExecFile",  s:gui04, "", "", "", "", "")
-call s:hi("NvimTreeVertSplit", s:gui00, "", "", "", "")
+call s:hi("NvimTreeVertSplit", s:gui00, "", "", "", "", "")
 
 
 " Bufferline
