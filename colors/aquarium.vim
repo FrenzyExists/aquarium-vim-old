@@ -43,9 +43,10 @@ if s:configuration.style ==# 'dark'
     " BASE BG
     let s:gui00 = "#20202A"
     let s:gui01 = "#2c2e3e"
+    let s:gui02 = "#4C5664"
     let s:gui03 = "#3D4059"
-    let s:aquarium_bg_dim = "#313449"
-    let s:aquarium_bg_light = "#414560"
+    let s:gui06 = "#313449"
+    let s:gui07 = "#1A1A24"
 
     " BASE FG
     let s:gui05 = "#63718b"
@@ -60,11 +61,11 @@ if s:configuration.style ==# 'dark'
     let s:gui0F = "#EAC1C1"
     let s:gui0C = "#B8DEEB" 
     let s:gui0E = "#F6BBE7" 
-    let s:gui02 = "#4C5664"
 
     " OTHER
-    let s:linenr_bg = "#3D4059"
-    let s:linenr_fg = "#4c5664"
+    let s:linenr_bg = "#2c2e3e"
+    let s:linenr_fg = "#4C5664"
+    let s:cursor_bg = "#414560"
 
 elseif s:configuration.style ==# 'light'
 
@@ -72,16 +73,17 @@ elseif s:configuration.style ==# 'light'
     " Old BG -> #E6E6F1 #E1E3F2
     let s:gui00 = "#E6E6F1"
     let s:gui01 = "#D5D4E0"
+    let s:gui02 = "#414560"
     let s:gui03 = "#CCCBD9"
-    let s:aquarium_bg_dim = "#9CA6B9"
-    let s:aquarium_bg_light = "#AFB5C6"
+    let s:gui06 = "#9CA6B9"
+    let s:gui07 = "#D9DBE6"
 
     " BASE FG
-    let s:gui05 = "#708190"
     let s:gui04 = "#7F8E9D"
+    let s:gui05 = "#708190"
 
     " OTHER COLORS
-    let s:gui08 = "#CD667B"
+    let s:gui08 = "#C34864"
     let s:gui09 = "#D66652"
     let s:gui0B = "#7D9685"
     let s:gui0D = "#6A8CBC"
@@ -89,11 +91,11 @@ elseif s:configuration.style ==# 'light'
     let s:gui0F = "#E06B6B"
     let s:gui0C = "#829FB0" 
     let s:gui0A = "#DE956F" 
-    let s:gui02 = "#414560"
     
     " OTHER
     let s:linenr_bg = "#D5D4E0"
     let s:linenr_fg = "#414560"
+    let s:cursor_bg = "#AFB5C6"
 endif
 
 " Focused line toggle
@@ -176,9 +178,9 @@ call s:hi("ColorColumn", "", s:gui01, "NONE", "", "", "")
 call s:hi("CursorColumn", s:gui0C, "", "NONE", "", "", "")
 
 " Cursor
-call s:hi("Cursor", s:aquarium_bg_light, s:aquarium_bg_dim, "NONE", "NONE", "", "") " Regular Cursor thing
-call s:hi("CursorIM", s:gui02, s:aquarium_bg_dim, "", "NONE", "", "") " like Cursor, but used when in IME mode
-call s:hi("iCursor", s:aquarium_bg_light, s:aquarium_bg_dim, "", "NONE", "", "")
+call s:hi("Cursor", s:cursor_bg, s:gui06, "NONE", "NONE", "", "") " Regular Cursor thing
+call s:hi("CursorIM", s:gui02, s:gui06, "", "NONE", "", "") " like Cursor, but used when in IME mode
+call s:hi("iCursor", s:cursor_bg, s:gui06, "", "NONE", "", "")
 
 " Line Stuff 
 call s:hi("LineNr", s:gui03, s:gui00, "", "", "bold", "") " The Number Columns
@@ -232,7 +234,7 @@ call s:hi("VertSplit", s:gui01, s:gui00, "", "NONE", s:bold, "")
 call s:hi("StatusLine", s:gui00, s:gui00, "", "", "", "") " status line of current window
 call s:hi("StatusLineNC", s:gui01, s:gui00, "", "", "underline", "underline") "status lines of not-current windows Note: if this is equal to 'StatusLine' Vim will use '^^^' in the status line of the current window.
 call s:hi("StatusLineTerm", s:gui05, s:gui00, "", "", "", "" ) " status line of current :terminal window
-call s:hi("StatusLineTermNC", s:aquarium_bg_dim, s:gui00, "", "", "underline", "") " status line of non-current :terminal window
+call s:hi("StatusLineTermNC", s:gui06, s:gui00, "", "", "underline", "") " status line of non-current :terminal window
 
 
 "+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -361,10 +363,10 @@ else
   call s:hi("CursorLine", "", s:line, "", "", "", "" ) " the screen line that the cursor is in when 'cursorline' is set
 endif
 call s:hi("Directory", s:gui0D, "", "", "", "", "") " directory names (and other special names in listings)
-call s:hi("DiffAdd", s:gui0B, s:gui02, "", "", "", "") " diff mode: Added line
-call s:hi("DiffChange", s:gui0A, "", "", "", "undercurl", "") " diff mode: Changed line
-call s:hi("DiffDelete", s:gui08, s:gui02, "", "", "", "") " diff mode: Deleted line
-call s:hi("DiffText", s:gui0A, s:gui02, "", "", "", "") " diff mode: Changed text within a changed line
+call s:hi("DiffAdd", s:gui0B, s:gui00, "", "", "", "") " diff mode: Added line
+call s:hi("DiffChange", s:gui0C, s:gui00, "", "", "", "") " diff mode: Changed line
+call s:hi("DiffDelete", s:gui08, s:gui00, "", "", "", "") " diff mode: Deleted line
+call s:hi("DiffText", s:gui0A, s:gui00, "", "", "", "") " diff mode: Changed text within a changed line
 
 
 "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -756,50 +758,22 @@ call s:hi("yamlKey", s:gui08, "", "", "", "italic", "")
 call s:hi("jediFunction", s:gui0E, s:gui02, "", "", "italic", "")
 call s:hi("jediFat", s:gui0C, s:gui02, "", "", "italic", "")
 
-" Rainbow Parentheses
-" > Science XD
-if !exists('g:rbpt_colorpairs')
-  let g:rbpt_colorpairs =
-    \ [
-      \ ['blue', '#cddbf9'], ['magenta', '#f6bbe7'],
-      \ ['red',  '#ebb9b9'], ['yellow',     '#E6DFB8']
-    \ ]
-endif
-
-let g:rainbow_guifgs = [ '#E6DFB8', '#ebb9b9', '#f6bbe7', '#cddbf9' ]
-let g:rainbow_ctermfgs = [ 'yellow', 'red', 'magenta', 'blue' ]
-
-if !exists('g:rainbow_conf')
-   let g:rainbow_conf = {}
-endif
-if !has_key(g:rainbow_conf, 'guifgs')
-   let g:rainbow_conf['guifgs'] = g:rainbow_guifgs
-endif
-if !has_key(g:rainbow_conf, 'ctermfgs')
-   let g:rainbow_conf['ctermfgs'] = g:rainbow_ctermfgs
-endif
-
-let g:niji_dark_colours = g:rbpt_colorpairs
-let g:niji_light_colours = g:rbpt_colorpairs
-
 " tree-sitter
 " > nvim-treesitter/nvim-treesitter
-if has("nvim")
-  hi! link TSAnnotation Annotation
-  hi! link TSConstBuiltin Constant
-  hi! link TSConstructor Function
-  hi! link TSEmphasis Italic
-  hi! link TSError Error
-  hi! link TSFuncBuiltin Function
-  hi! link TSFuncMacro Function
-  hi! link TSStringRegex SpecialChar
-  hi! link TSStrong Bold
-  hi! link TSStructure Structure
-  hi! link TSTagDelimiter TSTag
-  hi! link TSUnderline Underline
-  hi! link TSVariable Variable
-  hi! link TSVariableBuiltin Keyword
-endif
+hi! link TSAnnotation Annotation
+hi! link TSConstBuiltin Constant
+hi! link TSConstructor Function
+hi! link TSEmphasis Italic
+hi! link TSError Error
+hi! link TSFuncBuiltin Function
+hi! link TSFuncMacro Function
+hi! link TSStringRegex SpecialChar
+hi! link TSStrong Bold
+hi! link TSStructure Structure
+hi! link TSTagDelimiter TSTag
+hi! link TSUnderline Underline
+hi! link TSVariable Variable
+hi! link TSVariableBuiltin Keyword
 
 " Pandoc
 " > vim-pandoc/vim-pandoc-syntax
@@ -828,7 +802,23 @@ hi! link pandocUListItemBullet Operator
 
 " Nvim-Tree
 " > kyazdani42/nvim-tree.lua
-call s:hi("NvimTreeRootFolder", s:gui0A, "", "", "", "italic", "")
-call s:hi("NvimTreeNormal", "", s:gui01, "", "", "", "")
-call s:hi("NvimTreeImageFile", "", s:gui0C, "", "", "", "")
-call s:hi("NvimTreeExecFile", "", s:gui04, "", "", "", "")
+call s:hi("NvimTreeRootFolder", s:gui08, "", "", "", "italic", "")
+call s:hi("NvimTreeNormal", "", s:aquarium_bg_darkest, "", "", "", "")
+call s:hi("NvimTreeImageFile", s:gui0E, "NONE", "", "", "", "")
+call s:hi("NvimTreeExecFile",  s:gui04, "", "", "", "", "")
+call s:hi("NvimTreeVertSplit", s:gui00, "", "", "", "")
+
+
+" Bufferline
+call s:hi("BufferLineFill", "", s:gui07, "", "", "")
+call s:hi("BufferLineSeparatorSelected", s:gui00, s:gui07, "", "", "")
+call s:hi("BufferLineSeparator", s:gui01, s:gui07, "", "", "")
+call s:hi("BufferLineSeparatorVisible", s:gui07, s:gui01, "", "", "")
+call s:hi("BufferLineBackgrou:nd", s:gui05, s:gui01, "", "", "")
+call s:hi("BufferLineCloseButton", s:gui05, s:gui01, "", "", "")
+call s:hi("BufferLineCloseButtonVisible", s:gui05, s:gui01, "", "", "")
+call s:hi("BufferLineBufferVisible", s:gui05, s:gui01, "", "", "")
+call s:hi("BufferLineTabClose", s:gui08, s:gui01, "", "", "")
+
+call s:hi("BufferLineModifiedVisible", s:gui05, s:gui01, "", "", "")
+call s:hi("BufferLineModifiedSelected", s:gui0C, s:gui00, "", "", "")
