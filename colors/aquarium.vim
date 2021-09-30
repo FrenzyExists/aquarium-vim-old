@@ -63,7 +63,7 @@ if s:configuration.style ==# 'dark'
     let s:gui0E = "#F6BBE7" 
 
     " OTHER
-    let s:linenr_bg = "#2c2e3e"
+    let s:linenr_bg = "#2C2E3E"
     let s:linenr_fg = "#4C5664"
     let s:cursor_bg = "#414560"
 
@@ -76,7 +76,7 @@ elseif s:configuration.style ==# 'light'
     let s:gui02 = "#414560"
     let s:gui03 = "#CCCBD9"
     let s:gui06 = "#9CA6B9"
-    let s:gui07 = "#D9DBE6"
+    let s:gui07 = "#D7D7E2"
 
     " BASE FG
     let s:gui04 = "#7F8E9D"
@@ -825,9 +825,9 @@ call s:hi("BufferLineTabClose", s:gui08, s:gui01, "", "", "", "")
 call s:hi("BufferLineModifiedVisible", s:gui05, s:gui01, "", "", "", "")
 call s:hi("BufferLineModifiedSelected", s:gui0C, s:gui00, "", "", "", "")
 
+if execute(":echo has('nvim-0.5.0')")
 
 " LSP Diagnostics
-
 " Errors
 call s:hi("LspDiagnosticsSignError", s:gui0E, "", "", "", "italic", "")
 call s:hi("LspDiagnosticsSignWarning", s:gui0A, "", "", "", "italic", "")
@@ -845,7 +845,7 @@ call s:hi("LspDiagnosticsVirtualTextHint", s:gui0E, "", "", "", "italic", "")
 
 lua << EOF
 local function lspSymbol(name, icon)
-   vim.fn.sign_define("LspDiagnosticsSign" .. name, { text = icon, numhl = "LspDiagnosticsDefault" .. name })
+    vim.fn.sign_define("LspDiagnosticsSign" .. name, { text = icon, numhl = "LspDiagnosticsDefault" .. name })
 end
 
 lspSymbol("Error", "")
@@ -853,3 +853,4 @@ lspSymbol("Information", "")
 lspSymbol("Hint", "")
 lspSymbol("Warning", "")
 EOF
+endif
