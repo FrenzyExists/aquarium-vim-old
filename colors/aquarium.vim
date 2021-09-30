@@ -323,9 +323,13 @@ call s:hi("SpellRare", s:gui0D, s:gui01, "", "", "undercurl", "")
 "+-+-+-+-+-+-+-+-+-+-+
 "+ Visual Something  +
 "+-+-+-+-+-+-+-+-+-+-+
-call s:hi("Visual", "reverse", s:gui01, "", "", "", "")
-call s:hi("VisualNOS", "reverse", s:gui01, "", "", "", "")
-
+if execute(":echo has('nvim')")
+	call s:hi("Visual", "reverse", s:gui01, "", "", "", "")
+	call s:hi("VisualNOS", "reverse", s:gui01, "", "", "", "")
+else
+	call s:hi("Visual", s:linenr_bg, s:gui01, "", "", "", "")
+	call s:hi("VisualNOS", s:linenr_bg, s:gui01, "", "", "", "")
+endif
 
 "+-+-+-+-+-+-+-+-+-+-+
 "+ Git Highlighting  +
@@ -800,6 +804,8 @@ hi! link pandocStrong markdownBold
 hi! link pandocTableHeaderWord pandocAtxHeader
 hi! link pandocUListItemBullet Operator
 
+if execute(":echo has('nvim-0.5.0')")
+
 " Nvim-Tree
 " > kyazdani42/nvim-tree.lua
 call s:hi("NvimTreeRootFolder", s:gui08, "", "", "", "italic", "")
@@ -824,8 +830,6 @@ call s:hi("BufferLineTabClose", s:gui08, s:gui01, "", "", "", "")
 
 call s:hi("BufferLineModifiedVisible", s:gui05, s:gui01, "", "", "", "")
 call s:hi("BufferLineModifiedSelected", s:gui0C, s:gui00, "", "", "", "")
-
-if execute(":echo has('nvim-0.5.0')")
 
 " LSP Diagnostics
 " Errors
