@@ -85,8 +85,8 @@ g.airline_theme = "base16_aquarium_light"
 ```
 
 ### Screenshots
-Here's a demo of how it looks
-![](screenshots/pic_1.png)
+Here's a demo of how it looks on [NvChad](https://github.com/NvChad/NvChad)
+![](screenshots/nv_chad.png)
 
 Light Variant Colors Preview
 ![](screenshots/preview-light.png)
@@ -104,7 +104,7 @@ There's a lot of ways to contribute, creating ports in particular. For example, 
 Other ways you can contribute is by adding a config of your favorite program using aquarium colors over [here](https://github.com/FrenzyExists/dotfiles).
 
 ### To-do list
-- [ ] Add Scheme switch script
+- [x] Add Scheme switch script
 - [ ] Glorify theme
 - [ ] Add Mish Theme
 - [ ] Profit (hehe)
