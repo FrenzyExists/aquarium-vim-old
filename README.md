@@ -1,7 +1,7 @@
 
 <p align="center">
     <a href="https://github.com/FrenzyExists" target="_blank">
-        <img src="screenshots/frame_1.png" alt="Aquarium Banner" width="630"/>
+        <img src="screenshots/banner.png" alt="Aquarium Banner" width="630"/>
     </a>
 </p>
 <p align="center">

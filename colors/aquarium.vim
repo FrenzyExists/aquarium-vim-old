@@ -41,56 +41,57 @@ endif
 if s:configuration.style ==# 'dark'
 
     " BASE BG
-    let s:gui00 = "#20202A"
-    let s:gui01 = "#2c2e3e"
-    let s:gui02 = "#4C5664"
-    let s:gui03 = "#3D4059"
-    let s:gui06 = "#313449"
-    let s:gui07 = "#1A1A24"
+    let s:gui00     = "#20202A"
+    let s:gui01     = "#2c2e3e"
+    let s:gui02     = "#A7B7D6"
+    let s:gui03     = "#3D4059"
 
     " BASE FG
-    let s:gui05 = "#63718b"
-    let s:gui04 = "#C8CEDC"
+    let s:gui04     = "#C6D0E9"
+    let s:gui05     = "#63718b"
+
+    let s:gui06     = "#313449"
+    let s:gui07     = "#1A1A24"
 
     " OTHER COLORS
-    let s:gui08 = "#EBB9B9"
-    let s:gui09 = "#E8CCA7"
-    let s:gui0D = "#CDDBF9"
-    let s:gui0B = "#B1DBA4"
-    let s:gui0A = "#E6DFB8"
-    let s:gui0F = "#EAC1C1"
-    let s:gui0C = "#B8DEEB" 
-    let s:gui0E = "#F6BBE7" 
+    let s:gui08     = "#EBB9B9"
+    let s:gui09     = "#E8CCA7"
+    let s:gui0A     = "#E6DFB8"
+    let s:gui0B     = "#B1DBA4"
+    let s:gui0C     = "#B8DEEB"
+    let s:gui0D     = "#CDDBF9"
+    let s:gui0E     = "#F6BBE7"
+    let s:gui0F     = "#EAC1C1"
 
     " OTHER
     let s:linenr_bg = "#2C2E3E"
-    let s:linenr_fg = "#4C5664"
-    let s:cursor_bg = "#414560"
+    let s:linenr_fg = "#A7B7D6"
+    let s:cursor_bg = "#A7B7D6"
 
 elseif s:configuration.style ==# 'light'
 
     " BASE BG
     " Old BG -> #E6E6F1 #E1E3F2
-    let s:gui00 = "#E6E6F1"
-    let s:gui01 = "#D5D4E0"
-    let s:gui02 = "#414560"
-    let s:gui03 = "#CCCBD9"
-    let s:gui06 = "#9CA6B9"
-    let s:gui07 = "#D7D7E2"
+    let s:gui00     = "#E6E6F1"
+    let s:gui01     = "#D5D4E0"
+    let s:gui02     = "#e1e1ec"
+    let s:gui03     = "#CCCBD9"
+    let s:gui06     = "#9CA6B9"
+    let s:gui07     = "#D7D7E2"
 
     " BASE FG
-    let s:gui04 = "#7F8E9D"
-    let s:gui05 = "#708190"
+    let s:gui04     = "#7F8E9D"
+    let s:gui05     = "#708190"
 
     " OTHER COLORS
-    let s:gui08 = "#C34864"
-    let s:gui09 = "#D66652"
-    let s:gui0B = "#7D9685"
-    let s:gui0D = "#6A8CBC"
-    let s:gui0E = "#8787BF"
-    let s:gui0F = "#E06B6B"
-    let s:gui0C = "#829FB0" 
-    let s:gui0A = "#DE956F" 
+    let s:gui08     = "#C34864"
+    let s:gui09     = "#D66652"
+    let s:gui0B     = "#7D9685"
+    let s:gui0D     = "#6A8CBC"
+    let s:gui0E     = "#8787BF"
+    let s:gui0F     = "#E06B6B"
+    let s:gui0C     = "#829FB0" 
+    let s:gui0A     = "#DE956F" 
     
     " OTHER
     let s:linenr_bg = "#D5D4E0"
@@ -102,7 +103,7 @@ endif
 if !exists("g:aqua_line")
     let g:aqua_line = 0
 endif
-
+ 
 let s:line = "NONE"
 if g:aqua_line == 1
     let s:line = s:gui01
@@ -232,7 +233,7 @@ hi! link Variable Identifier
 "+-+-+-+-+-+-+-+-+-+-+-+-+
 call s:hi("VertSplit", s:gui01, s:gui00, "", "NONE", s:bold, "")
 call s:hi("StatusLine", s:gui00, s:gui00, "", "", "", "") " status line of current window
-call s:hi("StatusLineNC", s:gui01, s:gui00, "", "", "underline", "underline") "status lines of not-current windows Note: if this is equal to 'StatusLine' Vim will use '^^^' in the status line of the current window.
+call s:hi("StatusLineNC", s:gui01, s:gui00, "", "", "underline", "") "status lines of not-current windows Note: if this is equal to 'StatusLine' Vim will use '^^^' in the status line of the current window.
 call s:hi("StatusLineTerm", s:gui05, s:gui00, "", "", "", "" ) " status line of current :terminal window
 call s:hi("StatusLineTermNC", s:gui06, s:gui00, "", "", "underline", "") " status line of non-current :terminal window
 
@@ -323,13 +324,8 @@ call s:hi("SpellRare", s:gui0D, s:gui01, "", "", "undercurl", "")
 "+-+-+-+-+-+-+-+-+-+-+
 "+ Visual Something  +
 "+-+-+-+-+-+-+-+-+-+-+
-if execute(":echo has('nvim')")
-	call s:hi("Visual", "reverse", s:gui01, "", "", "", "")
-	call s:hi("VisualNOS", "reverse", s:gui01, "", "", "", "")
-else
-	call s:hi("Visual", s:linenr_bg, s:gui01, "", "", "", "")
-	call s:hi("VisualNOS", s:linenr_bg, s:gui01, "", "", "", "")
-endif
+call s:hi("Visual", "", s:gui01, "", "", "", "")
+call s:hi("VisualNOS", "", s:gui01, "", "", "", "")
 
 "+-+-+-+-+-+-+-+-+-+-+
 "+ Git Highlighting  +
@@ -804,8 +800,6 @@ hi! link pandocStrong markdownBold
 hi! link pandocTableHeaderWord pandocAtxHeader
 hi! link pandocUListItemBullet Operator
 
-if execute(":echo has('nvim-0.5.0')")
-
 " Nvim-Tree
 " > kyazdani42/nvim-tree.lua
 call s:hi("NvimTreeRootFolder", s:gui08, "", "", "", "italic", "")
@@ -813,23 +807,37 @@ call s:hi("NvimTreeNormal", "", s:gui07, "", "", "", "")
 call s:hi("NvimTreeImageFile", s:gui0E, "NONE", "", "", "", "")
 call s:hi("NvimTreeExecFile",  s:gui04, "", "", "", "", "")
 call s:hi("NvimTreeVertSplit", s:gui00, "", "", "", "", "")
-
+ 
 
 " Bufferline
 call s:hi("BufferLineFill", "", s:gui07, "", "", "", "")
-call s:hi("BufferLineSeparatorSelected", s:gui00, s:gui07, "", "", "", "")
-call s:hi("BufferLineSeparator", s:gui01, s:gui07, "", "", "", "")
-call s:hi("BufferLineSeparatorVisible", s:gui07, s:gui01, "", "", "", "")
+call s:hi("BufferLineSeparatorSelected", s:gui07, s:gui00, "", "", "", "")
 
-call s:hi("BufferLineBackground", s:gui05, s:gui01, "", "", "", "")
+if s:configuration.style ==# 'dark'
+    call s:hi("BufferLineSeparatorVisible", s:gui07, s:gui01, "", "", "", "")
+    call s:hi("BufferLineSeparator", s:gui07, s:gui01, "", "", "", "")
+    call s:hi("BufferLineBackground", s:gui05, s:gui01, "", "", "", "")
+    call s:hi("BufferLineCloseButton", s:gui05, s:gui01, "", "", "", "")
+    call s:hi("BufferLineCloseButton", s:gui05, s:gui01, "", "", "", "")
+    call s:hi("BufferLineBufferVisible", s:gui05, s:gui01, "", "", "", "")
+    call s:hi("BufferLineCloseButtonVisible", s:gui05, s:gui01, "", "", "", "")
+    call s:hi("BufferLineModifiedVisible", s:gui05, s:gui01, "", "", "", "")
+    call s:hi("BufferLineModified", s:gui05, s:gui01, "", "", "", "")
+else
+    call s:hi("BufferLineSeparatorVisible", s:gui07, s:gui02, "", "", "", "")
+    call s:hi("BufferLineSeparator", s:gui07, s:gui02, "", "", "", "")
+    call s:hi("BufferLineBackground", s:gui05, s:gui02, "", "", "", "")
+    call s:hi("BufferLineCloseButton", s:gui05, s:gui02, "", "", "", "")
+    call s:hi("BufferLineCloseButton", s:gui05, s:gui02, "", "", "", "")
+    call s:hi("BufferLineBufferVisible", s:gui05, s:gui02, "", "", "", "")
+    call s:hi("BufferLineCloseButtonVisible", s:gui05, s:gui02, "", "", "", "")
+    call s:hi("BufferLineModifiedVisible", s:gui05, s:gui02, "", "", "", "")
+    call s:hi("BufferLineModified", s:gui05, s:gui02, "", "", "", "")
+endif
 
-call s:hi("BufferLineCloseButton", s:gui05, s:gui01, "", "", "", "")
-call s:hi("BufferLineCloseButtonVisible", s:gui05, s:gui01, "", "", "", "")
-call s:hi("BufferLineBufferVisible", s:gui05, s:gui01, "", "", "", "")
 call s:hi("BufferLineTabClose", s:gui08, s:gui01, "", "", "", "")
-
-call s:hi("BufferLineModifiedVisible", s:gui05, s:gui01, "", "", "", "")
 call s:hi("BufferLineModifiedSelected", s:gui0C, s:gui00, "", "", "", "")
+
 
 " LSP Diagnostics
 " Errors
@@ -847,6 +855,7 @@ call s:hi("LspDiagnosticsVirtualTextInformation", s:gui0B, "", "", "", "italic",
 call s:hi("LspDiagnosticsSignHint", s:gui0E, "", "", "", "italic", "")
 call s:hi("LspDiagnosticsVirtualTextHint", s:gui0E, "", "", "", "italic", "")
 
+if execute(":echo has('nvim-0.5.0')")
 lua << EOF
 local function lspSymbol(name, icon)
     vim.fn.sign_define("LspDiagnosticsSign" .. name, { text = icon, numhl = "LspDiagnosticsDefault" .. name })
