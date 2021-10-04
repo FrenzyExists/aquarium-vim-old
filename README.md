@@ -5,10 +5,10 @@
     </a>
 </p>
 <p align="center">
-    <a href="https://github.com/FrenzyExists/aquarium-vim/stargazers"><img src="https://img.shields.io/github/stars/FrenzyExists/aquarium-vim?colorA=20202a&colorB=cddbf9&style=for-the-badge&logo=starship style=flat-square"></a>
-    <a href="https://github.com/FrenzyExists/aquarium-vim/releases/latest"><img src="https://img.shields.io/github/release/FrenzyExists/aquarium-vim.svg?&style=for-the-badge&label=Release&logo=github&logoColor=eceff4&colorA=20202a&colorB=f6bbe7"/></a> 
-    <a href="https://github.com/FrenzyExists/aquarium-vim/issues"><img src="https://img.shields.io/github/issues/FrenzyExists/aquarium-vim?colorA=20202a&colorB=e6dfb8&style=for-the-badge&logo=bugatti"></a>
-    <a href="https://github.com/FrenzyExists/aquarium-vim/network/members"><img src="https://img.shields.io/github/forks/FrenzyExists/aquarium-vim?colorA=20202a&colorB=ebb9b9&style=for-the-badge&logo=github"></a>
+    <a href="https://github.com/FrenzyExists/aquarium-vim-old/stargazers"><img src="https://img.shields.io/github/stars/FrenzyExists/aquarium-vim-old?colorA=20202a&colorB=cddbf9&style=for-the-badge&logo=starship style=flat-square"></a>
+    <a href="https://github.com/FrenzyExists/aquarium-vim-old/releases/latest"><img src="https://img.shields.io/github/release/FrenzyExists/aquarium-vim-old.svg?&style=for-the-badge&label=Release&logo=github&logoColor=eceff4&colorA=20202a&colorB=f6bbe7"/></a> 
+    <a href="https://github.com/FrenzyExists/aquarium-vim-old/issues"><img src="https://img.shields.io/github/issues/FrenzyExists/aquarium-vim-old?colorA=20202a&colorB=e6dfb8&style=for-the-badge&logo=bugatti"></a>
+    <a href="https://github.com/FrenzyExists/aquarium-vim-old/network/members"><img src="https://img.shields.io/github/forks/FrenzyExists/aquarium-vim-old?colorA=20202a&colorB=ebb9b9&style=for-the-badge&logo=github"></a>
 </p>
 
 <br/>
