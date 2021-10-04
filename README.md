@@ -15,6 +15,8 @@
 
 <p align="center">A colorful, dark cozy <a href="https://github.com/neovim/neovim">Neovim</a> colorscheme.</p>
 
+## NOTE: THIS REPO WILL BE MOVED SOON AS LUA DEVELOPMENT WILL TAKE HIGHER PRIORITY. NEW NEOVIM (LUA) AND VIM (VISCRIPT) SOON. I apoligize the sudden change
+
 Currently aquarium is at a very early stage, there's a large need for ports. At the time of this writting, you can visit [my dotfiles](https://github.com/FrenzyExists/dotfiles) for terminal configurations as well as my [tmux](https://github.com/FrenzyExists/dotfiles/blob/master/config/.tmux.conf) config, which is partly ripped from [Hi I'm Bored](https://github.com/shaunsingh).
 
 ## Getting Started
