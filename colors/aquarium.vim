@@ -823,7 +823,7 @@ if s:configuration.style ==# 'dark'
     call s:hi("BufferLineCloseButtonVisible", s:gui05, s:gui01, "", "", "", "")
     call s:hi("BufferLineModifiedVisible", s:gui05, s:gui01, "", "", "", "")
     call s:hi("BufferLineModified", s:gui05, s:gui01, "", "", "", "")
-s:configuration.style ==# 'light'
+elseif s:configuration.style ==# 'light'
     call s:hi("BufferLineSeparatorVisible", s:gui07, s:gui02, "", "", "", "")
     call s:hi("BufferLineSeparator", s:gui07, s:gui02, "", "", "", "")
     call s:hi("BufferLineBackground", s:gui05, s:gui02, "", "", "", "")
